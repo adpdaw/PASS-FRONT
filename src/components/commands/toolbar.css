@@ -1,0 +1,26 @@
+.titleBarWrap{
+    display: flex;
+    display: inline-flex;
+    height: 100%;
+    width: auto;  
+}
+
+.titleBar{
+    padding: 0.2rem;
+    
+
+}
+
+.titleBar:hover{
+    cursor: pointer;
+
+}
+
+.all{
+    border:1px solid;
+    flex-wrap: wrap;
+    display: flex;
+    display: inline-flex;
+    width: auto;
+    height: auto;
+}

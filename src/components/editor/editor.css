@@ -1,0 +1,28 @@
+.editor__wrap{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+ 
+
+
+}
+
+.editor{
+    width: 100%;
+    flex-grow: 1;
+    color: #fff;
+    margin-bottom: 20px;
+    outline: none;
+    appearance: none;
+    background: none;
+    resize: none;
+    border: none;
+    font-size: calc(1rem);  
+}
+
+.btn-download:hover{
+    cursor: pointer;
+    background-color:  rgba(233, 148, 236, 0.267);
+    border: none;
+
+}
