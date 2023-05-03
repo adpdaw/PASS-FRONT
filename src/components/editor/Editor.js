@@ -27,15 +27,6 @@ const Editor = () =>{
         setChars(getCharsCount(value));
     }
 
-    const downloadFile = () =>{
-        const link = document.createElement('a');
-        const file = new Blob([markdown], {type: 'text/plain'});
-        link.href = URL.createObjectURL(file);
-        link.download = 'Untitled.md';
-        link.click();
-        URL.revokeObjectURL(link.href);
-    };
-
     return(
         <div className="editor__wrap">
             <All/>
@@ -44,7 +35,6 @@ const Editor = () =>{
             className="editor"
             value={markdown}
             onChange={updateMarkdown}/>
-            <button className="btn-download" onClick={downloadFile}> Download File </button>
         </div>
     );
 }

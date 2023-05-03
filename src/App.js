@@ -5,13 +5,14 @@ import Editor from './components/editor/Editor.js';
 import Preview from './components/preview/Preview.js';
 import MarkdownProvider from './provider/markdown-provider.js';
 import Sidebar from './components/sidebar/SideBar.js';
-import NewToolBar from './components/newtootlbar/NewToolbar.js'
+import NavBar from './components/navBar/NavBar.js'
+import Footer from './components/footer/Footer.js'
 
 function  App  () {
 
   return(  
     <MarkdownProvider>
-       <NewToolBar/>
+       <NavBar/>
        <Sidebar/>
     <MainLayout>
       <MainLayout.Column>
@@ -22,6 +23,7 @@ function  App  () {
         <Preview/>
       </MainLayout.Column>
     </MainLayout>
+    <Footer/>
   </MarkdownProvider> 
 
   );

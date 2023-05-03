@@ -8,3 +8,13 @@
     overflow: auto;
     flex-grow: 1;
 }
+
+pre{
+    background-color:var(--dark);
+    border-radius: 5px;
+   
+}
+
+code{
+    
+}

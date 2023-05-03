@@ -20,9 +20,3 @@
     font-size: calc(1rem);  
 }
 
-.btn-download:hover{
-    cursor: pointer;
-    background-color:  rgba(233, 148, 236, 0.267);
-    border: none;
-
-}

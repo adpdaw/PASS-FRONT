@@ -6,7 +6,7 @@ const TitleBar = ({title , aside}) => (
        
         <div className='titleBar__wrap'>
             {title && <h4 className='mb-2'>{title}</h4>}
-            {aside && <h6>{aside}</h6>}
+            {aside && <h6 className='mb-2'> {aside} </h6>}
         </div>
         <hr/>
     </div>

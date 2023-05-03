@@ -1,0 +1,45 @@
+.page-footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height:2.8rem;
+    display: flex;
+    background-color: blueviolet;
+    justify-content: space-evenly;
+    margin-left: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: calc(10px + 0.75vmin); 
+  
+  }
+  .page-footer p {
+      margin-bottom: 0;
+    }
+  
+  .page-footer .footer-logo,
+  .page-footer a {
+   color: hsl(270, 2%, 79%);
+  }
+  
+  span{
+    margin-right: 25px;
+  }
+  a{
+    text-decoration: none;
+    margin-left: 5px;
+  }
+  a:hover{
+    color: hsl(240, 1%, 25%);
+    margin-left: 5px;
+  }
+
+  @media (max-width:450px) {
+    .page-footer{
+      height:3.8rem;
+      text-align:left;
+
+    }
+
+  }
