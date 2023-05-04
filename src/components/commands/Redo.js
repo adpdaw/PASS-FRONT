@@ -5,11 +5,15 @@ import { useContext } from "react";
 function Redo() {
   const [markdown, setMarkdown] = useMarkdown();
   const executeRedo = () => {
-    return setMarkdown(markdown + "\n****");
+    document.execCommand("redo",false,null);
   };
 
+  const handleOnChange = (e) =>{
+    setMarkdown(markdown + e.target.value)
+  }
+
   return (
-    <div className="titleBar" onClick={executeRedo}>
+    <div className="titleBar" onClick={executeRedo } onChange={handleOnChange}>
       <button aria-label="Redo action">
         <svg width="15" height="15" viewBox="0 0 384 512">
           <path
