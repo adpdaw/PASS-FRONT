@@ -1,20 +1,38 @@
 import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
 import { useContext } from "react";
+import useUndoableState from "../../customHooks/useUndoableState";
+
 
 function Redo() {
   const [markdown, setMarkdown] = useMarkdown();
-  const executeRedo = () => {
-    document.execCommand("redo",false,null);
-  };
+  const init = {text: markdown};
+  const {
+    state: doc,
+    setState: setDoc,
+    resetState: resetDoc,
+    index: docStateIndex,
+    lastIndex: docStateLastIndex,
+    goBack: undoDoc,
+    goForward: redoDoc
+  } = useUndoableState(init);
+
+  const canUndo = docStateIndex > 0;
+  const canRedo = docStateIndex < docStateLastIndex;
+
+
+  // const executeRedo = () => {
+  //   document.execCommand("redo",false,null);
+  // };
 
   const handleOnChange = (e) =>{
     setMarkdown(markdown + e.target.value)
   }
 
   return (
-    <div className="titleBar" onClick={executeRedo } onChange={handleOnChange}>
-      <button aria-label="Redo action">
+    <div className="titleBar"  onClick={() => redoDoc()}
+    disabled={!canRedo}>
+      <button aria-label="Redo action" >
         <svg width="15" height="15" viewBox="0 0 384 512">
           <path
             

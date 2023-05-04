@@ -10,7 +10,7 @@ function Undo() {
 
 
   const handleOnChange = (e) =>{
-    setMarkdown(markdown)
+    setMarkdown(markdown + e.target.value)
   }
 
   return (
