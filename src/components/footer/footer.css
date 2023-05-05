@@ -6,10 +6,9 @@
     text-align: center;
     height:2.8rem;
     display: flex;
-    background-color: blueviolet;
+    background-color: var(--primary);
     justify-content: space-evenly;
     margin-left: 60px;
-    display: flex;
     flex-wrap: wrap;
     font-size: calc(10px + 0.75vmin); 
   
@@ -28,11 +27,11 @@
   }
   a{
     text-decoration: none;
-    margin-left: 5px;
+ 
   }
   a:hover{
     color: hsl(240, 1%, 25%);
-    margin-left: 5px;
+   
   }
 
   @media (max-width:450px) {

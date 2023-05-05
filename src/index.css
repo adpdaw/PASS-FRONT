@@ -28,15 +28,16 @@ margin: 0;
 font-family: Arimo, sans-serif ; 
 font-size: 16px;
 line-height: 1.5; 
--webkit-font—smoothing: antialiased ; 
--moz-osx-font—smoothing: grayscale; 
+-webkit-font—smoothing: antialiased ;
+-webkit-font—smoothing: grayscale;  
+/* -moz-osx-font—smoothing: grayscale;  */
 background-color: var(--darkest) ; 
 color: white; 
 }
 
 /*Typography*/
 p{
-  margin: 0 0 1.rem;
+  margin: 0% ;
 }
 
 h1, h2 , h3 , h4 , h5, h6{
@@ -80,9 +81,13 @@ a{
   color: white;
 }
 
+p > a:hover{
+  color:var(--primary)
+}
+
 button:hover{
   cursor: pointer;
-  color: none;
+  
 }
 
 /*Buttons*/

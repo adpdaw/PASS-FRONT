@@ -5,17 +5,22 @@ import { useContext } from "react";
 function Italic() {
   const [markdown, setMarkdown] = useMarkdown();
   const executeItalic = () => {
-    return setMarkdown(markdown + "\n****");
+    return setMarkdown(markdown + "\n**");
   };
 
   return (
     <div className="titleBar" onClick={executeItalic}>
-      <button aria-label="Italic action">
+      <button aria-label="Add Italic Text">
+
         <svg width="15" height="15" viewBox="0 0 384 512">
           <path
-            
             fill="currentColor"
-            d="M58.79,439.13A16,16,0,0,1,48,424c0-73.1,14.68-131.56,43.65-173.77,35-51,90.21-78.46,164.35-81.87V88a16,16,0,0,1,27.05-11.57l176,168a16,16,0,0,1,0,23.14l-176,168A16,16,0,0,1,256,424V344.23c-45,1.36-79,8.65-106.07,22.64-29.25,15.12-50.46,37.71-73.32,67a16,16,0,0,1-17.82,5.28Z"
+            d="M204.758 416h-33.849l62.092-320h40.725a16 16 0 0 0 
+            15.704-12.937l6.242-32C297.599 41.184 290.034 32 279.968 
+            32H120.235a16 16 0 0 0-15.704 12.937l-6.242 32C96.362 86.816 
+            103.927 96 113.993 96h33.846l-62.09 320H46.278a16 16 0 0 0-15.704
+            12.935l-6.245 32C22.402 470.815 29.967 480 40.034 480h158.479a16 16
+            0 0 0 15.704-12.935l6.245-32c1.927-9.88-5.638-19.065-15.704-19.065z"
           />
         </svg>
       </button>
@@ -23,3 +28,4 @@ function Italic() {
   );
 }
 export default Italic;
+

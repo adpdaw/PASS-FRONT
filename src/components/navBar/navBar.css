@@ -180,7 +180,7 @@ input[type="file"] {
 .file-custom::before {
   content: 'Upload Documents';
   display: inline-block;
-  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  /* background: linear-gradient(top, #f9f9f9, #e3e3e3); */
   border: 1px solid #999;
   border-radius: 3px;
   padding: 5px 8px;
@@ -196,9 +196,9 @@ input[type="file"] {
   border-color: #b07ff0;
   color: #b07ff0;
 }
-.file-custom:active::before {
+/* .file-custom:active::before {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
-}
+} */
 /* End Button Upload Document */
 
 /* Button Download Document */
@@ -212,7 +212,7 @@ input[type="'text/plain'"] {
 .file-customDownload::before {
   content: 'Download Documents';
   display: inline-block;
-  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  /* background: linear-gradient(top, #f9f9f9, #e3e3e3); */
   border: 1px solid #999;
   border-radius: 3px;
   padding: 5px 8px;
