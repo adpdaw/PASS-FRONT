@@ -17,6 +17,10 @@
       margin-bottom: 0;
     }
   
+  .footerText{
+    padding-top: 10px;
+  }
+  
   .page-footer .footer-logo,
   .page-footer a {
    color: hsl(270, 2%, 79%);
@@ -29,8 +33,8 @@
     text-decoration: none;
  
   }
-  a:hover{
-    color: hsl(240, 1%, 25%);
+  .page-footer a:hover{
+    color:var(--darkest)
    
   }
 

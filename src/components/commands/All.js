@@ -10,6 +10,10 @@ import Image from "./Image";
 import AddList from "./AddList";
 import CodeBlock from "./CodeBlock";
 import Link from "./Link";
+import OList from "./OList";
+import UList from "./UList";
+import Quote from "./Quote";
+import Code from "./Code";
 
 const All = () => {
   return (
@@ -21,7 +25,11 @@ const All = () => {
         <Italic/>
         <Header/>
         <Link/>
+        <Quote/>
+        <Code/>
         <AddList/>
+        <OList/>
+        <UList/>
         <Image/>
         <CodeBlock/>
       </div>

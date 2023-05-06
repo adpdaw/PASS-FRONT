@@ -164,7 +164,7 @@ height: 100%;
   -webkit-transform:translateZ(0) scale(1,1);
   z-index:1;
   margin-top: 70px;
-  height:auto;
+  height:100vh;
   }
   
   .main-menu>ul {
@@ -238,12 +238,12 @@ height: 100%;
   }
   
   nav ul,nav li {
-  outline:0;
+  /* outline:0; */
   margin:0;
   padding:0;
   }
   .main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
-  color:#fff;
+  color:var(--primary);
   background-color:#000000;
   }
   .area {

@@ -10,7 +10,7 @@ function AddList() {
 
   return (
     <div className="titleBar" onClick={executeAddList}>
-      <button aria-label="Add AddList Text">
+      <button aria-label="List Items">
 
       <svg width="15" height="15" viewBox="0 0 48 48">
             <path

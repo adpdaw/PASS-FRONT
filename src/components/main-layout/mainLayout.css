@@ -6,7 +6,7 @@
 }
 .mainLayout__col{
     flex: 1;
-    padding: 1.875rem;
+    padding: 0 1.875rem 1.875rem 1.875rem;
 }
 
 .mainLayout__col:not(:last-child){

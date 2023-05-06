@@ -17,6 +17,7 @@ const NavBar = () =>{
         setMarkdown(event.target.result); 
       }; 
       reader.readAsText(event.target.files[0]); 
+    
     }; 
 
     const downloadFile = () =>{

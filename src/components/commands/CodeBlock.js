@@ -5,12 +5,12 @@ import { useContext } from "react";
 function CodeBlock() {
   const [markdown, setMarkdown] = useMarkdown();
   const executeCodeBlock = () => {
-    return setMarkdown(markdown + "\n**");
+    return setMarkdown(markdown + "\n ```js\n\n```");
   };
 
   return (
     <div className="titleBar" onClick={executeCodeBlock}>
-      <button aria-label="Add CodeBlock Text">
+      <button aria-label="Code Block ">
 
         <svg width="15" height="15" viewBox="0 0 48 48">
         <path

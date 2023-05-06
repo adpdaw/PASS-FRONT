@@ -18,9 +18,9 @@ function Footer() {
   return (
     <React.Fragment>
       <footer className="page-footer">
-        <p>
+        <p className="footerText">
           &copy; <span id="date">{year}</span>
-          <span className="footer-logo">PassCode made by</span>
+          <span className="footer-logo">PassCode made by  </span>
           <a href="https://guileless-scone-3def61.netlify.app" target="_blank">
             MDcreations
           </a>

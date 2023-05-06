@@ -32,7 +32,7 @@ function Redo() {
   return (
     <div className="titleBar"  onClick={() => redoDoc()}
     disabled={!canRedo}>
-      <button aria-label="Redo action" >
+      <button aria-label="Redo Action" >
         <svg width="15" height="15" viewBox="0 0 384 512">
           <path
             fill="currentColor"

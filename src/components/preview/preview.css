@@ -7,14 +7,55 @@
 .preview__scroll{
     overflow: auto;
     flex-grow: 1;
-}
-
-pre{
-    background-color:var(--dark);
-    border-radius: 5px;
    
 }
 
+.preview__scroll img {
+
+}
+
+.preview__scroll::before > ul > li{
+    list-style: square;
+    color: white;
+}
+
+pre{
+    background-color: rgb(148, 148, 231, 0.5);
+    border-radius: 5px; 
+}
+
+pre > code{
+    background-color: rgb(148, 148, 231, 0.5);
+    border-radius: 5px;
+    color: var(--white)
+}
+
 code{
+    background-color: rgb(148, 148, 231, 0.8);
+    border-radius: 3px;
+    color: var(--white);
+    padding: 2px;
     
 }
+
+blockquote {
+    quotes: "\201C""\201D""\2018""\2019";
+  }
+  blockquote:before {
+    color: var(--white);
+    content: open-quote;
+    font-size: 1.5em;
+    line-height: 0.1em;
+    vertical-align: -0.2em;
+  }
+
+  blockquote:after {
+    color: var(--white);
+    content: close-quote;
+    font-size: 1.5em;
+    line-height: 0.1em;
+    vertical-align: -0.2em;
+  }
+  blockquote p {
+    display: inline;
+  }

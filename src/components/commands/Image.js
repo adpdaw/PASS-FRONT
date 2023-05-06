@@ -10,7 +10,7 @@ function Image() {
 
   return (
     <div className="titleBar" onClick={executeImage}>
-      <button aria-label="Add Image Text">
+      <button aria-label="Add Image">
 
         <svg width="15" height="15" viewBox="0 0 20 20">
         <path

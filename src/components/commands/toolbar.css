@@ -17,6 +17,7 @@
     border:1px solid;
     width: auto;
     height: auto;
+    border-radius: 5px;
 }
 
 button {
@@ -49,3 +50,4 @@ button:hover{
     line-height: 2em;
     text-align: left;
   }
+
