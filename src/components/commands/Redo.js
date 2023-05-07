@@ -4,8 +4,19 @@ import { useContext } from "react";
 import useUndoableState from "../../customHooks/useUndoableState";
 
 
+
 function Redo() {
   const [markdown, setMarkdown] = useMarkdown();
+ 
+  const  redo = ()  =>{
+    var evt = new KeyboardEvent('keydown', {'key': 'y', 'ctrlKey': true});
+    document.dispatchEvent(evt);
+
+    console.log("redo")
+  
+  }
+
+
   const init = {text: markdown};
   const {
     state: doc,
@@ -30,8 +41,8 @@ function Redo() {
   }
 
   return (
-    <div className="titleBar"  onClick={() => redoDoc()}
-    disabled={!canRedo}>
+    <div className="titleBar" onClick={() => undoDoc()}
+    disabled={!canUndo} >
       <button aria-label="Redo Action" >
         <svg width="15" height="15" viewBox="0 0 384 512">
           <path

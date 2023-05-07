@@ -11,21 +11,20 @@ const Editor = () =>{
     const [chars , setChars] = useState(0);
 
     const getWordsCount = (str) => {
-        return str.match(/(\w+)/g).length;
-        
-    }
+        return str.match(/(\w+)/g).length;   
+    };
 
     const getCharsCount = (str) =>{
         return str.length;
-    }
+    };
 
     const updateMarkdown = (event) =>{
-        const value = event.target.value;
-
+        var value = event.target.value;
         setMarkdown(value);
+        value = value !== "" ? value : "0";
         setWords(getWordsCount(value));
         setChars(getCharsCount(value));
-    }
+    };
 
     return(
         <div className="editor__wrap">

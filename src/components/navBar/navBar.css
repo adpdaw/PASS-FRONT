@@ -118,6 +118,10 @@
   .logo{
     float: left;
   }
+
+  .logoName:hover{
+    color: var(--primary);
+  }
   
   .nav > .nav-btn {
     display: none;

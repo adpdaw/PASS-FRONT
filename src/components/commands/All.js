@@ -14,6 +14,7 @@ import OList from "./OList";
 import UList from "./UList";
 import Quote from "./Quote";
 import Code from "./Code";
+import FullScreen from "./FullScreen";
 
 const All = () => {
   return (
@@ -32,6 +33,7 @@ const All = () => {
         <UList/>
         <Image/>
         <CodeBlock/>
+        <FullScreen/>
       </div>
     </div>
   );
