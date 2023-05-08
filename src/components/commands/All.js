@@ -1,7 +1,6 @@
 import { useMarkdown } from "../../provider/markdown-provider";
 import React from "react";
 import Bold from "./Bold";
-
 import Undo from "./Undo";
 import Redo from "./Redo";
 import Italic from "./Italic";
@@ -17,9 +16,10 @@ import Code from "./Code";
 import FullScreen from "./FullScreen";
 
 const All = () => {
+
   return (
     <div className="all">
-      <div className="titleBarWrap">
+      <div className="titleBarWrap" >
         <Undo />
         <Redo />
         <Bold />

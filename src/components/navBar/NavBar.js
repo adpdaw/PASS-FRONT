@@ -1,11 +1,31 @@
 import { useMarkdown } from "../../provider/markdown-provider";
-import React, { useState, useRef} from 'react';
+import React, { useState, useRef, useEffect} from 'react';
 import './navBar.css';
 import logo from '../../img/favicon.png';
 
 const NavBar = () =>{
 
     const [markdown, setMarkdown] = useMarkdown();
+    const [mode, setMode] = useState('light');
+
+
+    // Cambia el modo al montar/desmontar el componente
+  useEffect(() => {
+    const savedMode = localStorage.getItem('mode');
+    if (savedMode) {
+      setMode(savedMode);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('mode', mode);
+    document.body.className = mode;
+  }, [mode]);
+
+  // Cambia el modo al hacer clic en el botón
+  function toggleMode() {
+    setMode(mode === 'light' ? 'dark' : 'light');
+  }
     
     const updateMarkdown = (event) =>{
         const value = event.target.value;  
@@ -59,8 +79,7 @@ const NavBar = () =>{
     <input className="inputNav" aria-label="File browser" type="'text/plain'" onClick={downloadFile} />
     <span className="file-customDownload"></span>
     </label> 
-    <li>Link</li>
-    <li>Link</li>
+    <li onClick={toggleMode} className="btn-mode" >{mode === 'light' ? '🌞' : '🌚'}</li>
     <li>Link</li>
     <li>Link</li>
   </ul>

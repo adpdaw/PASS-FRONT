@@ -12,6 +12,7 @@ const Preview = () =>{
             <div className="preview__scroll">
                 <ReactMarkdown>{markdown}</ReactMarkdown>
             </div>
+            
         </div>
     );
 }

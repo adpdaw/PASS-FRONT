@@ -19,8 +19,7 @@ const Sidebar = () => {
 
 
   return (
-    <>Italic
-    <div className="area"></div><nav className="main-menu">
+    <nav className="main-menu">
             <ul>
                 <li>
                     <a href="#">
@@ -112,7 +111,7 @@ const Sidebar = () => {
             </ul>
         </nav>
 
-    </>
+    
   );
 };
 
