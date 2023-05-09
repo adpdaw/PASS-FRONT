@@ -13,6 +13,8 @@ function Redo() {
     document.dispatchEvent(evt);
 
     console.log("redo")
+
+    setMarkdown(markdown + "\n**Botón por implementar**")
   
   }
 
@@ -41,7 +43,7 @@ function Redo() {
   }
 
   return (
-    <div className="titleBar" onClick={() => undoDoc()}
+    <div className="titleBar" onClick={() => redo()}
     disabled={!canUndo} >
       <button aria-label="Redo Action" >
         <svg width="15" height="15" viewBox="0 0 384 512">

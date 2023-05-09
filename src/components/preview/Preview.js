@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import { useMarkdown } from "../../provider/markdown-provider";
 import './preview.css';
 
+
 const Preview = () =>{
     const [markdown] = useMarkdown();
 
@@ -12,6 +13,7 @@ const Preview = () =>{
             <div className="preview__scroll">
                 <ReactMarkdown>{markdown}</ReactMarkdown>
             </div>
+            
             
         </div>
     );

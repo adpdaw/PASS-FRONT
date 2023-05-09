@@ -19,15 +19,17 @@
   
   .footerText{
     padding-top: 10px;
+    color: var(--white);
   }
   
   .page-footer .footer-logo,
   .page-footer a {
-   color: hsl(270, 2%, 79%);
+   color: var(--white);
   }
   
   span{
     margin-right: 25px;
+    color: var(--white);
   }
   a{
     text-decoration: none;

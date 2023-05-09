@@ -2,10 +2,13 @@ import React from 'react';
 import './sidebar.css';
 import { useMarkdown } from "../../provider/markdown-provider.js";
 
+
+
+
 const Sidebar = () => {
 
     const [markdown, setMarkdown] = useMarkdown();
-    
+
     const downloadFile = () =>{
         const link = document.createElement('a');
         const file = new Blob([markdown], {type: 'text/plain'});
@@ -15,10 +18,13 @@ const Sidebar = () => {
         URL.revokeObjectURL(link.href);
     };
 
-
-
+    function handleLinkClick() {
+         alert("¿Estás seguro de que quieres salir de la aplicación?");
+    };
+        
 
   return (
+
     <nav className="main-menu">
             <ul>
                 <li>
@@ -49,10 +55,11 @@ const Sidebar = () => {
                     
                 </li>
                 <li className="has-subnav">
+                    <input type="file" />
                     <a href="#">
                        <i className="fa fa-camera-retro fa-2x"></i>
                         <span className="nav-text">
-                            Survey Photos
+                            Upload Photos
                         </span>
                     </a>
                    
@@ -89,11 +96,11 @@ const Sidebar = () => {
                         </span>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
+                <li >
+                    <a  href="https://www.markdownguide.org/basic-syntax/" target='blank' onClick={handleLinkClick} >
                        <i className="fa fa-info fa-2x"></i>
                         <span className="nav-text">
-                            Documentation
+                            Markdown Guide
                         </span>
                     </a>
                 </li>
@@ -110,6 +117,8 @@ const Sidebar = () => {
                 </li>  
             </ul>
         </nav>
+
+       
 
     
   );

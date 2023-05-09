@@ -26,14 +26,17 @@ const Editor = () =>{
         setChars(getCharsCount(value));
     };
 
+
+
     return(
         <div className="editor__wrap">
-            <All/>
+            <All/>          
             <TitleBar title='Editor' aside={`${words} Words ${chars} Characters`}/>
             <textarea
             className="editor"
             value={markdown}
             onChange={updateMarkdown}/>
+
         </div>
     );
 }

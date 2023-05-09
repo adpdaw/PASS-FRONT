@@ -1,0 +1,52 @@
+
+  .manual {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: var(--secondary);
+    padding: 20px;
+    width: 600px;
+    color: var(--dark);
+    height: 800px;
+    border-radius: 15px;
+  }
+
+  .manual:hover{
+    cursor: auto;
+  }
+  
+  .manual h2 {
+    margin-top: 0;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  
+  .minimize-button {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+  }
+
+
+  @media (max-width:600px) {
+    .manual {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        background-color: var(--secondary);
+        padding: 20px;
+        width:auto;
+        color: var(--dark);
+        height: auto;
+        border-radius: 15px;
+      }
+    }
+

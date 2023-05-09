@@ -15,9 +15,17 @@
   text-align: center;
 }
 
-.preview__scroll::before > ul > li{
-    list-style: square;
-    color:var(--white)
+ li::marker{
+    list-style: square !important;
+    color:inherit;
+}
+
+.preview__scroll> p > a{
+  color:inherit;
+}
+
+.preview__scroll> p > a:hover{
+  color:var(--primary);
 }
 
 pre{

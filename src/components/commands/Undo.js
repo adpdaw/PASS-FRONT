@@ -11,6 +11,8 @@ function Undo() {
     document.dispatchEvent(evt);
 
     console.log("undo")
+
+    setMarkdown(markdown + "\n**Botón por implementar**")
   
   }
 

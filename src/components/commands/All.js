@@ -14,6 +14,7 @@ import UList from "./UList";
 import Quote from "./Quote";
 import Code from "./Code";
 import FullScreen from "./FullScreen";
+import MarkDownManual from '../markDownManual/MarkDownManual';
 
 const All = () => {
 
@@ -34,6 +35,7 @@ const All = () => {
         <Image/>
         <CodeBlock/>
         <FullScreen/>
+        <MarkDownManual/>
       </div>
     </div>
   );

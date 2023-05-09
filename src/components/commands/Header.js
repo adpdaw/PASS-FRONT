@@ -8,10 +8,11 @@ function Header() {
     const executeHeader = () => {
         const text = markdown.toString();
         console.log(markdown.toString().length)
-        if (text.charAt(text.length - 1) == "#" || text.charAt(text.length - 1) == " ") {
+        if (text.charAt(text.length - 1) == "#" || text.charAt(text.length - 1) == " " ) {
             setMarkdown(markdown + "#")
 
         } else {
+            
             setMarkdown(markdown + "\n#")
         }
     };
