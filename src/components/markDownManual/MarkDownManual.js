@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-import ReactMarkdown from "react-markdown";
 import "./markdownmanual.css";
 import "../commands/toolbar.css";
-import Quote from "../commands/Quote";
 
 function MarkDownManual() {
     const [showManual, setShowManual] = useState(false);
 
     function toggleManual() {
         setShowManual((prev) => !prev);
-    }
+    };
 
     return (
         <div className="markdown-editor titleBar">
@@ -24,10 +22,7 @@ function MarkDownManual() {
             </button>
             {showManual && (
                 <div className="manual">
-                    
-               
-                    <h2>Basic Syntax</h2>
-                    
+                    <h2>PassCode ™</h2> 
                     <br></br>
                     <p># Heading level 1</p>
                     <p>## Heading level 2</p>
@@ -46,15 +41,33 @@ function MarkDownManual() {
                     <br></br>
                     <p>``Here your code``</p>
                     <br></br>
+                    <p>```Here your block of code```</p>
+                    <br></br>
                     <p>![Imagen](https://t2.uc.ltmcdn.com/es/posts/5/4/2/como_conocer_los_colores_exactos_de_una_imagen_10245_600_square.jpg)</p>
+                    <br></br>
+                    <p>- To add a line break</p>
+                    <br></br>
+                    <p>--- To add a line</p>
+                  
+
+                    <p>Link [w3schools](https://www.w3schools.com/)</p>
+                    <br></br>
+                    <p>{`>`} Quotation</p>
+                    <br></br>
+                    <p>``Here your code``</p>
+                    <br></br>
+                    <p>```Here your block of code```</p>
+                    <br></br>
+                    {/* <p>![Imagen](https://t2.uc.ltmcdn.com/es/posts/5/4/2/como_conocer_los_colores_exactos_de_una_imagen_10245_600_square.jpg)</p> */}
                     <br></br>
                     <p>- To add a line break</p>
                     <br></br>
                     <p>--- To add a line</p>
                     <p>To add a block of code {`js`}</p>
                     <button className="close-button" onClick={toggleManual}>
-                        ✖
+                    <i className="fa fa-times" aria-hidden="true"></i>
                     </button>
+
                 </div>
             )}
         </div>

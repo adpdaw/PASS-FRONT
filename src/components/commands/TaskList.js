@@ -2,15 +2,15 @@ import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
 import { useContext } from "react";
 
-function AddList() {
+function TaskList() {
   const [markdown, setMarkdown] = useMarkdown();
-  const executeAddList = () => {
-    return setMarkdown(markdown + "\n**Botón por implementar**");
+  const executeTaskList = () => {
+    return setMarkdown(markdown + "\n- [X] Write the press release");
   };
 
   return (
-    <div className="titleBar" onClick={executeAddList}>
-      <button aria-label="List Items">
+    <div className="titleBar" onClick={executeTaskList}>
+      <button aria-label="Task List">
 
       <svg width="15" height="15" viewBox="0 0 48 48">
             <path
@@ -25,5 +25,5 @@ function AddList() {
     </div>
   );
 }
-export default AddList;
+export default TaskList;
 

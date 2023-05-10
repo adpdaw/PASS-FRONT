@@ -11,6 +11,8 @@
     color: var(--dark);
     height: 800px;
     border-radius: 15px;
+    overflow-wrap: break-word;
+    overflow: scroll;
   }
 
   .manual:hover{
@@ -34,7 +36,7 @@
   }
 
 
-  @media (max-width:600px) {
+  @media (max-width:650px) {
     .manual {
         position: fixed;
         top: 50%;
@@ -43,10 +45,10 @@
         z-index: 9999;
         background-color: var(--secondary);
         padding: 20px;
-        width:auto;
+        width:300px;
         color: var(--dark);
-        height: auto;
         border-radius: 15px;
+        overflow-wrap: break-word;
       }
     }
 

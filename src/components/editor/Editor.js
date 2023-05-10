@@ -24,9 +24,11 @@ const Editor = () =>{
         value = value !== "" ? value : "0";
         setWords(getWordsCount(value));
         setChars(getCharsCount(value));
+        if(value == 0){
+            setWords(0)
+            setChars(0)
+        }   
     };
-
-
 
     return(
         <div className="editor__wrap">

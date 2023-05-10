@@ -6,7 +6,7 @@ import Redo from "./Redo";
 import Italic from "./Italic";
 import Header from "./Header";
 import Image from "./Image";
-import AddList from "./AddList";
+import TaskList from "./TaskList";
 import CodeBlock from "./CodeBlock";
 import Link from "./Link";
 import OList from "./OList";
@@ -29,7 +29,7 @@ const All = () => {
         <Link/>
         <Quote/>
         <Code/>
-        <AddList/>
+        <TaskList/>
         <OList/>
         <UList/>
         <Image/>

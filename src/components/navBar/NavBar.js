@@ -25,11 +25,7 @@ const NavBar = () => {
   // Cambia el modo al hacer clic en el botón
   function toggleMode() {
     setMode(mode === 'light' ? 'dark' : 'light');
-  }
-
-  const updateMarkdown = (event) => {
-    const value = event.target.value;
-  }
+  };
 
   const upLoadFile = (event) => {
     const reader = new FileReader();

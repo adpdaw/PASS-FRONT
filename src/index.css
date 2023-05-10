@@ -61,6 +61,10 @@ h1, h2 , h3 , h4 , h5, h6{
 
 }
 
+li ul {
+  padding-left: 20px;
+}
+
 h1{
   font-size: 2.625em;
   line-height: 1.55;

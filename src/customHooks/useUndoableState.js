@@ -35,6 +35,8 @@ export default function useUndoableState(init) {
   const goForward = (steps = 1) => {
     setIndex(Math.min(states.length - 1, Number(index) + (Number(steps) || 1)));
   };
+
+  
   return {
     state,
     setState,

@@ -1,50 +1,62 @@
 import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
-import { useContext } from "react";
+import { useContext, useState} from "react";
 import useUndoableState from "../../customHooks/useUndoableState";
+
 
 
 
 function Redo() {
   const [markdown, setMarkdown] = useMarkdown();
+  const [states, setStates] = useState([markdown]);
  
   const  redo = ()  =>{
-    var evt = new KeyboardEvent('keydown', {'key': 'y', 'ctrlKey': true});
-    document.dispatchEvent(evt);
+    // var evt = new KeyboardEvent('keydown', {'key': 'y', 'ctrlKey': true});
+    // document.dispatchEvent(evt);
 
-    console.log("redo")
+    let estado = markdown;
 
-    setMarkdown(markdown + "\n**Botón por implementar**")
+    //console.log("redo")
+    setMarkdown(markdown)
+    setStates([...markdown , estado]) 
+    
+  
+console.log(states)
+    if(states[0] !== ""){
+      setMarkdown(states[states.length-1])
+    }
+  
+
+    //setMarkdown(markdown + "\n**Botón por implementar**")
   
   }
 
 
-  const init = {text: markdown};
-  const {
-    state: doc,
-    setState: setDoc,
-    resetState: resetDoc,
-    index: docStateIndex,
-    lastIndex: docStateLastIndex,
-    goBack: undoDoc,
-    goForward: redoDoc
-  } = useUndoableState(init);
+  // const init = {text: markdown};
+  // const {
+  //   state: doc,
+  //   setState: setDoc,
+  //   resetState: resetDoc,
+  //   index: docStateIndex,
+  //   lastIndex: docStateLastIndex,
+  //   goBack: undoDoc,
+  //   goForward: redoDoc
+  // } = useUndoableState(init);
 
-  const canUndo = docStateIndex > 0;
-  const canRedo = docStateIndex < docStateLastIndex;
+  // const canUndo = docStateIndex > 0;
+  // const canRedo = docStateIndex < docStateLastIndex;
 
 
-  // const executeRedo = () => {
-  //   document.execCommand("redo",false,null);
-  // };
+  // // const executeRedo = () => {
+  // //   document.execCommand("redo",false,null);
+  // // };
 
-  const handleOnChange = (e) =>{
-    setMarkdown(markdown + e.target.value)
-  }
+  // const handleOnChange = (e) =>{
+  //  setDoc = setMarkdown(markdown + e.target.value)
+  // }
 
   return (
-    <div className="titleBar" onClick={() => redo()}
-    disabled={!canUndo} >
+    <div className="titleBar" onClick={redo}>
       <button aria-label="Redo Action" >
         <svg width="15" height="15" viewBox="0 0 384 512">
           <path

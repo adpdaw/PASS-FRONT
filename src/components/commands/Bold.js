@@ -13,7 +13,7 @@ function Bold() {
   };
 
   return (
-    <div className="titleBar" onClick={executeBold}    >
+    <div className="titleBar" onClick={executeBold}>
       <button aria-label="Add Bold Text">
         <svg width="15" height="15" viewBox="0 0 384 512">
           <path
