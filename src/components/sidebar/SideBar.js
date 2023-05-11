@@ -105,6 +105,15 @@ const Sidebar = () => {
                         </span>
                     </a>
                 </li>
+                <li >
+                    <a href="#" >
+                       
+                        <i className="fa fa-user fa-2x " aria-hidden="true"></i>
+                        <span className="nav-text">
+                            Upgrade your plan <span className=" newPlan"> New </span>
+                        </span>
+                    </a>
+                </li>
             </ul>
 
             <ul className="logout">

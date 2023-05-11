@@ -1,13 +1,19 @@
 import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
-import { useContext } from "react";
+import handleSelectedText from  "../../utils/SelectedText.js";
+import StartPosition from "../../utils/StarPosition";
 
 function Link() {
   const [markdown, setMarkdown] = useMarkdown();
-  const executeLink = () => {
-    return setMarkdown(markdown + "\n[NAME_PAGE](LINK)");
-  };
 
+  const executeLink = () => {
+    const text = handleSelectedText();
+    const indexToReplace = StartPosition();
+    const previousMarkdown = markdown;
+    return  text !== "" ? setMarkdown(previousMarkdown.substring(0 , indexToReplace) +  `\n[${text}](LINK)` +
+      markdown.substring(indexToReplace + text.length )): setMarkdown(markdown +`\n[NAME_PAGE](LINK)`);
+    };
+  
   return (
     <div className="titleBar" onClick={executeLink}>
       <button aria-label="Add Link">

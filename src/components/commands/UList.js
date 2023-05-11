@@ -1,12 +1,18 @@
 import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
-import { useContext } from "react";
+import handleSelectedText from  "../../utils/SelectedText.js";
+import StartPosition from "../../utils/StarPosition";
 
 function UList() {
   const [markdown, setMarkdown] = useMarkdown();
+
   const executeUList = () => {
-    return setMarkdown(markdown + "\n+ Item 1 ");
-  };
+    const text = handleSelectedText();
+    const indexToReplace = StartPosition();
+    const previousMarkdown = markdown;
+    return  text !== "" ? setMarkdown(previousMarkdown.substring(0 , indexToReplace) +  `\n+ ${text}` +
+      markdown.substring(indexToReplace + text.length )): setMarkdown(markdown +`\n+ Item 1 `);
+    };
 
   return (
     <div className="titleBar" onClick={executeUList}>

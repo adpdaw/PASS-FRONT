@@ -4,7 +4,6 @@ import Bold from "./Bold";
 import Undo from "./Undo";
 import Redo from "./Redo";
 import Italic from "./Italic";
-import Header from "./Header";
 import Image from "./Image";
 import TaskList from "./TaskList";
 import CodeBlock from "./CodeBlock";
@@ -15,6 +14,7 @@ import Quote from "./Quote";
 import Code from "./Code";
 import FullScreen from "./FullScreen";
 import MarkDownManual from '../markDownManual/MarkDownManual';
+import HeaderDropdown from "./HeaderDropdown";
 
 const All = () => {
 
@@ -25,7 +25,7 @@ const All = () => {
         <Redo />
         <Bold />
         <Italic/>
-        <Header/>
+        <HeaderDropdown/>
         <Link/>
         <Quote/>
         <Code/>

@@ -6,7 +6,8 @@
 }
 
 .titleBar{
-    padding: 0.2rem;   
+    padding: 0.2rem; 
+  
 }
 
 .titleBar:hover{
@@ -18,6 +19,7 @@
     width: auto;
     height: auto;
     /* border-radius: 5px; */
+
 }
 
 button {
@@ -53,4 +55,32 @@ button:hover{
     text-align: left;
   }
 
+  .dropdown-menu ul li {
+    list-style: none;
+    color: currentColor;
+
+   
+   
+  }
+
+  .dropdown-menu ul{
+    text-align: center;
+    background-color: var(--secondary);
+    padding-left: 20px;
+    border-radius: 10px;
+    
+  }
+
+  .dropdown-menu{
+    position: absolute;
+    z-index: 1;
+    box-shadow: var(--shadow3);
+    border-radius: 10px;
+    
+  }
+
+  .container{
+    position: relative;
+  
+  }
 

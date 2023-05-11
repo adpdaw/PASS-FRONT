@@ -76,3 +76,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 [Markdown sintaxis](https://tutorialmarkdown.com/sintaxis)
 
 [Markdown sintaxis II](https://www.markdownguide.org/basic-syntax/)
+
+[Markdown sintaxis III](https://blog.logrocket.com/how-to-safely-render-markdown-using-react-markdown/)
+
+
+# Imagenes para testear nuestro markdown
+***
+![To create](https://misimagenesde.com/wp-content/uploads/2017/06/fotos-chulas-3.jpg)
+
+![Foto de un gato](https://cdn.pixabay.com/photo/2013/05/30/18/21/cat-114782_640.jpg "Esto es un gato")
+
+![Iconos sideBar ](http://btsai.github.io/font_awesome4_cheatsheet/index.html)

@@ -125,6 +125,12 @@
   height: 100%;
   }
   
+
+  .newPlan{
+    background-color: chartreuse;
+    padding: 3px;
+    color: var(--dark);
+  }
   /* 
   @media (max-width:350px) {
     .main-menu{

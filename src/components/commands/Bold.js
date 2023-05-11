@@ -1,11 +1,18 @@
 import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
-import { useContext } from "react";
+import handleSelectedText from  "../../utils/SelectedText.js";
+import StartPosition from "../../utils/StarPosition";
+
 
 function Bold() {
   const [markdown, setMarkdown] = useMarkdown();
+
   const executeBold = () => {
-    return setMarkdown(markdown + "\n****");
+  const text = handleSelectedText();
+  const indexToReplace = StartPosition();
+  const previousMarkdown = markdown;
+  return  text !== "" ? setMarkdown(previousMarkdown.substring(0 , indexToReplace) +  `**${text}**` +
+    markdown.substring(indexToReplace + text.length )): setMarkdown(markdown +`\n****`);
   };
 
   const focusTextarea = () => {

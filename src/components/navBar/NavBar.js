@@ -54,6 +54,7 @@ const NavBar = () => {
           <img className='logo' src={logo} alt="logo" />
 
           <span className="logoName">PassCode ™</span>
+          
         </div>
       </div>
       <div className="nav-btn">
@@ -65,8 +66,9 @@ const NavBar = () => {
       </div>
 
       <div className="nav-links">
-
+     
         <ul>
+        <span className="logoName upgradePlan">Upgrade to Premium</span>
           <label className="file">
             <input className="inputNav" aria-label="File browser" type="file" onChange={upLoadFile} />
             <span className="file-custom"></span>

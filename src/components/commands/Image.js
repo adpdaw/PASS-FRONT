@@ -1,12 +1,19 @@
 import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
-import { useContext } from "react";
+import handleSelectedText from  "../../utils/SelectedText.js";
+import StartPosition from "../../utils/StarPosition";
 
 function Image() {
   const [markdown, setMarkdown] = useMarkdown();
+ 
+
   const executeImage = () => {
-    return setMarkdown(markdown + "\n![PAGE_NAME_ALT](LINK_IMAGE)");
-  };
+    const text = handleSelectedText();
+    const indexToReplace = StartPosition();
+    const previousMarkdown = markdown;
+    return  text !== "" ? setMarkdown(previousMarkdown.substring(0 , indexToReplace) +  `\n![${text}](LINK_IMAGE)` +
+      markdown.substring(indexToReplace + text.length )): setMarkdown(markdown +`\n![PAGE_NAME_ALT](LINK_IMAGE)`);
+    };
 
   return (
     <div className="titleBar" onClick={executeImage}>
