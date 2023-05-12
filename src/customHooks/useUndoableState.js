@@ -6,6 +6,7 @@ export default function useUndoableState(init) {
   const [states, setStates] = useState([init]); // Used to store history of all states
   const [index, setIndex] = useState(0); // Index of current state within `states`
   const state = useMemo(() => states[index], [states, index]);
+
   // Current state
   const setState = (value) => {
     // Use lodash isEqual to check for deep equality
@@ -21,7 +22,7 @@ export default function useUndoableState(init) {
   };
 
   // Clear all state history
-  const resetState = (init) => {
+    const resetState = (init) => {
     setIndex(0);
     setStates([init]);
   };

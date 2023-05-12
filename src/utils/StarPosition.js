@@ -5,4 +5,11 @@ function StartPosition (){
 
   };
 
+  function endPosition (){
+    const textarea = document.querySelector('.editor');
+    const endPos = textarea.selectionEnd;
+    return endPos;
+
+  };
+
   export default StartPosition;

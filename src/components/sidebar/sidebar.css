@@ -130,6 +130,7 @@
     background-color: chartreuse;
     padding: 3px;
     color: var(--dark);
+    border-radius: 5px;
   }
   /* 
   @media (max-width:350px) {

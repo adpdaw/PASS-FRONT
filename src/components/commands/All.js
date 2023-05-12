@@ -15,6 +15,8 @@ import Code from "./Code";
 import FullScreen from "./FullScreen";
 import MarkDownManual from '../markDownManual/MarkDownManual';
 import HeaderDropdown from "./HeaderDropdown";
+import Refresh from "./Refresh";
+import AutoSave from "../autosave/AutoSave";
 
 const All = () => {
 
@@ -35,6 +37,8 @@ const All = () => {
         <Image/>
         <CodeBlock/>
         <FullScreen/>
+        <Refresh/>
+        <AutoSave/>
         <MarkDownManual/>
       </div>
     </div>

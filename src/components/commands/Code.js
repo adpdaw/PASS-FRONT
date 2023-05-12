@@ -10,7 +10,7 @@ function Code() {
     const text = handleSelectedText();
     const indexToReplace = StartPosition();
     const previousMarkdown = markdown;
-    return  text !== "" ? setMarkdown(previousMarkdown.substring(0 , indexToReplace) + `\n\`\`${text}\`\`` +
+    return  text !== "" ? setMarkdown(previousMarkdown.substring(0 , indexToReplace) + `\`\`${text}\`\`` +
       markdown.substring(indexToReplace + text.length )): setMarkdown(markdown +"\n``Here your code``");
     };
 
@@ -29,6 +29,7 @@ function Code() {
       <path d="m28 4-7 40" stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
     </svg>
       </button>
+      
     </div>
   );
 }

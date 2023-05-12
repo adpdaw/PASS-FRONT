@@ -5,18 +5,19 @@ import StartPosition from "../../utils/StarPosition";
 
 
 function Bold() {
-  const [markdown, setMarkdown] = useMarkdown();
+
+const [markdown, setMarkdown] = useMarkdown();
 
   const executeBold = () => {
   const text = handleSelectedText();
   const indexToReplace = StartPosition();
   const previousMarkdown = markdown;
+
+  console.log(markdown)
   return  text !== "" ? setMarkdown(previousMarkdown.substring(0 , indexToReplace) +  `**${text}**` +
     markdown.substring(indexToReplace + text.length )): setMarkdown(markdown +`\n****`);
-  };
 
-  const focusTextarea = () => {
-    markdown.focus();
+   
   };
 
   return (

@@ -106,8 +106,8 @@ const Sidebar = () => {
                     </a>
                 </li>
                 <li >
-                    <a href="#" >
-                       
+                    <a href="#" > 
+                    {/* Enviar a la página de subcripción premiun, hacer una simulación no vamos a gestionar pagos*/}
                         <i className="fa fa-user fa-2x " aria-hidden="true"></i>
                         <span className="nav-text">
                             Upgrade your plan <span className=" newPlan"> New </span>
