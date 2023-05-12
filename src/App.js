@@ -1,32 +1,37 @@
-
+import React from 'react';
 import './index.css';
-import MainLayout from './components/main-layout/MainLayout.js';
-import Editor from './components/editor/Editor.js';
-import Preview from './components/preview/Preview.js';
-import MarkdownProvider from './provider/markdown-provider.js';
-import Sidebar from './components/sidebar/SideBar.js';
-import NavBar from './components/navBar/NavBar.js'
-import Footer from './components/footer/Footer.js'
+import { Route,Routes } from 'react-router-dom';
+import Context from './index_components/Context/Context.js';
+import Login from './Login/Login.js';
+import Signup from './Sign-up/Signup';
+import UserForm from './index_components/Client/UserForm';
+import IndexAdmin from './index_components/Admin/IndexAdmin';
+import { IndexClient } from './index_components/Content/IndexClient';
+import EditUser from './index_components/Admin/EditUser';
+import IndexEditor from './Editor_components/editor/IndexEditor.js';
+/**Este es el componente principal que tiene las routas utilizadas. */
 
-function  App  () {
+function App() {
+  return (
+    <React.Fragment>
+      <Context>
+        <Routes>
+          <Route path='/' element={<IndexClient/>}/>
+          <Route path='/user' element={<UserForm/>}/>
+          <Route path='/IndexAdmin' element={<IndexAdmin/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/signup' element={<Signup/>}/>
+          <Route path='/editUser' element={<EditUser/>}/>
+          <Route path='/editor' element={<IndexEditor/>}/>
 
-  return(  
-    <MarkdownProvider>
-       <NavBar/>
-       <Sidebar/>
-    <MainLayout>
-      <MainLayout.Column>
-    
-        <Editor/>
-      </MainLayout.Column>
-      <MainLayout.Column>
-        <Preview/>
-      </MainLayout.Column>
-    </MainLayout>
-    <Footer/>
-  </MarkdownProvider> 
+        </Routes>
+      </Context>
+   
+    </React.Fragment>
+ 
 
   );
 }
 
 export default App;
+
