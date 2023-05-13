@@ -2,6 +2,7 @@ import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
 import handleSelectedText from  "../../utils/SelectedText.js";
 import StartPosition from "../../utils/StarPosition";
+import React from "react";
 
 function Image() {
   const [markdown, setMarkdown] = useMarkdown();
@@ -16,6 +17,7 @@ function Image() {
     };
 
   return (
+    <React.Fragment>
     <div className="titleBar" onClick={executeImage}>
       <button aria-label="Add Image">
 
@@ -27,6 +29,7 @@ function Image() {
         </svg>
       </button>
     </div>
+    </React.Fragment>
   );
 }
 export default Image;

@@ -1,6 +1,6 @@
 import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
-import { useState} from "react";
+import React from "react";
 
 
 
@@ -29,6 +29,7 @@ function Undo() {
 
 
   return (
+    <React.Fragment>
     <div className="titleBar" onClick={undo}>
       <button aria-label="Undo Action">
         <svg width="15" height="15" viewBox="0 0 384 512">
@@ -39,6 +40,8 @@ function Undo() {
         </svg>
       </button>
     </div>
+    </React.Fragment>
   );
+
 }
 export default Undo;

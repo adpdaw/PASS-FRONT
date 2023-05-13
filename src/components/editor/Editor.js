@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useRef , useEffect} from "react";
 import TitleBar from "../title-bar/TitleBar.js";
 import { useMarkdown } from "../../provider/markdown-provider.js";
@@ -42,6 +43,7 @@ const Editor = () =>{
     };
 
     return(
+        <React.Fragment>
         <div className="editor__wrap">
             <All/>          
             <TitleBar title='Editor' aside={`${words} Words ${chars} Characters`}/>
@@ -52,6 +54,7 @@ const Editor = () =>{
             onChange={updateMarkdown }
             />
         </div>
+        </React.Fragment>
         
     );
 }

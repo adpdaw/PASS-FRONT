@@ -1,6 +1,6 @@
 import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
-import { useContext } from "react";
+import React from "react";
 import handleSelectedText from  "../../utils/SelectedText.js";
 import StartPosition from "../../utils/StarPosition";
 
@@ -18,6 +18,7 @@ function Quote() {
     };
 
   return (
+    <React.Fragment>
     <div className="titleBar" onClick={executeQuote}>
       <button aria-label="Add Quote Text">
 
@@ -26,6 +27,7 @@ function Quote() {
     </svg>
       </button>
     </div>
+    </React.Fragment>
   );
 }
 export default Quote;

@@ -1,4 +1,3 @@
-import { useMarkdown } from "../../provider/markdown-provider";
 import React from "react";
 import Bold from "./Bold";
 import Undo from "./Undo";
@@ -21,6 +20,7 @@ import AutoSave from "../autosave/AutoSave";
 const All = () => {
 
   return (
+    <React.Fragment>
     <div className="all">
       <div className="titleBarWrap" >
         <Undo />
@@ -42,6 +42,7 @@ const All = () => {
         <MarkDownManual/>
       </div>
     </div>
+    </React.Fragment>
   );
 };
 

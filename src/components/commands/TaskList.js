@@ -1,6 +1,6 @@
 import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
-import { useContext } from "react";
+import React from "react";
 
 function TaskList() {
   const [markdown, setMarkdown] = useMarkdown();
@@ -9,6 +9,7 @@ function TaskList() {
   };
 
   return (
+    <React.Fragment>
     <div className="titleBar" onClick={executeTaskList}>
       <button aria-label="Task List">
 
@@ -23,6 +24,7 @@ function TaskList() {
           </svg>
       </button>
     </div>
+    </React.Fragment>
   );
 }
 export default TaskList;

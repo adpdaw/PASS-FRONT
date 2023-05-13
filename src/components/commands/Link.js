@@ -2,6 +2,7 @@ import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
 import handleSelectedText from  "../../utils/SelectedText.js";
 import StartPosition from "../../utils/StarPosition";
+import React from "react";
 
 function Link() {
   const [markdown, setMarkdown] = useMarkdown();
@@ -15,6 +16,7 @@ function Link() {
     };
   
   return (
+    <React.Fragment>
     <div className="titleBar" onClick={executeLink}>
       <button aria-label="Add Link">
 
@@ -26,6 +28,7 @@ function Link() {
         </svg>
       </button>
     </div>
+    </React.Fragment>
   );
 }
 export default Link;

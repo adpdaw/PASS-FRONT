@@ -2,6 +2,7 @@ import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
 import handleSelectedText from  "../../utils/SelectedText.js";
 import StartPosition from "../../utils/StarPosition";
+import React from "react";
 
 function OList() {
   const [markdown, setMarkdown] = useMarkdown();
@@ -15,6 +16,7 @@ function OList() {
     };
 
   return (
+    <React.Fragment>
     <div className="titleBar" onClick={executeOList}>
       <button aria-label="Ordered List">
 
@@ -26,6 +28,7 @@ function OList() {
     </svg>
       </button>
     </div>
+    </React.Fragment>
   );
 }
 export default OList;

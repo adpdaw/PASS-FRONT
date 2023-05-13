@@ -2,6 +2,7 @@ import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
 import handleSelectedText from  "../../utils/SelectedText.js";
 import StartPosition from "../../utils/StarPosition";
+import React from "react";
 
 function Code() {
   const [markdown, setMarkdown] = useMarkdown();
@@ -15,6 +16,7 @@ function Code() {
     };
 
   return (
+    <React.Fragment>
     <div className="titleBar" onClick={executeCode}>
       <button aria-label="Insert Code">
 
@@ -31,6 +33,7 @@ function Code() {
       </button>
       
     </div>
+    </React.Fragment>
   );
 }
 export default Code;

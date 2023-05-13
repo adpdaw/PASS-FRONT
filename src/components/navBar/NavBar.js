@@ -46,6 +46,7 @@ const NavBar = () => {
   };
 
   return (
+    <React.Fragment>
     <div className="nav">
       <input type="checkbox" id="nav-check" />
       <div className="nav-header">
@@ -83,6 +84,7 @@ const NavBar = () => {
         </ul>
       </div>
     </div>
+    </React.Fragment>
   );
 }
 

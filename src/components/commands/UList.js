@@ -1,3 +1,4 @@
+import React from "react";
 import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
 import handleSelectedText from  "../../utils/SelectedText.js";
@@ -15,6 +16,7 @@ function UList() {
     };
 
   return (
+    <React.Fragment>
     <div className="titleBar" onClick={executeUList}>
       <button aria-label="Unordered List">
 
@@ -25,7 +27,8 @@ function UList() {
       />
     </svg>
       </button>
-    </div>
+    </div> 
+     </React.Fragment>
   );
 }
 export default UList;

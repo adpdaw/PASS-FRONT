@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { React, useState, useEffect } from "react";
 import { useMarkdown } from "../../provider/markdown-provider.js";
 import Editor from "../editor/Editor.js";
 
@@ -33,6 +33,7 @@ const AutoSave = () => {
     };
 
     return (
+        <React.Fragment>
         <div className="titleBar">
             <button aria-label={button} onClick={handleAutoSaveToggle}>
                 <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" >
@@ -75,6 +76,7 @@ const AutoSave = () => {
                 </svg>
             </button>
         </div>
+        </React.Fragment>
     );
 };
 

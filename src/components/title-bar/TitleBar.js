@@ -1,7 +1,9 @@
 import './title-bar.css';
+import React from 'react';
 
 
 const TitleBar = ({title , aside}) => (
+    
     <div className='mb-4'>
        
         <div className='titleBar__wrap'>

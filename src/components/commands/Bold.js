@@ -2,6 +2,7 @@ import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
 import handleSelectedText from  "../../utils/SelectedText.js";
 import StartPosition from "../../utils/StarPosition";
+import React from "react";
 
 
 function Bold() {
@@ -21,6 +22,7 @@ const [markdown, setMarkdown] = useMarkdown();
   };
 
   return (
+    <React.Fragment>
     <div className="titleBar" onClick={executeBold}>
       <button aria-label="Add Bold Text">
         <svg width="15" height="15" viewBox="0 0 384 512">
@@ -31,6 +33,7 @@ const [markdown, setMarkdown] = useMarkdown();
         </svg>
       </button>
     </div>
+    </React.Fragment>
   );
 }
 export default Bold;

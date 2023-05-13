@@ -1,10 +1,14 @@
 import "./toolbar.css";
 import { useState } from "react";
+import React from "react";
 
 function FullScreen() {
 
   const [button, setButton] = useState("Enter Full Screen");
   const [fullScreen, setFullScreen] = useState(false);
+
+
+
 
 function changeFullScreen() {
   if (!fullScreen) {
@@ -17,9 +21,9 @@ function changeFullScreen() {
     } else if (elemento.msRequestFullscreen) {
       elemento.msRequestFullscreen();
     }
-
+   ;
     setButton("Exit Full Screen");
-      setFullScreen(true);
+    setFullScreen(true);
     
   } else {
     if (document.exitFullscreen) {
@@ -37,6 +41,7 @@ function changeFullScreen() {
 };
 
   return (
+    <React.Fragment>
     <div className="titleBar" onClick={changeFullScreen}>
       <button aria-label={button}>
       <svg fill="currentColor" viewBox="0 0 448 512" height="15" width="15">
@@ -44,6 +49,7 @@ function changeFullScreen() {
     </svg>
       </button>
     </div>
+    </React.Fragment>
   );
 }
 export default FullScreen;

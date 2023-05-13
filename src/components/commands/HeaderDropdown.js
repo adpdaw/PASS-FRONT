@@ -52,6 +52,7 @@ const HeaderDropdown = () => {
 
 
     return (
+        <React.Fragment>
         <div className="titleBar">
             <button aria-label="Dropdown Header" onClick={toggleDropdown}>
                 <svg width="15" height="15" viewBox="0 0 384 512">
@@ -107,6 +108,7 @@ const HeaderDropdown = () => {
                 </div>
             )}
         </div>
+        </React.Fragment>
     );
 };
 

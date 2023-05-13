@@ -1,6 +1,6 @@
 import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
-import { useContext } from "react";
+import React from "react";
 import handleSelectedText from  "../../utils/SelectedText.js";
 import StartPosition from "../../utils/StarPosition";
 
@@ -15,6 +15,7 @@ function Italic() {
   };
 
   return (
+    <React.Fragment>
     <div className="titleBar" onClick={executeItalic}>
       <button aria-label="Add Italic Text">
 
@@ -31,6 +32,7 @@ function Italic() {
         </svg>
       </button>
     </div>
+    </React.Fragment>
   );
 }
 export default Italic;

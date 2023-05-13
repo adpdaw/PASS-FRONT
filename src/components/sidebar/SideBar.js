@@ -25,7 +25,7 @@ const Sidebar = () => {
 
 
     return (
-
+        <React.Fragment>
         <nav className="main-menu">
             <ul>
                 <li>
@@ -127,6 +127,7 @@ const Sidebar = () => {
                 </li>
             </ul>
         </nav>
+        </React.Fragment>
     );
 };
 

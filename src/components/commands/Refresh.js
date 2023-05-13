@@ -1,5 +1,6 @@
 import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
+import React from "react";
 
 
 function Refresh() {
@@ -12,6 +13,7 @@ function Refresh() {
     };
 
     return (
+        <React.Fragment>
         <div className="titleBar" onClick={executeRefresh}>
             <button aria-label="Refresh Text">
                 <svg width="20" height="20" viewBox="0 0 24 24">
@@ -36,6 +38,7 @@ function Refresh() {
                 </svg>
             </button>
         </div>
+        </React.Fragment>
     );
 }
 export default Refresh;

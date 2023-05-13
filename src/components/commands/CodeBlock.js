@@ -2,6 +2,7 @@ import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
 import handleSelectedText from  "../../utils/SelectedText.js";
 import StartPosition from "../../utils/StarPosition";
+import React from "react";
 
 function CodeBlock() {
   const [markdown, setMarkdown] = useMarkdown();
@@ -15,6 +16,7 @@ function CodeBlock() {
     };
 
   return (
+    <React.Fragment>
     <div className="titleBar" onClick={executeCodeBlock}>
       <button aria-label="Code Block ">
 
@@ -33,6 +35,7 @@ function CodeBlock() {
         </svg>
       </button>
     </div>
+    </React.Fragment>
   );
 }
 export default CodeBlock;
