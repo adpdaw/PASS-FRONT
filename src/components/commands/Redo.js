@@ -25,10 +25,7 @@ console.log(states)
     if(states[0] !== ""){
       setMarkdown(states[states.length-1])
     }
-  
-
-    //setMarkdown(markdown + "\n**Botón por implementar**")
-  
+    //setMarkdown(markdown + "\n**Botón por implementar**"
   }
 
 
@@ -56,7 +53,6 @@ console.log(states)
   // }
 
   return (
-    <React.Fragment>
     <div className="titleBar" onClick={redo}>
       <button aria-label="Redo Action" >
         <svg width="15" height="15" viewBox="0 0 384 512">
@@ -67,7 +63,6 @@ console.log(states)
         </svg>
       </button>
     </div>
-    </React.Fragment>
   );
 }
 export default Redo;
