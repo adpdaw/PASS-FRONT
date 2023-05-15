@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import './navBar.css';
 import logo from '../../img/favicon.png';
 
+
 const NavBar = () => {
 
   const [markdown, setMarkdown] = useMarkdown();
@@ -36,14 +37,93 @@ const NavBar = () => {
 
   };
 
+  // const downloadFile = () => {
+  //   const link = document.createElement('a');
+  //   const file = new Blob([markdown], { type: 'text/plain' });
+  //   link.href = URL.createObjectURL(file);
+  //   link.download = 'Untitled.md';
+  //   link.click();
+  //   URL.revokeObjectURL(link.href);
+  // };
+
   const downloadFile = () => {
-    const link = document.createElement('a');
-    const file = new Blob([markdown], { type: 'text/plain' });
-    link.href = URL.createObjectURL(file);
-    link.download = 'Untitled.md';
-    link.click();
-    URL.revokeObjectURL(link.href);
+    // Crea una ventana emergente con un formulario
+    const popup = document.createElement('div');
+    popup.innerHTML = `
+      <form>
+        <label for="filename">Name:</label>
+        <input type="text" id="filename" name="filename"><br>
+        
+        <label for="formato">Format:</label>
+        <select id="formato" name="formato">
+          <option value="md">Markdown</option>
+          <option value="txt">Texto plano</option>
+          <option value="pdf">PDF</option>
+          <option value="html">HTML</option>
+        </select><br>
+        
+        <button type="submit">Descargar</button>
+        <button onclick="document.body.removeChild(popup)">Cancel</button>
+      </form>
+    `;
+    popup.style.position = 'fixed';
+    popup.style.top = '50%';
+    popup.style.left = '50%';
+    popup.style.transform = 'translate(-50%, -50%)';
+    popup.style.padding = '1rem';
+    popup.style.background = 'white';
+    popup.style.boxShadow = 'var(--shadow3)';
+    popup.style.zIndex = '999';
+  
+    // Agrega la ventana emergente al cuerpo del documento
+    document.body.appendChild(popup);
+  
+    // Manejador de eventos para el envío del formulario
+    const handleSubmit = (event) => {
+      event.preventDefault();
+  
+      // Obtiene el valor del nombre de archivo y el formato seleccionado
+      const filename = document.getElementById('filename').value;
+      const formato = document.getElementById('formato').value;
+  
+      // Crea el archivo y lo descarga
+      const link = document.createElement('a');
+      let file;
+  
+      switch (formato) {
+        case 'pdf':
+          // Crea un archivo PDF a partir del contenido de markdown
+          file = new Blob([markdown], { type: 'application/pdf' });
+          link.download = `${filename}.pdf`;
+          break;
+        case 'txt':
+          // Crea un archivo de texto plano a partir del contenido de markdown
+          file = new Blob([markdown], { type: 'text/plain' });
+          link.download = `${filename}.txt`;
+          break;
+        case 'html':
+          // Crea un archivo HTML a partir del contenido de markdown
+          file = new Blob([`<!DOCTYPE html><html><head><title>${filename}</title></head><body>${markdown}</body></html>`], { type: 'text/html' });
+          link.download = `${filename}.html`;
+          break;
+        default:
+          // Si se proporciona un formato desconocido, se utiliza el formato MD por defecto
+          file = new Blob([markdown], { type: 'text/plain' });
+          link.download = `${filename}.md`;
+      }
+  
+      link.href = URL.createObjectURL(file);
+      link.click();
+      URL.revokeObjectURL(link.href);
+  
+      // Elimina la ventana emergente
+      document.body.removeChild(popup);
+    };
+  
+    // Asigna el manejador de eventos al formulario
+    popup.querySelector('form').addEventListener('submit', handleSubmit);
   };
+  
 
   return (
     <React.Fragment>

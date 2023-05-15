@@ -13,16 +13,15 @@ function Redo() {
   const  redo = ()  =>{
     // var evt = new KeyboardEvent('keydown', {'key': 'y', 'ctrlKey': true});
     // document.dispatchEvent(evt);
-
     let estado = markdown;
-
     //console.log("redo")
-    setMarkdown(markdown)
+    //setMarkdown(markdown)
     setStates([...markdown , estado]) 
-    
-  
-console.log(states)
+    console.log(states)
     if(states[0] !== ""){
+      states.forEach(state => {
+        
+      });
       setMarkdown(states[states.length-1])
     }
     //setMarkdown(markdown + "\n**Botón por implementar**"

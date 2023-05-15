@@ -23,18 +23,16 @@ function MarkDownManual() {
             </button>
             {showManual && (
                 <div className="manual">
-                    <h2>PassCode ™</h2> 
+                    <h2 className="titleH">PassCode ™</h2> 
                     <br></br>
-                    <p># Heading level 1</p>
-                    <p>## Heading level 2</p>
-                    <p>### Heading level 3</p>
-                    <p>#### Heading level 4</p>
-                    <p>##### Heading level 5</p>
-                    <p>###### Heading level 6</p>
+                    <h1># Header 1</h1>
+                    <h2>## Header 2</h2>
+                    <h3>### Header 3</h3>
+                   
                     <br></br>
-                    <p>*Italic Text*</p>
+                    <p><em>*Italic Text*</em> </p>
                     <br></br>
-                    <p>**Bold Text**</p>
+                    <p><strong>**Bold Text**</strong></p>
                     <br></br>
                     <p>Link [w3schools](https://www.w3schools.com/)</p>
                     <br></br>
@@ -44,27 +42,12 @@ function MarkDownManual() {
                     <br></br>
                     <p>```Here your block of code```</p>
                     <br></br>
-                    <p>![Imagen](https://t2.uc.ltmcdn.com/es/posts/5/4/2/como_conocer_los_colores_exactos_de_una_imagen_10245_600_square.jpg)</p>
+                    <p>![elefante](https://www.tooltyp.com/wp-content/uploads/2014/10/1900x920-8-beneficios-de-usar-imagenes-en-nuestros-sitios-web.jpg)</p>
                     <br></br>
                     <p>- To add a line break</p>
                     <br></br>
                     <p>--- To add a line</p>
                   
-
-                    <p>Link [w3schools](https://www.w3schools.com/)</p>
-                    <br></br>
-                    <p>{`>`} Quotation</p>
-                    <br></br>
-                    <p>``Here your code``</p>
-                    <br></br>
-                    <p>```Here your block of code```</p>
-                    <br></br>
-                    {/* <p>![Imagen](https://t2.uc.ltmcdn.com/es/posts/5/4/2/como_conocer_los_colores_exactos_de_una_imagen_10245_600_square.jpg)</p> */}
-                    <br></br>
-                    <p>- To add a line break</p>
-                    <br></br>
-                    <p>--- To add a line</p>
-                    <p>To add a block of code {`js`}</p>
                     <button className="close-button" onClick={toggleManual}>
                     <i className="fa fa-times" aria-hidden="true"></i>
                     </button>

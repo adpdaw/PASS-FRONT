@@ -51,7 +51,7 @@ const Editor = () =>{
             ref={markdownRef}
             className="editor"
             value={markdown}
-            onChange={updateMarkdown }
+            onChange={updateMarkdown}
             />
         </div>
         </React.Fragment>

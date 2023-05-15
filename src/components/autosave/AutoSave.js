@@ -8,6 +8,7 @@ const AutoSave = () => {
     const [autoSaveTimer, setAutoSaveTimer] = useState(null);
     const [button, setButton] = useState("AutoSave Off");
     const [color, setColor] = useState("currentColor");
+    const [states, setStates] = useState([markdown]);
    
 
     useEffect(() => {
@@ -15,6 +16,7 @@ const AutoSave = () => {
 
             const timer = setInterval(() => {
                 console.log("Guardando el markdown...");
+                console.log(mdLength(markdown))
                 //No actualiza el contenido del markdown
                 // Llamar a una función que guarde el markdown en una base de datos
             }, 3000);
@@ -25,11 +27,18 @@ const AutoSave = () => {
         }
     }, [autoSaveEnabled]);
 
+    function mdLength(mark){
+        let previousMarkdown = mark
+        setMarkdown(previousMarkdown + markdown)
+        return markdown.length;
+    }
+
     const handleAutoSaveToggle = () => {
         setAutoSaveEnabled(!autoSaveEnabled);
         setButton(!autoSaveEnabled ? "AutoSave On" : "AutoSave Off");
         setColor(!autoSaveEnabled ? "red" : "currentColor");
     };
+
 
     return (
        

@@ -17,8 +17,7 @@ const [markdown, setMarkdown] = useMarkdown();
   console.log(markdown)
   return  text !== "" ? setMarkdown(previousMarkdown.substring(0 , indexToReplace) +  `**${text}**` +
     markdown.substring(indexToReplace + text.length )): setMarkdown(markdown +`\n****`);
-
-   
+    
   };
 
   return (
