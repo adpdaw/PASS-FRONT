@@ -1,30 +1,45 @@
 import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+import useHistoryState from '../../customHooks/useHistoryState';
 
 
 function Undo() {
   const [markdown, setMarkdown] = useMarkdown();
+ // const [count, setCount, undo, redo, history, pointer] = useHistoryState(markdown);
+ const [undoStack, setUndoStack] = useState([]);
+ const [redoStack, setRedoStack] = useState([]);
   
-  const undo = () => {
-    const keydownEvent = new KeyboardEvent('keydown', { key: 'z', code: 'KeyZ', ctrlKey: true });
-    //const keyupEvent = new KeyboardEvent('keyup', { key: 'z', code: 'KeyZ', ctrlKey: true });
-    keydownEvent.preventDefault();
-    // keyupEvent.preventDefault();
-    document.dispatchEvent(keydownEvent);
-    //document.dispatchEvent(keyupEvent);
-    // console.log(typeof (markdown))
-    let string = markdown + "";
-    // console.log(string.length)
-    // console.log(string)
-    // console.log(string.substring(0, string.length - 1))
-    setMarkdown(string.substring(0, string.length - 1))
-    // console.log("undo")
-    // setMarkdown(markdown + "\n**Botón por implementar**")
-    //alert("estoy entrando")
-  };
-
+  // const undo = () => {
+  //   const keydownEvent = new KeyboardEvent('keydown', { key: 'z', code: 'KeyZ', ctrlKey: true });
+  //   //const keyupEvent = new KeyboardEvent('keyup', { key: 'z', code: 'KeyZ', ctrlKey: true });
+  //   keydownEvent.preventDefault();
+  //   // keyupEvent.preventDefault();
+  //   document.dispatchEvent(keydownEvent);
+  //   //document.dispatchEvent(keyupEvent);
+  //   // console.log(typeof (markdown))
+  //   let string = markdown + "";
+  //   // console.log(string.length)
+  //   // console.log(string)
+  //   // console.log(string.substring(0, string.length - 1))
+  //   setMarkdown(string.substring(0, string.length - 1))
+  //   // console.log("undo")
+  //   // setMarkdown(markdown + "\n**Botón por implementar**")
+  //   //alert("estoy entrando")
+  // };
+ const undo = (e) =>{
+  e.preventDefault();
+  if (undoStack.length >= 0) {
+    const undoText = undoStack.pop();
+    setRedoStack((prevRedoStack) => [...prevRedoStack, markdown]);
+    setMarkdown(undoText);
+  }
+  if (redoStack.length >= 0) {
+    const redoText = redoStack.pop();
+    setUndoStack((prevUndoStack) => [...prevUndoStack, markdown]);
+    setMarkdown(redoText)
+  }
+ }
 
 
 
