@@ -1,6 +1,6 @@
 import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import useHistoryState from '../../customHooks/useHistoryState';
 
 
@@ -9,6 +9,18 @@ function Undo() {
  // const [count, setCount, undo, redo, history, pointer] = useHistoryState(markdown);
  const [undoStack, setUndoStack] = useState([]);
  const [redoStack, setRedoStack] = useState([]);
+
+//  const inputElement = document.querySelector(".editor");
+//  console.log(inputElement)
+
+// inputElement.addEventListener('keydown', function(event) {
+//   if (event.keyCode === 13) {
+//     let prevRedoStack = markdown; 
+//     setRedoStack([...markdown, prevRedoStack]);
+//     console.log(redoStack)
+ 
+//   }
+// });
   
   // const undo = () => {
   //   const keydownEvent = new KeyboardEvent('keydown', { key: 'z', code: 'KeyZ', ctrlKey: true });
@@ -30,9 +42,9 @@ function Undo() {
  const undo = (e) =>{
   e.preventDefault();
   if (undoStack.length >= 0) {
-    const undoText = undoStack.pop();
+    //const undoText = undoStack.pop();
     setRedoStack((prevRedoStack) => [...prevRedoStack, markdown]);
-    setMarkdown(undoText);
+    setMarkdown(undoStack[undoStack.length-1]);
   }
   if (redoStack.length >= 0) {
     const redoText = redoStack.pop();
