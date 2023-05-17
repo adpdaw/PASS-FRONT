@@ -13,8 +13,15 @@ const [markdown, setMarkdown] = useMarkdown();
   const text = handleSelectedText();
   const indexToReplace = StartPosition();
   const previousMarkdown = markdown;
+  var firstCharacters =text.substring(0, 2);
+  var lastCharacters = text.substring(text.length - 2);
+ 
+  if (firstCharacters === "**" && lastCharacters === "**"){
+    var modifiedText = text.substring(2, text.length - 2);
 
-  console.log(markdown)
+    return  text !== "" ? setMarkdown(previousMarkdown.substring(0 , indexToReplace) +  `${modifiedText}` +
+    markdown.substring(indexToReplace + text.length )): setMarkdown(markdown +`\n****`);
+  }
   return  text !== "" ? setMarkdown(previousMarkdown.substring(0 , indexToReplace) +  `**${text}**` +
     markdown.substring(indexToReplace + text.length )): setMarkdown(markdown +`\n****`);
     

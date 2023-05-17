@@ -37,16 +37,16 @@ const NavBar = () => {
 
   };
 
-  // const downloadFile = () => {
-  //   const link = document.createElement('a');
-  //   const file = new Blob([markdown], { type: 'text/plain' });
-  //   link.href = URL.createObjectURL(file);
-  //   link.download = 'Untitled.md';
-  //   link.click();
-  //   URL.revokeObjectURL(link.href);
-  // };
-
   const downloadFile = () => {
+    const link = document.createElement('a');
+    const file = new Blob([markdown], { type: 'text/plain' });
+    link.href = URL.createObjectURL(file);
+    link.download = 'Untitled.md';
+    link.click();
+    URL.revokeObjectURL(link.href);
+  };
+
+  const downloadFile2 = () => {
     // Crea una ventana emergente con un formulario
     const popup = document.createElement('div');
     popup.innerHTML = `
@@ -149,7 +149,7 @@ const NavBar = () => {
       <div className="nav-links">
      
         <ul>
-        <span className="logoName upgradePlan">Upgrade to Premium</span>
+        <span className="logoName upgradePlan"> Premium</span>
           <label className="file">
             <input className="inputNav" aria-label="File browser" type="file" onChange={upLoadFile} />
             <span className="file-custom"></span>

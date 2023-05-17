@@ -84,3 +84,14 @@ button:hover{
   
   }
 
+  .dropdown{
+    position: absolute;
+    
+  }
+
+  .emoji{
+    font-size: 16px;
+  }
+
+ 
+

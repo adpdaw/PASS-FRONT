@@ -155,7 +155,7 @@ input[type="'text/plain'"] {
 }
 /* End Button Upload Document */
 
-  @media (max-width:900px) {
+  @media (max-width:975px) {
     .nav > .nav-btn {
       display: inline-block;
       position: absolute;

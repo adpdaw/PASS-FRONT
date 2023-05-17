@@ -9,10 +9,17 @@ function Italic() {
 
   const executeItalic = () => {
     const text = handleSelectedText();
-  const indexToReplace = StartPosition();
-  const previousMarkdown = markdown;
-  return  text !== "" ? setMarkdown(previousMarkdown.substring(0 , indexToReplace) +  `*${text}*` +  markdown.substring(indexToReplace + text.length )): setMarkdown(markdown +`\n**`);
-  };
+    const indexToReplace = StartPosition();
+    const previousMarkdown = markdown;
+    var firstCharacter =text.substring(0, 1);
+    var lastCharacter = text.substring(text.length - 1);
+
+    if (firstCharacter === "*" && lastCharacter === "*"){
+      var modifiedText = text.substring(1, text.length - 1);
+      return  text !== "" ? setMarkdown(previousMarkdown.substring(0 , indexToReplace) +  `${modifiedText}` +  markdown.substring(indexToReplace + text.length )): setMarkdown(markdown +`\n**`);
+    }
+    return  text !== "" ? setMarkdown(previousMarkdown.substring(0 , indexToReplace) +  `*${text}*` +  markdown.substring(indexToReplace + text.length )): setMarkdown(markdown +`\n**`);
+    };
 
   return (
     <React.Fragment>

@@ -79,6 +79,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 [Markdown sintaxis III](https://blog.logrocket.com/how-to-safely-render-markdown-using-react-markdown/)
 
+[Emojis](https://www.npmjs.com/package/emoji-picker-react)
+
 
 # Imagenes para testear nuestro markdown
 ***

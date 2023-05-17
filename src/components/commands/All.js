@@ -16,6 +16,7 @@ import MarkDownManual from '../markDownManual/MarkDownManual';
 import HeaderDropdown from "./HeaderDropdown";
 import Refresh from "./Refresh";
 import AutoSave from "../autosave/AutoSave";
+import Emoticon from "./Emoticon.tsx";
 
 const All = () => {
 
@@ -40,6 +41,7 @@ const All = () => {
         <Refresh/>
         <AutoSave/>
         <MarkDownManual/>
+        <Emoticon/>
       </div>
     </div>
     </React.Fragment>
