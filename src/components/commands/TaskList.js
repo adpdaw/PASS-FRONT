@@ -5,7 +5,7 @@ import React from "react";
 function TaskList() {
   const [markdown, setMarkdown] = useMarkdown();
   const executeTaskList = () => {
-    return setMarkdown(markdown + "\n- [X] Write the press release");
+    return setMarkdown(markdown + "\n- [X] Not implemented");
   };
 
   return (

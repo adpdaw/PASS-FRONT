@@ -9,9 +9,10 @@
     padding: 20px;
     width: 600px;
     color: var(--dark);
-    height: 800px;
+    height: 900px;
     border-radius: 15px;
     overflow-wrap: break-word;
+    box-shadow: var(--shadow3);
   }
 
   .manual:hover{
@@ -34,17 +35,18 @@
     right: 5px;
   }
 
-  .manual .titleH {
+   .titleH {
     text-align: center;
   }
 
-  .manual h1, h2 ,h3 ,h4 ,h5,h6 {
-
+  .headerManual {
     text-align: left;
   }
+
+  .spanManual{
+    color: var(--darkest);
+  }
   
-
-
   @media (max-width:650px) {
     .manual {
         position: fixed;
@@ -58,6 +60,7 @@
         color: var(--dark);
         border-radius: 15px;
         overflow-wrap: break-word;
+        font-size: smaller;
       }
     }
 

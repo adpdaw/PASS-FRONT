@@ -25,9 +25,9 @@ function MarkDownManual() {
                 <div className="manual">
                     <h2 className="titleH">PassCode ™</h2> 
                     <br></br>
-                    <h1># Header 1</h1>
-                    <h2>## Header 2</h2>
-                    <h3>### Header 3</h3>
+                    <h1 className="headerManual"># Header 1</h1>
+                    <h2 className="headerManual">## Header 2</h2>
+                    <h3 className="headerManual">### Header 3</h3>
                    
                     <br></br>
                     <p><em>*Italic Text*</em> </p>
@@ -44,10 +44,13 @@ function MarkDownManual() {
                     <br></br>
                     <p>![elefante](https://www.tooltyp.com/wp-content/uploads/2014/10/1900x920-8-beneficios-de-usar-imagenes-en-nuestros-sitios-web.jpg)</p>
                     <br></br>
-                    <p>- To add a line break</p>
+                    <p>To create a line break or new line {`<br>`}, end a line with two or more spaces, and then type return. </p>
                     <br></br>
                     <p>--- To add a line</p>
-                  
+                    <br></br>
+                    <p>1. Ordered List</p>
+                    <br></br>
+                    <p>+ Unodered List. <span className="spanManual">Also - and * can be used</span></p>
                     <button className="close-button" onClick={toggleManual}>
                     <i className="fa fa-times" aria-hidden="true"></i>
                     </button>

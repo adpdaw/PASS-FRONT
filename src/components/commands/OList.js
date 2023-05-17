@@ -12,7 +12,7 @@ function OList() {
     const indexToReplace = StartPosition();
     const previousMarkdown = markdown;
     return  text !== "" ? setMarkdown(previousMarkdown.substring(0 , indexToReplace) +  `\n1. ${text}` +
-      markdown.substring(indexToReplace + text.length )): setMarkdown(markdown +`\n1. `);
+      markdown.substring(indexToReplace + text.length )): setMarkdown(markdown +`\n1. Item `);
     };
 
   return (
