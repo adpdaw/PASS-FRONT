@@ -5,33 +5,34 @@ import { useMarkdown } from "../../provider/markdown-provider.js";
 const AutoSave = () => {
     const [markdown, setMarkdown] = useMarkdown();
     const [autoSaveEnabled, setAutoSaveEnabled] = useState(false);
-    const [autoSaveTimer, setAutoSaveTimer] = useState(null);
     const [button, setButton] = useState("AutoSave Off");
     const [color, setColor] = useState("currentColor");
-    const [states, setStates] = useState([markdown]);
+   
    
 
     useEffect(() => {
+        const handleKeyPress = (event) => {
+          if (event.key === "Enter") {
+        
+            console.log("Guardando el markdown...");
+            console.log(markdown);
+            // Llamar a una función que guarde el markdown en una base de datos
+          }
+        };
+      
         if (autoSaveEnabled) {
-
-            const timer = setInterval(() => {
-                console.log("Guardando el markdown...");
-                console.log(mdLength(markdown))
-                //No actualiza el contenido del markdown
-                // Llamar a una función que guarde el markdown en una base de datos
-            }, 3000);
-            setAutoSaveTimer(timer);
+          document.addEventListener("keypress", handleKeyPress);
         } else {
-            clearInterval(autoSaveTimer);
-            setAutoSaveTimer(null);
+          document.removeEventListener("keypress", handleKeyPress);
         }
-    }, [autoSaveEnabled]);
+      
+        // Cleanup: remove event listener when component unmounts or autoSaveEnabled changes
+        return () => {
+          document.removeEventListener("keypress", handleKeyPress);
+        };
+      }, [autoSaveEnabled, markdown]);
 
-    function mdLength(mark){
-        let previousMarkdown = mark
-        setMarkdown(previousMarkdown + markdown)
-        return markdown.length;
-    }
+ 
 
     const handleAutoSaveToggle = () => {
         setAutoSaveEnabled(!autoSaveEnabled);
