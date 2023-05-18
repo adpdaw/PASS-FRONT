@@ -81,7 +81,36 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 [Emojis](https://www.npmjs.com/package/emoji-picker-react)
 
+[ReactMarkdown](https://github.com/remarkjs/react-markdown)
+***
+ ## Futuras implementaciones
+ [remark-gfm](https://github.com/remarkjs/remark-gfm)
+ # GFM
 
+## Autolink literals
+
+www.example.com, https://example.com, and contact@example.com.
+
+## Footnote
+
+A note[^1]
+
+[^1]: Big note.
+
+## Strikethrough
+
+~one~ or ~~two~~ tildes.
+
+## Table
+
+| a | b  |  c |  d  |
+| - | :- | -: | :-: |
+
+## Tasklist
+
+* [ ] to do
+* [x] done
+***
 # Imagenes para testear nuestro markdown
 ***
 ![To create](https://misimagenesde.com/wp-content/uploads/2017/06/fotos-chulas-3.jpg)

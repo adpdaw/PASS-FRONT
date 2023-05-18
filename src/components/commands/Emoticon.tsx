@@ -4,6 +4,7 @@ import handleSelectedText from "../../utils/SelectedText.js";
 import StartPosition from "../../utils/StarPosition";
 import EmojiPicker, { Emoji, EmojiStyle,EmojiClickData } from "emoji-picker-react";
 import React, { useState } from "react";
+import { isNativeError } from "util/types";
 
 function Emoticon() {
   const [markdown, setMarkdown] = useMarkdown();
@@ -39,7 +40,7 @@ function Emoticon() {
       <div className="titleBar dropdown">
         <button aria-label="Emoji" className="emoji" onClick={handleToggle}>😀</button>
         {isOpen && (
-          <EmojiPicker onEmojiClick={handleEmojiClick} />
+          <EmojiPicker onEmojiClick={handleEmojiClick} height={400} width={300} />
         )}
       </div>
       </div>
