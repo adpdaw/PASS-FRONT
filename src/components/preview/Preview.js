@@ -9,21 +9,21 @@ import { useEffect,useRef } from "react";
 
 const Preview = () =>{
     const [markdown, setMarkdown] = useMarkdown();
-
-    
-
     const previewRef = useRef(null);
 
+    // useEffect que añade una separación a los parrafos
     useEffect(() => {
       let lastParagraph = null;
-  
+      let enterCount = 0;
+
       const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
-         
-  
           const previewContainer = previewRef.current;
           const paragraphs = previewContainer.querySelectorAll('p');
-  
+          const lastTag = document.querySelector('.preview__scroll');
+          enterCount++;
+          
+          if(lastTag.lastElementChild.tagName === 'P' &&  paragraphs.childElementCount != 0 && enterCount === 3){
           paragraphs.forEach((paragraph) => {
             paragraph.classList.remove('last'); // Quita la clase 'last' de los párrafos previos
           });
@@ -37,6 +37,9 @@ const Preview = () =>{
             lastParagraph.appendChild(br);
           }
         }
+        enterCount = 0;
+        }
+        
       };
   
       const handleKeyUp = (event) => {
@@ -60,7 +63,6 @@ const Preview = () =>{
     const handleChange = (event) => {
       setMarkdown(event.target.value);
     };
-
 
     return (
         <React.Fragment>
