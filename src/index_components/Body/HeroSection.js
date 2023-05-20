@@ -1,10 +1,12 @@
-import React, {  } from "react";
+import React, { useContext } from "react";
 import background from "../../img/hero/hero-bg.svg";
 import logo from "../../img/logo/logo-CP.svg";
 import { Link } from "react-router-dom";
+import  { datosContexto }  from "../Context/Context";
 
 
 function HeroSection() {
+  var context = useContext(datosContexto);
   return (
     <React.Fragment>
       <section
@@ -24,9 +26,9 @@ function HeroSection() {
                   diam nonumy eirmod tempor invidunt ut labore et dolore magna
                   aliquyam erat, sed diam voluptua.
                 </p>
-                <Link
+        
+                <Link  to={ context.loggedIn ? "/projects" : "/login" }
                   className="main-btn  btn-hover mb-2"
-                  
                 >
                   Get Started
                 </Link>

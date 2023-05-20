@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../Header/Header.js";
 import { useState } from "react";
 import { useContext } from "react";
-import { datosContexto } from "../../Context/Context";
+import { datosContexto } from "../Context/Context.js";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 /**Este componente es un formulario controlado que permite modificar o borra tu propia cuenta. */

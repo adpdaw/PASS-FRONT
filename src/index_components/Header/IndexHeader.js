@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { datosContexto } from "../Context/Context";
 import { useNavigate } from "react-router-dom";
 import logo from "../../img/faviconLogoround.png";
+import {} from '../Client/Folder/FoldersPage.css';
+
 
 /**Este componente es la cabecera de la página de inicio y sus enlaces cambian según el tipo de usuario. */
 function IndexHeader() {
@@ -16,7 +18,7 @@ function IndexHeader() {
   /**Función que hace el logout. */
   const submitLogout = async () => {
     const response = await context.logout(url);
-    if (response.status === 200) {
+   if (response.status === 200) {
       Navigate("/");
     } else {
       alert("Something is wrong,please try again!!");
@@ -27,10 +29,10 @@ function IndexHeader() {
     <React.Fragment>
       <header className="header">
         <div className="navbar-area">
-          <div className="container relative shadow-lg shadow-indigo-200">
+          <div className="container relative">
             <div className="row items-center">
               <div className="w-full">
-                <nav className=" flex items-center justify-between py-4 navbar navbar-expand-lg shadow-gray-100	 ">
+                <nav className=" flex items-center justify-between py-4 navbar navbar-expand-lg !shadow-gray-100	 ">
                   <div className="container flex flex-wrap items-center justify-end mx-auto gap-10">
                     <a href="/" className="flex items-center shrink-1 w-8/12">
                       <img

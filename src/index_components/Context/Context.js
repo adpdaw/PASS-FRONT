@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import { getData, postData, putData, deleteData } from "../../biblioteca";
+import { getData, postData, putData, deleteData, postDataHeaders, getDataHeaders,putDataHeaders,deleteDataHeaders } from "../../biblioteca";
 /**Este componente es el contexto de toda la aplicación. */
 const datosContexto = createContext();
 
@@ -7,20 +7,59 @@ var listaInicial = [];
 var objetoInicial = {};
 
 function Context(props) {
-  const [userConnected, setUserConnected] = useState(objetoInicial);
   const [user, setUser] = useState(objetoInicial);
 
   const [users, setUsers] = useState(listaInicial);
-  const [loggedIn, setLogin] = useState(false);
+
+  const tokenStored = localStorage.getItem('token');
+  var checkLogin = !!tokenStored;
+  const [loggedIn, setLogin] = useState(checkLogin);
+
+  const [project, setProject]= useState(objetoInicial);
+  const [projects, setProjects] = useState(listaInicial);
+
+  const [files, setFiles] = useState(listaInicial);
+
+
+  const [token,setToken]=useState(objetoInicial);
+  const [userConnected, setUserConnected] = useState(objetoInicial);
+
+const saveToken = (user,token)=>{
+  sessionStorage.setItem('token',JSON.stringify(token));
+  sessionStorage.setItem('user',JSON.stringify(user));
+  setToken(token);
+  setUserConnected(user);
+}
+
+const getToken = ()=>{
+  const tokenString = sessionStorage.getItem('token');
+  const userToken = JSON.parse(tokenString);
+  setToken(userToken);
+  return userToken;
+}
+
+const getUser2 = ()=>{
+  const userString = sessionStorage.getItem('user');
+  const user_detail = JSON.parse(userString);
+  return user_detail;
+}
+
+
+
 
   /***LOGIN******* */
   const login = async (url, object) => {
     try {
       const response = await postData(url, object);
+      console.log(response)
       setUserConnected(response.data.user);
+      saveToken(response.data.user,response.data.token);
+      localStorage.setItem('token', response.data.token);
+      setToken(response.data.token);
       setLogin(true);
       return response.data.path;
     } catch (error) {
+      console.log(error)
       return error;
     }
   };
@@ -32,6 +71,7 @@ function Context(props) {
       const response = await postData(url, object);
       return response;
     } catch (error) {
+      console.log(error)
       return error;
     }
   };
@@ -40,8 +80,12 @@ function Context(props) {
 
   const logout = async (url) => {
     try {
-      const response = await postData(url);
+      const response = await postDataHeaders(url,{},getToken());
+      console.log(response)
+      console.log(getToken())
       setUserConnected(objetoInicial);
+      sessionStorage.clear();
+      localStorage.removeItem('token');
       setLogin(false);
       return response;
     } catch (error) {
@@ -98,6 +142,121 @@ function Context(props) {
     setUsers(list);
   };
 
+/****************************************************************** */
+/**Create a project */
+
+const createProject = async (url, object) => {
+  try {
+    const response = await postDataHeaders(url, object,getToken());
+    console.log(response)
+    return response;
+  }
+  catch (error) {
+    console.log(error)
+    return error;
+    }
+
+}
+
+/**Get All projects */
+const getProject =async (url, object)=>{
+  const project = await getData(url, object);
+  setProject(project);
+}
+/**Get one project */
+const getProjects = async (url) => {
+  const projectsList = await getDataHeaders(url,getToken());
+  setProjects(projectsList.data.listProjects)
+  console.log(projects)
+   return projectsList
+};
+
+/**Update a project */
+
+const updateProject = async (url, object) => {
+  try {
+    const response = await putDataHeaders(url, object,getToken());
+    if ((response.status = 200)) {
+      setProject(object);
+    }
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+/**Delete a project */
+const deleteProject = async (url) => {
+  try {
+    const response = await deleteDataHeaders(url, getToken());
+    console.log(response)
+    if ((response.status = 200)) {
+      setProject(objetoInicial);
+      }
+      return response;
+  }
+  catch (error) {
+    return error;
+    }
+}
+
+  /**Cambiar el estado de lista de usuarios. */
+  const updateProjectList = (list) => {
+    setProjects(list);
+  };
+
+/**************************************** */
+/**Create a project */
+
+
+/**Get All projects */
+// const getProject =async (url, object)=>{
+//   const project = await getData(url, object);
+//   setProject(project);
+// }
+/**Get one project */
+const getFiles = async (url,projectId) => {
+  const FilesList = await getDataHeaders(url,getToken());
+  setFiles(FilesList.data.listProjects)
+  console.log(FilesList)
+   return FilesList;
+};
+
+/**Update a project */
+
+// const updateProject = async (url, object) => {
+//   try {
+//     const response = await putDataHeaders(url, object,getToken());
+//     if ((response.status = 200)) {
+//       setProject(object);
+//     }
+//     return response;
+//   } catch (error) {
+//     return error;
+//   }
+// };
+/**Delete a project */
+// const deleteProject = async (url) => {
+//   try {
+//     const response = await deleteDataHeaders(url, getToken());
+//     console.log(response)
+//     if ((response.status = 200)) {
+//       setProject(objetoInicial);
+//       }
+//       return response;
+//   }
+//   catch (error) {
+//     return error;
+//     }
+// }
+
+  /**Cambiar el estado de lista de usuarios. */
+  // const updateProjectList = (list) => {
+  //   setProjects(list);
+  // };
+
+
+
+
   const data = {
     user,
     users,
@@ -113,8 +272,18 @@ function Context(props) {
     updateUser,
     deleteUser,
     userConnected,
+    saveToken,
     setUserConnected,
     logout,
+    projects,
+    getProject,
+    getProjects,
+    createProject,
+    updateProject,
+    deleteProject,
+    updateProjectList,
+    files,
+    getFiles
   };
   return (
     <datosContexto.Provider value={data}>

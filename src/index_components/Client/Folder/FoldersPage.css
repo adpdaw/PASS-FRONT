@@ -1,0 +1,154 @@
+.projectsContainer{
+   color: rgb(85, 9, 152);
+   text-align: center;
+   position: relative;
+   top: 150px;
+   display: inline;
+
+}
+body{
+    background-color: #f3f4f6;
+}
+#addProjectCard{
+    width: 330px;
+    height: 174px;
+    background-color: #e9e7fe;
+    margin-top: 4rem;
+    margin-left: 4rem;
+    cursor: pointer;
+    color: #8e84f8;
+    transition: width height 1s;
+}
+#addProjectCard:hover{
+    background-color:#d3d0ff ;
+    color: #665add;
+    width: 360px;
+    height: 210px;
+
+}
+#addProjectCard svg{
+    margin: 1rem;
+}
+/*
+.projectList .folder::before{
+    content:  '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 24px;
+    background: inherit;
+    border-radius: 1rem 0 0 0;
+    background-color: #43405c;
+    clip-path: path('M 0 0 L 160 0 C 185 2, 175 14, 200 16 L 0 24 z');
+}
+
+    
+.folder {
+    min-height: 158px;
+    position: relative;
+    width: 250px;
+   
+
+}*/
+.projectList{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.folder{
+
+  width: 330px;
+  height: 174px;
+  margin: 4rem;
+  margin-right: 0.5em;
+
+  border-radius: 5px 25px 25px 25px;
+  filter: drop-shadow(0 0 0.75rem grey);
+
+  background: #665add;
+  position: relative;
+  cursor: pointer;
+}
+
+.folder::before{
+    content:  '';
+    position: absolute;
+    top: -18px;
+    left: 0;
+    width: 200px;
+    height: 25px;
+    background: #665add;
+    border-radius: 25px 0 0 0;
+    clip-path: path('M 0 0 L 160 0 C 185 2, 175 16, 200 18 L 0 50 z');
+}
+.folder::after{
+  content: '';
+  position: absolute;
+  left:  40px;
+  width: 85px;
+  height: 5px;
+  top: -18px;
+  background: white;
+  border-radius: 0 0 5px 5px;
+
+}
+.folder h2{
+    padding: 2rem;
+}
+.folder button:first-of-type{
+    color: #d3d0ff;
+    position: absolute;
+    right: 2px ;
+    bottom: 0;
+    margin-bottom:10px ;
+    margin-right: 10px;
+}
+.folder button:last-of-type{
+    color: #d3d0ff;
+    position: absolute;
+    right: 50px ;
+    bottom: 0;
+    margin-right: 10px;
+    margin-bottom:10px ;
+
+}
+
+/* <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" 
+                        viewBox="0 0 50 50" xmlSpace="preserve" width={60}>
+                        <circle style={{fill:'#4B0082'}} cx="25" cy="25" r="25"/>
+                        <line style={{fill:'none' , stroke:'#FFFFFF' , strokeWidth:2 ,strokeLinecap:'round' , strokeLinejoin:'round' , strokeMiterlimit:10}} x1="25" y1="13" x2="25" y2="38"/>
+                        <line style={{fill:'none' , stroke:'#FFFFFF', strokeWidth:2 , strokeLinecap:'round' , strokeLinejoin:'round' , strokeMiterlimit:10}} x1="37.5" y1="25" x2="12.5" y2="25"/>
+                        </svg>*/
+
+
+#folderForm{
+    background-color: #43405c;
+    text-align: left;
+    margin: 1rem;
+    padding: 1rem;
+}
+form input{
+    display: inline-block;
+}
+
+.modal{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 200vh;
+    background-color: rgba(0, 0, 0, 0.527);
+    z-index: 100;
+}
+.cancel{
+    position: absolute;
+    right: 13%;
+    top: 19.5%;
+    color: black;
+    z-index: 200;
+    cursor: pointer;
+    color: white;
+}
+

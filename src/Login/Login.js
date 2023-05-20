@@ -22,8 +22,9 @@ function Login() {
       values.email !== "" &&
       values.password !== "" &&
       pathApi.path !== undefined
-    ) {
+    ) {      
       Navigate(pathApi.path);
+     
     } else {
       setError(true);
     }
