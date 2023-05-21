@@ -2,14 +2,14 @@ import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
 import handleSelectedText from "../../utils/SelectedText.js";
 import StartPosition from "../../utils/StarPosition";
-import EmojiPicker, { Emoji, EmojiStyle,EmojiClickData } from "emoji-picker-react";
+import EmojiPicker, {EmojiClickData } from "emoji-picker-react";
 import React, { useState } from "react";
-import { isNativeError } from "util/types";
+
 
 function Emoticon() {
   const [markdown, setMarkdown] = useMarkdown();
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedEmoji, setSelectedEmoji] = useState<string>("");
+ // const [selectedEmoji, setSelectedEmoji] = useState<string>("");
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -39,9 +39,11 @@ function Emoticon() {
       <div className="container">
       <div className="titleBar dropdown">
         <button aria-label="Emoji" className="emoji" onClick={handleToggle}>😀</button>
+        <div className="emojiPiker">
         {isOpen && (
-          <EmojiPicker onEmojiClick={handleEmojiClick} height={400} width={300} />
+          <EmojiPicker onEmojiClick={handleEmojiClick} />
         )}
+        </div>
       </div>
       </div>
     </React.Fragment>

@@ -2,12 +2,11 @@
     display: flex;
     height: 100%;
     width: auto;
-    flex-wrap: wrap;  
+    flex-wrap: wrap; 
 }
 
 .titleBar{
     padding: 0.2rem; 
-  
 }
 
 .titleBar:hover{
@@ -18,15 +17,14 @@
     /* border:1px solid; */
     width: auto;
     height: auto;
-    /* border-radius: 5px; */
-
+    /* border-radius: 5px; */ 
 }
 
 button {
     position: relative;
     color: var(--primary);
     background-color: transparent;
-    border: none;
+    border: none; 
 }
 
 button:hover{
@@ -38,8 +36,8 @@ button:hover{
   button[aria-label]:focus:after,
   button[aria-label]:hover:after {
     position: absolute;
-    z-index: 1;
-    top: -2em;
+    z-index: 100;
+    top: 2em;
     left: 0;
     display: block;
     overflow: hidden;
@@ -79,14 +77,12 @@ button:hover{
     
   }
 
-  .container{
-    position: relative;
-  
-  }
-
-  .dropdown{
-    position: absolute;
-    
+  .emojiPiker{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
   }
 
   .emoji{

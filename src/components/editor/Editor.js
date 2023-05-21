@@ -42,6 +42,7 @@ const Editor = () =>{
         }
     };
 
+
     return(
         <React.Fragment>
         <div className="editor__wrap">

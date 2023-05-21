@@ -14,10 +14,10 @@
     background: none;
     resize: none;
     border: none;
-    font-size: calc(1rem);  
+    font-size: calc(1rem); 
 }
 
-.editor .light{
+/* .editor .light{
     width: 100%;
     flex-grow: 1;
     margin-bottom: 20px;
@@ -27,5 +27,5 @@
     resize: none;
     border: none;
     font-size: calc(1rem);  
-}
+} */
 

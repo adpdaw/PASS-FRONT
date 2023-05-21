@@ -24,6 +24,7 @@ const All = () => {
     <React.Fragment>
     <div className="all">
       <div className="titleBarWrap" >
+        <Emoticon/>
         <Undo />
         <Redo />
         <Bold />
@@ -41,7 +42,7 @@ const All = () => {
         <Refresh/>
         <AutoSave/>
         <MarkDownManual/>
-        <Emoticon/>
+        
       </div>
     </div>
     </React.Fragment>

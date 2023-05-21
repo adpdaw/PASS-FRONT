@@ -149,7 +149,6 @@ const NavBar = () => {
       <div className="nav-links">
      
         <ul>
-        <span className="logoName upgradePlan"> Premium</span>
           <label className="file">
             <input className="inputNav" aria-label="File browser" type="file" onChange={upLoadFile} />
             <span className="file-custom"></span>
@@ -159,8 +158,7 @@ const NavBar = () => {
             <span className="file-customDownload"></span>
           </label>
           <li onClick={toggleMode} className="btn-mode" >{mode === 'light' ? '🌞' : '🌚'}</li>
-          <li>Link</li>
-          <li>Link</li>
+        
         </ul>
       </div>
     </div>

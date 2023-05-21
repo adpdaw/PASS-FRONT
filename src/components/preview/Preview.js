@@ -11,19 +11,18 @@ const Preview = () =>{
     const [markdown, setMarkdown] = useMarkdown();
     const previewRef = useRef(null);
 
-    // useEffect que añade una separación a los parrafos
+    //useEffect que añade una separación a los párrafos.
     useEffect(() => {
       let lastParagraph = null;
-      let enterCount = 0;
+ 
 
       const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
           const previewContainer = previewRef.current;
           const paragraphs = previewContainer.querySelectorAll('p');
           const lastTag = document.querySelector('.preview__scroll');
-          enterCount++;
           
-          if(lastTag.lastElementChild.tagName === 'P' &&  paragraphs.childElementCount != 0 && enterCount === 3){
+          if(lastTag.lastElementChild.tagName === 'P' &&  paragraphs.childElementCount !== 0){
           paragraphs.forEach((paragraph) => {
             paragraph.classList.remove('last'); // Quita la clase 'last' de los párrafos previos
           });
@@ -37,7 +36,7 @@ const Preview = () =>{
             lastParagraph.appendChild(br);
           }
         }
-        enterCount = 0;
+     
         }
         
       };
@@ -59,7 +58,9 @@ const Preview = () =>{
         window.removeEventListener('keyup', handleKeyUp);
       };
     }, []);
-  
+
+
+
     const handleChange = (event) => {
       setMarkdown(event.target.value);
     };
@@ -69,7 +70,7 @@ const Preview = () =>{
         <div className="preview">
             <TitleBar title='Preview'/>
             <div className="preview__scroll" ref={previewRef}>
-                <ReactMarkdown onChange={handleChange}>{markdown}</ReactMarkdown>
+                <ReactMarkdown>{markdown}</ReactMarkdown>
             </div>  
         </div>
         </React.Fragment>

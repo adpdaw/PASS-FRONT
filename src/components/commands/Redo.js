@@ -1,61 +1,38 @@
 import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
-import { React, useState} from "react";
-import useUndoableState from "../../customHooks/useUndoableState";
-
-
-
+import { React, useEffect, useState } from "react";
 
 function Redo() {
   const [markdown, setMarkdown] = useMarkdown();
-  const [states, setStates] = useState([markdown]);
+  const [undoneWords, setUndoneWords] = useState([]);
+  const [words, setWords] = useState([]);
 
-  
- 
-  const  redo = ()  =>{
-    // var evt = new KeyboardEvent('keydown', {'key': 'y', 'ctrlKey': true});
-    // document.dispatchEvent(evt);
-    let estado = markdown;
-    //console.log("redo")
-    //setMarkdown(markdown)
-    setStates([...markdown , estado]) 
-    console.log(states)
-    if(states[0] !== ""){
-      states.forEach(state => {
-        
-      });
-      setMarkdown(states[states.length-1])
+
+  useEffect(() => {
+    const newWords = markdown.split(" ");
+    setWords(newWords);
+
+    if (newWords[newWords.length - 1] === "") {
+      const valorAnterior = newWords[newWords.length - 2];
+      setUndoneWords((prevUndoneWords) => [...prevUndoneWords, valorAnterior]);
+      console.log(newWords)
     }
-    //setMarkdown(markdown + "\n**Botón por implementar**"
-  }
+  }, [markdown]);
 
-
-  // const init = {text: markdown};
-  // const {
-  //   state: doc,
-  //   setState: setDoc,
-  //   resetState: resetDoc,
-  //   index: docStateIndex,
-  //   lastIndex: docStateLastIndex,
-  //   goBack: undoDoc,
-  //   goForward: redoDoc
-  // } = useUndoableState(init);
-
-  // const canUndo = docStateIndex > 0;
-  // const canRedo = docStateIndex < docStateLastIndex;
-
-
-  // // const executeRedo = () => {
-  // //   document.execCommand("redo",false,null);
-  // // };
-
-  // const handleOnChange = (e) =>{
-  //  setDoc = setMarkdown(markdown + e.target.value)
-  // }
+  const handleRedo = () => {
+    if (undoneWords.length > 0) {
+      const redoWord = undoneWords[undoneWords.length - 1];
+      const updatedWords = [...words, redoWord];
+      const updatedUndoneWords = undoneWords.slice(0, undoneWords.length - 1);
+      setWords(updatedWords);
+      setUndoneWords(updatedUndoneWords);
+      setMarkdown(updatedWords.join(" "));
+    }
+  };
 
   return (
-    <div className="titleBar" onClick={redo}>
-      <button aria-label="Redo Action" >
+    <div className="titleBar" onClick={handleRedo}>
+      <button aria-label="Redo Action">
         <svg width="15" height="15" viewBox="0 0 384 512">
           <path
             fill="currentColor"
