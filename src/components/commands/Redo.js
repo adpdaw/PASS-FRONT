@@ -10,24 +10,16 @@ function Redo() {
 
   useEffect(() => {
     const newWords = markdown.split(" ");
-    setWords(newWords);
-
     if (newWords[newWords.length - 1] === "") {
+      setWords(newWords);
       const valorAnterior = newWords[newWords.length - 2];
       setUndoneWords((prevUndoneWords) => [...prevUndoneWords, valorAnterior]);
-      console.log(newWords)
+      //console.log(newWords);
     }
   }, [markdown]);
-
+  
   const handleRedo = () => {
-    if (undoneWords.length > 0) {
-      const redoWord = undoneWords[undoneWords.length - 1];
-      const updatedWords = [...words, redoWord];
-      const updatedUndoneWords = undoneWords.slice(0, undoneWords.length - 1);
-      setWords(updatedWords);
-      setUndoneWords(updatedUndoneWords);
-      setMarkdown(updatedWords.join(" "));
-    }
+      setMarkdown(words.join(' '));
   };
 
   return (
