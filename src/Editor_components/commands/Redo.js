@@ -1,38 +1,30 @@
 import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
-import { useContext } from "react";
-import useUndoableState from "../../customHooks/useUndoableState";
-
+import { React, useEffect, useState } from "react";
 
 function Redo() {
   const [markdown, setMarkdown] = useMarkdown();
-  const init = {text: markdown};
-  const {
-    state: doc,
-    setState: setDoc,
-    resetState: resetDoc,
-    index: docStateIndex,
-    lastIndex: docStateLastIndex,
-    goBack: undoDoc,
-    goForward: redoDoc
-  } = useUndoableState(init);
-
-  const canUndo = docStateIndex > 0;
-  const canRedo = docStateIndex < docStateLastIndex;
+  const [undoneWords, setUndoneWords] = useState([]);
+  const [words, setWords] = useState([]);
 
 
-  // const executeRedo = () => {
-  //   document.execCommand("redo",false,null);
-  // };
-
-  const handleOnChange = (e) =>{
-    setMarkdown(markdown + e.target.value)
-  }
+  useEffect(() => {
+    const newWords = markdown.split(" ");
+    if (newWords[newWords.length - 1] === "") {
+      setWords(newWords);
+      const valorAnterior = newWords[newWords.length - 2];
+      setUndoneWords((prevUndoneWords) => [...prevUndoneWords, valorAnterior]);
+      //console.log(newWords);
+    }
+  }, [markdown]);
+  
+  const handleRedo = () => {
+      setMarkdown(words.join(' '));
+  };
 
   return (
-    <div className="titleBar"  onClick={() => redoDoc()}
-    disabled={!canRedo}>
-      <button aria-label="Redo action" >
+    <div className="titleBar" onClick={handleRedo}>
+      <button aria-label="Redo Action">
         <svg width="15" height="15" viewBox="0 0 384 512">
           <path
             fill="currentColor"

@@ -5,6 +5,11 @@ function Footer() {
   const valorInicial = 0;
   const [year, setYear] = useState(valorInicial);
 
+  const toggleFooter = () => {
+    const footer = document.querySelector('.page-editor');
+    Footer.style.display === 'none' ? footer.style.display = 'block' : footer.style.display = 'none';
+  }
+
   const currentYear = () => {
     const currentYear = new Date().getFullYear();
     setYear(currentYear);
@@ -18,9 +23,9 @@ function Footer() {
   return (
     <React.Fragment>
       <footer className="page-footer">
-        <p>
+        <p className="footerText">
           &copy; <span id="date">{year}</span>
-          <span className="footer-logo">PassCode made by</span>
+          <span className="footer-logo">PassCode made by  </span>
           <a href="https://guileless-scone-3def61.netlify.app" target="_blank">
             MDcreations
           </a>

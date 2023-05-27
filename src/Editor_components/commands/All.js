@@ -1,31 +1,51 @@
-import { useMarkdown } from "../../provider/markdown-provider";
 import React from "react";
 import Bold from "./Bold";
-
 import Undo from "./Undo";
 import Redo from "./Redo";
 import Italic from "./Italic";
-import Header from "./Header";
 import Image from "./Image";
-import AddList from "./AddList";
+import TaskList from "./TaskList";
 import CodeBlock from "./CodeBlock";
 import Link from "./Link";
+import OList from "./OList";
+import UList from "./UList";
+import Quote from "./Quote";
+import Code from "./Code";
+import FullScreen from "./FullScreen";
+import MarkDownManual from '../markDownManual/MarkDownManual';
+import HeaderDropdown from "./HeaderDropdown";
+import Refresh from "./Refresh";
+import AutoSave from "../autosave/AutoSave";
+import Emoticon from "./Emoticon.tsx";
 
 const All = () => {
+
   return (
+    <React.Fragment>
     <div className="all">
-      <div className="titleBarWrap">
+      <div className="titleBarWrap" >
+        <Emoticon/>
         <Undo />
         <Redo />
         <Bold />
         <Italic/>
-        <Header/>
+        <HeaderDropdown/>
         <Link/>
-        <AddList/>
+        <Quote/>
+        <Code/>
+        <TaskList/>
+        <OList/>
+        <UList/>
         <Image/>
         <CodeBlock/>
+        <FullScreen/>
+        <Refresh/>
+        <AutoSave/>
+        <MarkDownManual/>
+        
       </div>
     </div>
+    </React.Fragment>
   );
 };
 
