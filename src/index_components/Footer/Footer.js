@@ -15,34 +15,34 @@ function Footer() {
               <div className="row">
                 <div className="w-full md:w-6/12 lg:w-4/12">
                   <div className="footer-widget mb-10 mx-3">
-                    <div className="logo mb-8">
+                    {/* <div className="logo mb-8">
                       <a href="/">
                         {" "}
                         <img src={logoFooter} alt="Logo MDcreations" />{" "}
                       </a>
-                    </div>
+                    </div> */}
                     {/* <p className="mb-8 text-black sm:pr-13 md:pr-0 2xl:pr-25">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed dinonumy eirmod tempor invidunt.</p>  */}
                     <ul className="socials flex items-center">
                       <li className="mr-5">
-                        <a href="/">
+                        <a href="https://es-es.facebook.com/" target="blank">
                           {" "}
                           <i className="lni lni-facebook-original"></i>{" "}
                         </a>
                       </li>
                       <li className="mr-5">
-                        <a href="/">
+                        <a href="https://twitter.com/" target="blank">
                           {" "}
                           <i className="lni lni-twitter-original"></i>{" "}
                         </a>
                       </li>
                       <li className="mr-5">
-                        <a href="/">
+                        <a href="https://www.instagram.com/" target="blank">
                           {" "}
                           <i className="lni lni-instagram-original"></i>{" "}
                         </a>
                       </li>
                       <li className="mr-5">
-                        <a href="/">
+                        <a href="https://es.linkedin.com/" target="blank">
                           {" "}
                           <i className="lni lni-linkedin-original"></i>{" "}
                         </a>
@@ -50,7 +50,7 @@ function Footer() {
 
                       <li>
                         {" "}
-                        <a href="/">
+                        <a href="https://github.com/" target="blank">
                           {" "}
                           <i className="lni lni-github-original"></i>{" "}
                         </a>{" "}
@@ -58,6 +58,11 @@ function Footer() {
                     </ul>
                   </div>
                 </div>
+              
+                  
+                    
+               
+              
 
                 <div className="w-full md:w-6/12 lg:w-2/12">
                   <div className="footer-widget mb-10 mx-3">
@@ -112,7 +117,7 @@ function Footer() {
                 </div>
 
                 <div className="w-full md:w-6/12 lg:w-3/12">
-                  <div className="footer-widget mb-10 mx-3">
+                  {/* <div className="footer-widget mb-10 mx-3">
                     <h3 className="mb-6 text-gray-800 text-2xl font-bold text-left">
                       Other Products
                     </h3>
@@ -134,7 +139,13 @@ function Footer() {
                         <a href="/">Tracking System</a>{" "}
                       </li>
                     </ul>
-                  </div>
+                  </div> */}
+                   <div className="logo mb-8">
+                      <a href="/">
+                        {" "}
+                        <img src={logoFooter} alt="Logo MDcreations" />{" "}
+                      </a>
+                    </div>
                 </div>
               </div>
             </div>
