@@ -11,9 +11,9 @@ import EditUser from './index_components/Admin/EditUser';
 import IndexEditor from './Editor_components/editor/IndexEditor.js';
 import FoldersPage from './index_components/Client/Folder/FoldersPage';
 import FolderForm from './index_components/Client/Folder/FolderForm';
-import FilesPage from './index_components/Client/File/FilesPage';
+//import FilesPage from './index_components/Client/File/FilesPage';
 
-/**Este es el componente principal que tiene las routas utilizadas. */
+/**Este es el componente principal que tiene las rutas utilizadas. */
 
 function App() {
   
@@ -30,7 +30,7 @@ function App() {
           <Route path='/editor' element={<IndexEditor/>}/>
           <Route path='/projects' element={<FoldersPage/>}/>
           <Route path='/projectForm' element={<FolderForm/>}/>
-          <Route path='/files/:projectId' element={<FilesPage/>}/>
+          {/* <Route path='/files/:projectId' element={<FilesPage/>}/> */}
         </Routes>
       </Context>
    

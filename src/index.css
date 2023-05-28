@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /*Fonts*/
 
@@ -19,6 +22,28 @@
   --shadow2:  rgba(0, 0, 0, 0.24) 0px 3px 8px;
   --shadow3:  rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
+  /* Paleta de Grises */
+  --gray100:#f8fafc;
+  --gray200:#f1f5f9;
+  --gray300:#cbd5e1;
+  --gray400:#94a3b8;
+  --gray500:#94a3b8;
+  --gray600:#64748b;
+  --gray700:#334155;
+  --gray800:#1e293b;
+  --gray900:#0f172a;
+
+  /* Other colors*/
+  --black: #222;
+  --white: #fff;
+  --red-light: #f8d7da;
+  --red-dark: #842029;
+  --red-intense: #ff0000;
+  --green-light: #d1e7dd;
+  --green-dark: #0f5132;
+  --green-light: #34bc48;
+  --green-alert: #008000;
+
 }
 
 /* General Styles*/ 
@@ -27,6 +52,7 @@
   box-sizing: border-box;
 
 }
+
 
 body { 
 margin: 0; 
@@ -110,7 +136,6 @@ a{
 }
 
 em{
-
   color: var(--contrast);
 }
 
@@ -128,10 +153,43 @@ hr{
 }
 
 /*Utilities*/
-.mb-2{
+.mbt-2{
   margin-bottom: 0.5rem;
+  color:inherit;
+
 }
-.mb-4{
+.mbt-4{
   margin-bottom: 1rem;
 }
 
+
+/* ICONOS FALLO FORMULARIO */
+
+.error  span {
+  color: var(--red-intense);
+}
+
+.failure-icon i{
+  color: var(--red-intense);
+}
+
+.success-icon i{
+  color: var(--green-alert);
+}
+
+.error  span {
+  font-size: calc(6px + 1vmin);
+  margin-top: 5px;
+}
+.error{
+  color: var(--red-intense);
+}
+
+.success-icon,
+.failure-icon {
+  /* right: center; */
+  opacity: 0;
+}
+svg .eye-open {
+  color: var(--red-intense);
+}

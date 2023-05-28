@@ -36,15 +36,15 @@ function Emoticon() {
 
   return (
     <React.Fragment>
-      <div className="container">
+   
       <div className="titleBar dropdown">
-        <button aria-label="Emoji" className="emoji" onClick={handleToggle}>😀</button>
+        <button aria-label="Emoji" className="emoji btnTools" onClick={handleToggle}>😀</button>
         <div className="emojiPiker">
         {isOpen && (
           <EmojiPicker onEmojiClick={handleEmojiClick} />
         )}
         </div>
-      </div>
+   
       </div>
     </React.Fragment>
   );

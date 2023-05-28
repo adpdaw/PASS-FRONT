@@ -18,7 +18,7 @@ function CodeBlock() {
   return (
     <React.Fragment>
     <div className="titleBar" onClick={executeCodeBlock}>
-      <button aria-label="Code Block ">
+      <button aria-label="Code Block " className="btnTools">
 
         <svg width="18" height="18" viewBox="0 0 640 512">
           <path

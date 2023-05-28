@@ -18,7 +18,7 @@ function UList() {
   return (
     <React.Fragment>
     <div className="titleBar" onClick={executeUList}>
-      <button aria-label="Unordered List">
+      <button aria-label="Unordered List" className="btnTools">
 
       <svg viewBox="0 0 512 512" height="15" width="15">
       <path

@@ -5,6 +5,8 @@ import { datosContexto } from "../Context/Context";
 import { useNavigate } from "react-router-dom";
 import logo from "../../img/faviconLogoround.png";
 import {} from '../Client/Folder/FoldersPage.css';
+import logoMd from "../../img/logo/logo-nav.svg";
+
 
 
 /**Este componente es la cabecera de la página de inicio y sus enlaces cambian según el tipo de usuario. */
@@ -25,6 +27,7 @@ function IndexHeader() {
     }
   };
 
+
   return (
     <React.Fragment>
       <header className="header">
@@ -32,18 +35,25 @@ function IndexHeader() {
           <div className="container relative">
             <div className="row items-center">
               <div className="w-full">
-                <nav className=" flex items-center justify-between py-4 navbar navbar-expand-lg !shadow-gray-100	 ">
-                  <div className="container flex flex-wrap items-center justify-end mx-auto gap-10">
+                <nav className=" flex items-center justify-between py-4 navbar navbar-expand-lg !shadow-gray-100">
+                  {/* <div className="container flex flex-wrap items-center justify-end mx-auto gap-10"> */}
+                  
                     <a href="/" className="flex items-center shrink-1 w-8/12">
                       <img
                         src={logo}
-                        className="h-6 mr-3 sm:h-9"
+                        className="h6 mr-3 sm:h-9"
                         alt="MDcreations Logo"
                       />
-                      <span className="self-center text-xl font-semibold whitespace-nowrap text-slate-800">
+                      <span className="self-center text-5xl font-semibold whitespace-nowrap rounded text-indigo-700 hover:bg-gray-100 md:hover:bg-indigo md:hover:text-gray-400 md:p-0 md:dark:hover:text-indigo dark:hover:bg-transparent dark:hover:text-indigo dark:border-gray-700">
                         MDcreations
                       </span>
                     </a>
+                    <button className="block navbar-toggler focus:outline-none lg:hidden" type="button" data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne" aria-expanded="false" aria-label="Toggle navigation">
+                  <span className="toggler-icon"></span>
+                  <span className="toggler-icon"></span>
+                  <span className="toggler-icon"></span>
+                </button>
+                  
 
                     {/* <!--menu user --> */}
                     {context.loggedIn ? (
@@ -88,7 +98,7 @@ function IndexHeader() {
                               className="py-2"
                               aria-labelledby="user-menu-button"
                             >
-                              <li>
+                               <li className="text-xl">
                                 <Link
                                   to="/user"
                                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
@@ -96,7 +106,7 @@ function IndexHeader() {
                                   Profile
                                 </Link>
                               </li>
-                              <li>
+                               <li className="text-xl">
                                 <Link
                                   onClick={() => {
                                     submitLogout();
@@ -144,16 +154,16 @@ function IndexHeader() {
                       id="mobile-menu-2"
                     >
                       <ul className="flex flex-col w-full p-4 mt-4 border border-gray-100 rounded-lg bg-300 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
-                        <li>
+                        <li className="text-xl">
                           <Link
                             to="/"
-                            className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-indigo-100 md:bg-transparent md:text-indigo-700 md:p-0 dark:text-white"
+                            className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-indigo md:hover:text-indigo-700 md:p-0 dark:text-gray-400 md:dark:hover:text-indigo dark:hover:bg-transparent dark:hover:text-indigo dark:border-gray-700"
                             aria-current="page"
                           >
                             Home
                           </Link>
                         </li>
-                        <li>
+                         <li className="text-xl">
                           <Link
                             to={context.loggedIn ? "/user" : "/login"}
                             className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-indigo md:hover:text-indigo-700 md:p-0 dark:text-gray-400 md:dark:hover:text-indigo dark:hover:bg-transparent dark:hover:text-indigo dark:border-gray-700"
@@ -161,7 +171,7 @@ function IndexHeader() {
                             Profile
                           </Link>
                         </li>
-                        <li>
+                         <li className="text-xl">
                           <Link
                             to="/"
                             className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-indigo md:hover:text-indigo-700 md:p-0 dark:text-gray-400 md:dark:hover:text-indigo dark:hover:bg-transparent dark:hover:text-indigo dark:border-gray-700"
@@ -170,7 +180,7 @@ function IndexHeader() {
                           </Link>
                         </li>
                         {context.loggedIn ? null : (
-                          <li>
+                           <li className="text-xl">
                             <Link
                               to="/login"
                               className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-indigo md:hover:text-indigo-700 md:p-0 dark:text-gray-400 md:dark:hover:text-indigo dark:hover:bg-transparent dark:hover:text-indigo dark:border-gray-700"
@@ -181,7 +191,7 @@ function IndexHeader() {
                         )}
                       </ul>
                     </div>
-                  </div>
+                  {/* </div> */}
                 </nav>
               </div>
             </div>

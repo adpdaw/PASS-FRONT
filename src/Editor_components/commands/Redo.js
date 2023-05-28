@@ -24,7 +24,7 @@ function Redo() {
 
   return (
     <div className="titleBar" onClick={handleRedo}>
-      <button aria-label="Redo Action">
+      <button aria-label="Redo Action" className="btnTools">
         <svg width="15" height="15" viewBox="0 0 384 512">
           <path
             fill="currentColor"

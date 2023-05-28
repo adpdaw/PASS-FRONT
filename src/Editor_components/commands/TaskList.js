@@ -11,7 +11,7 @@ function TaskList() {
   return (
     <React.Fragment>
     <div className="titleBar" onClick={executeTaskList}>
-      <button aria-label="Task List">
+      <button aria-label="Task List" className="btnTools">
 
       <svg width="15" height="15" viewBox="0 0 48 48">
             <path

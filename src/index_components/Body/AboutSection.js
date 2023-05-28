@@ -1,7 +1,8 @@
 import React, { } from "react";
 import { useState, useEffect } from "react";
-
-
+import aboutImg from "../../img/about/about-3.png"
+import aboutLeftImg from "../../img/about/about-left-shape.svg";
+import leftDotImg from "../../img/about/left-dots.svg";
 
 function AboutSection() {
   const img1 = "";
@@ -13,9 +14,9 @@ function AboutSection() {
   const [aboutDots, setImage3] = useState(img3);
 
   useEffect(() => {
-    setImage1(require("../../img/about/about-3.png"));
-    setImage2(require("../../img/about/about-left-shape.svg"));
-    setImage3(require("../../img/about/left-dots.svg"));
+    setImage1(aboutImg);
+    setImage2(aboutLeftImg);
+    setImage3(leftDotImg);
   }, []);
 
   return (
@@ -36,7 +37,7 @@ function AboutSection() {
                   <h1 className="mb-6 text-3xl text-gray-800 font-bold">
                     Perfect Solution Thriving Online Business
                   </h1>
-                  <p className="">
+                  <p className=" text-gray-800">
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                     dinonumy eirmod tempor invidunt ut labore et dolore magna
                     aliquyam erat, sed diam voluptua. At vero eos et accusam et

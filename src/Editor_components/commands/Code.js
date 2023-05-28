@@ -18,7 +18,7 @@ function Code() {
   return (
     <React.Fragment>
     <div className="titleBar" onClick={executeCode}>
-      <button aria-label="Insert Code">
+      <button aria-label="Insert Code" className="btnTools">
 
       <svg viewBox="0 0 48 48" fill="none" height="15" width="15">
       <path

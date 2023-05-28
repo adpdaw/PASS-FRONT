@@ -90,10 +90,6 @@ function FoldersPage() {
       null
       }
       
-
-
-
-
       <Footer />
     </React.Fragment>
   );

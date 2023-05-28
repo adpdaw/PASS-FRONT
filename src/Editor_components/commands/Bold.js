@@ -30,7 +30,7 @@ const [markdown, setMarkdown] = useMarkdown();
   return (
     <React.Fragment>
     <div className="titleBar" onClick={executeBold}>
-      <button aria-label="Add Bold Text">
+      <button aria-label="Add Bold Text" className="btnTools">
         <svg width="15" height="15" viewBox="0 0 384 512">
           <path
             fill="currentColor"

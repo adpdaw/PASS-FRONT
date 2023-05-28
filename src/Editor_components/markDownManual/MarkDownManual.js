@@ -12,7 +12,7 @@ function MarkDownManual() {
     return (
         <React.Fragment>
         <div className="markdown-editor titleBar">
-            <button onClick={toggleManual} aria-label="Manual">
+            <button onClick={toggleManual} aria-label="Manual" className="btnTools">
                 <svg width="20" height="20" viewBox="0 0 50 50">
                     <path
                         fill="currentColor"

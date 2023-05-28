@@ -154,7 +154,7 @@ const NavBar = () => {
             <span className="file-custom"></span>
           </label>
           <label className="file">
-            <input className="inputNav" aria-label="File browser" type="'text/plain'" onClick={downloadFile} />
+            <input className="inputNav" aria-label="File browser" type="'text/plain'" onClick={downloadFile2} />
             <span className="file-customDownload"></span>
           </label>
           <li onClick={toggleMode} className="btn-mode" >{mode === 'light' ? '🌞' : '🌚'}</li>

@@ -19,7 +19,7 @@ function Image() {
   return (
     <React.Fragment>
     <div className="titleBar" onClick={executeImage}>
-      <button aria-label="Add Image">
+      <button aria-label="Add Image" className="btnTools">
 
         <svg width="15" height="15" viewBox="0 0 20 20">
         <path

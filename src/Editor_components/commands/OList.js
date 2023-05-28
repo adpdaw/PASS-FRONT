@@ -18,7 +18,7 @@ function OList() {
   return (
     <React.Fragment>
     <div className="titleBar" onClick={executeOList}>
-      <button aria-label="Ordered List">
+      <button aria-label="Ordered List" className="btnTools">
 
       <svg viewBox="0 0 576 512" height="15" width="15">
       <path

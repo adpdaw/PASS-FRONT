@@ -22,7 +22,7 @@ function Undo() {
   return (
     <React.Fragment>
       <div className="titleBar" onClick={handleUndo}>
-        <button aria-label="Undo Action">
+        <button aria-label="Undo Action" className="btnTools">
           <svg width="15" height="15" viewBox="0 0 384 512">
             <path
               fill="currentColor"

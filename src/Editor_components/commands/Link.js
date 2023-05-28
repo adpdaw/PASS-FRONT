@@ -17,8 +17,8 @@ function Link() {
   
   return (
     <React.Fragment>
-    <div className="titleBar" onClick={executeLink}>
-      <button aria-label="Add Link">
+    <div className="titleBar" onClick={executeLink} >
+      <button aria-label="Add Link" className="btnTools">
 
         <svg width="15" height="15" viewBox="0 0 384 512">
         <path

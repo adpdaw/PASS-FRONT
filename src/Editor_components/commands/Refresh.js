@@ -15,7 +15,7 @@ function Refresh() {
     return (
         <React.Fragment>
         <div className="titleBar" onClick={executeRefresh}>
-            <button aria-label="Refresh Text">
+            <button aria-label="Refresh Text" className="btnTools">
                 <svg width="20" height="20" viewBox="0 0 24 24">
                     <path xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"
                     fill="currentColor"

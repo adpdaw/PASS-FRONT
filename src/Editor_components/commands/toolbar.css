@@ -6,7 +6,7 @@
 }
 
 .titleBar{
-    padding: 0.2rem; 
+    padding: 0.4rem; 
 }
 
 .titleBar:hover{
@@ -20,21 +20,20 @@
     /* border-radius: 5px; */ 
 }
 
-button {
+.btnTools {
     position: relative;
     color: var(--primary);
     background-color: transparent;
     border: none; 
 }
 
-button:hover{
-
+.btnTools:hover{
     background-color: var(--secondary);
     border-radius: 4px;
 }
 
-  button[aria-label]:focus:after,
-  button[aria-label]:hover:after {
+  button >.btnTools[aria-label]:focus:after,
+  button >.btnTools[aria-label]:hover:after {
     position: absolute;
     z-index: 100;
     top: 2em;
@@ -42,7 +41,7 @@ button:hover{
     display: block;
     overflow: hidden;
     width: 10em;
-    height: 2em;
+    height: 1.5em;
     border-radius: .2em;
     padding: 0 .7em;
     content: attr(aria-label);

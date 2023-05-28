@@ -9,17 +9,22 @@
 .preview__scroll{
     overflow: auto;
     flex-grow: 1;
-    padding-left: 20px;
+    padding-left: 25px;
 }
 
 .preview__scroll > h1, h2 ,h3 ,h4 ,h5, h6 {
   text-align: center;
+  color:inherit;
 }
 
- /* ul li::marker{
+.preview__scroll ul li{
     list-style: square !important;
     color:inherit;
-} */
+}
+.preview__scroll ol li{
+  list-style: i !important;
+  color:inherit;
+}
 
    p > img {
     display: block;
@@ -63,7 +68,8 @@
 pre{
     background-color: rgb(148, 148, 231, 0.5);
     border-radius: 5px;
-    width: auto; 
+    width: auto;
+    overflow: hidden; 
    
 }
 
@@ -76,7 +82,8 @@ code{
     border-radius: 3px;
     /* color: var(--white); */
     padding: 2px;
-    width: auto;   
+    width: auto; 
+    overflow: scroll;  
 }
 
 blockquote {

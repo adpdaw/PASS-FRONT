@@ -44,7 +44,7 @@ const AutoSave = () => {
     return (
        
         <div className="titleBar">
-            <button aria-label={button} onClick={handleAutoSaveToggle}>
+            <button aria-label={button} onClick={handleAutoSaveToggle} className="btnTools">
                 <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" >
                     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                         <g id="ic_fluent_document_autosave_24_regular" fill={color} fillRule="nonzero">
