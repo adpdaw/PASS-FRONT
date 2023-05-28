@@ -63,14 +63,14 @@ const UserForm = () => {
   return (
     <React.Fragment>
       <Header />
-      <div className="max-w-2xl mx-auto bg-white p-16">
-        <h2 className="mb-5 font-medium text-heading-color">
-          Welcome{" "}
+      <div className="max-w-2xl mx-auto bg-indigo-300 m-5 border rounded-2xl shadow-2xl p-16">
+        <h2 className="mb-5 font-medium text-heading-color text-gray-800">
+          Welcome Back To Your Profile{" "}
           <span id="userOnForm" className="font-normal text-theme-color">
             {context.userConnected.name}
           </span>
         </h2>
-        <p className="mb-5">
+        <p className="mb-5 text-gray-800" >
           You can add or delete information from your profile even change your
           email. We only require a valid name, email and password.
         </p>
@@ -107,6 +107,7 @@ const UserForm = () => {
               Email address{" "}
             </label>
             <input
+              autoComplete="user-mail"
               type="email"
               id="email"
               name="email"
@@ -178,8 +179,12 @@ const UserForm = () => {
                 type="file"
                 id="photo"
                 name="photo"
-                className="bg-indigo-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
-                placeholder="123 456 678"
+                className="block w-full text-sm text-slate-500
+                                file:mr-4 file:py-2 file:px-4
+                                file:rounded-full file:border-0
+                                file:text-sm file:font-semibold
+                                file:bg-violet-50 file:text-violet-700
+                                hover:file:bg-violet-100 "
                 {...register("photo", {
                   required: false,
                   pattern: {
@@ -239,7 +244,7 @@ const UserForm = () => {
                 className="bg-indigo-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
                 {...register("country")}
               >
-                <option value="">Choose a country</option>
+                <option className="option-title" value="">Choose a country</option>
                 <option value="Spain">Spain</option>
                 <option value="Morocco">Morocco</option>
                 <option value="United States">United States</option>
@@ -285,6 +290,7 @@ const UserForm = () => {
               </span>
             </label>
             <input
+              autoComplete="password"
               type={show ? "text" : "password"}
               id="password"
               name="password"
@@ -352,6 +358,7 @@ const UserForm = () => {
               </span>
             </label>
             <input
+            autoComplete="new-password"
               type={showRepeat ? "text" : "password"}
               id="password_confirmation"
               name="password_confirmation"

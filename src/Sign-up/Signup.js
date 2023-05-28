@@ -129,6 +129,7 @@ function Signup() {
                     </label>
                     <div className="relative flex items-center mt-2">
                       <input
+                      autoComplete="password"
                         id="password"
                         className="flex-1 p-2 pr-10 border border-gray-300 focus:outline-none focus:ring-0 focus:border-indigo-600 rounded text-sm text-gray-900"
                         placeholder="Enter your password"
@@ -200,6 +201,7 @@ function Signup() {
                       className="relative flex items-center mt-2"
                     >
                       <input
+                         autoComplete="password"
                         id="password_confirmation"
                         name="password_confirmation"
                         className="flex-1 p-2 pr-10 border border-gray-300 focus:outline-none focus:ring-0 focus:border-indigo-600 rounded text-sm text-gray-900"

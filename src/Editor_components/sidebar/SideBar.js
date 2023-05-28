@@ -56,7 +56,7 @@ const Sidebar = () => {
 
                 </li>
                 <li className="has-subnav">
-                    <input type="file" />
+                    <input type="file" className='sidenav'/>
                     <a href="#">
                         <i className="fa fa-camera-retro fa-2x"></i>
                         <span className="nav-text">

@@ -89,7 +89,7 @@
   }
 
 /* Button Upload Document */
-.inputNav > input[type="file"] {
+  input.inputNav[type="file"] {
   display: none;
 }
 

@@ -132,6 +132,9 @@
     color: var(--dark);
     border-radius: 5px;
   }
+  input.sidenav[type="file"] {
+    display: none;
+  }
   /* 
   @media (max-width:350px) {
     .main-menu{
