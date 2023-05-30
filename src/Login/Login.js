@@ -1,7 +1,8 @@
 import React from "react";
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 import { datosContexto } from "../index_components/Context/Context";
+import { getData } from "../biblioteca";
 /**Este componente es un formulario que te permite iniciar sesión. */
 function Login() {
   const url = "http://localhost/api/login";
@@ -42,6 +43,14 @@ function Login() {
       [name]: value,
     };
     setValues(newValues);
+  }
+
+  const socialLogin =async(url)=>{
+    const response = await getData(url);
+    if(response.status == 200){
+    window.location.href =response.data.url;
+      return response.data.url
+    }
   }
 
   return (
@@ -165,8 +174,8 @@ function Login() {
 
                 <div className="text-sm">
                   <a
-                    href="/"
-                    className="flex items-center justify-center space-x-2 text-gray-600 my-2 py-2 bg-gray-100 hover:bg-gray-200 rounded"
+                  onClick={()=>{socialLogin('http://localhost/api/auth-google')}}
+                    className="flex items-center justify-center space-x-2 text-gray-600 my-2 py-2 bg-gray-100 hover:bg-gray-200 rounded cursor-pointer"
                   >
                     <svg
                       className="w-5 h-5"
@@ -199,8 +208,8 @@ function Login() {
                     <span> Sign up with Google</span>
                   </a>
                   <a
-                    href="/"
-                    className="flex items-center justify-center space-x-2 text-gray-600 my-2 py-2 bg-gray-100 hover:bg-gray-200 rounded"
+                    onClick={()=>{socialLogin('http://localhost/api/auth-github')}}
+                    className="flex items-center justify-center space-x-2 text-gray-600 my-2 py-2 bg-gray-100 hover:bg-gray-200 rounded cursor-pointer"
                   >
                     <svg
                       fill="#1C2033"
@@ -213,8 +222,9 @@ function Login() {
                     <span>Sign up with GitHub</span>
                   </a>
                   <a
-                    href="/"
-                    className="flex items-center justify-center space-x-2 text-gray-600 my-2 py-2 bg-gray-100 hover:bg-gray-200 rounded"
+                    onClick={()=>{socialLogin('http://localhost/api/auth-linkedin')}}
+
+                    className="flex items-center justify-center space-x-2 text-gray-600 my-2 py-2 bg-gray-100 hover:bg-gray-200 rounded cursor-pointer"
                   >
                     <svg
                       className="w-5 h-5"

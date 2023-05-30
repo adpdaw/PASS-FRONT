@@ -5,12 +5,14 @@ import { datosContexto } from "../Context/Context";
 import { useNavigate } from "react-router-dom";
 import logo from "../../img/faviconLogoround.png";
 import {} from '../Client/Folder/FoldersPage.css';
+import {AiOutlineUser} from 'react-icons/ai'
 
 
 /**Este componente es la cabecera de la página de inicio y sus enlaces cambian según el tipo de usuario. */
 function IndexHeader() {
   var context = useContext(datosContexto);
   const [show, setShow] = useState(false);
+  var user = JSON.parse(sessionStorage.getItem('user'));
 
   const Navigate = useNavigate();
 
@@ -19,7 +21,7 @@ function IndexHeader() {
   const submitLogout = async () => {
     const response = await context.logout(url);
    if (response.status === 200) {
-      Navigate("/");
+      Navigate("/login");
     } else {
       alert("Something is wrong,please try again!!");
     }
@@ -61,13 +63,13 @@ function IndexHeader() {
                           data-dropdown-toggle="user-dropdown"
                           data-dropdown-placement="bottom"
                         >
-                          <span className="sr-only">Open user menu</span>
-                          <img
+                          {/* <img
                             id="userPhoto"
                             className="w-8 h-8 rounded-full"
                             src="./img/user.svg"
                             alt=""
-                          />
+                          /> */}
+                          <AiOutlineUser size={30}/>
                         </button>
                         {/* <!-- Dropdown menu user --> */}
                         {show ? (
@@ -77,11 +79,11 @@ function IndexHeader() {
                           >
                             <div className="px-4 py-3">
                               <span className="block text-sm text-gray-900 dark:text-white">
-                                {context.userConnected.name}{" "}
+                                {user.name}{" "}
                               </span>
                               <span className="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">
                                 {" "}
-                                {context.userConnected.email}{" "}
+                                {user.email}{" "}
                               </span>
                             </div>
                             <ul
