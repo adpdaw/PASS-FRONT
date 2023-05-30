@@ -11,26 +11,31 @@
     margin-left: 60px;
     flex-wrap: wrap;
     font-size: calc(10px + 0.75vmin); 
-  
   }
   .page-footer p {
       margin-bottom: 0;
     }
   
+  .footerText{
+    padding-top: 10px;
+    color: var(--white);
+  }
+  
   .page-footer .footer-logo,
   .page-footer a {
-   color: hsl(270, 2%, 79%);
+   color: var(--white);
   }
   
   span{
     margin-right: 25px;
+    color: var(--white);
   }
   a{
     text-decoration: none;
  
   }
-  a:hover{
-    color: hsl(240, 1%, 25%);
+  .page-footer a:hover{
+    color:var(--darkest)
    
   }
 

@@ -1,12 +1,15 @@
 
 import { useCallback, useState } from "react";
+import { useMarkdown } from "../provider/markdown-provider";
 
 const useHistoryState = (initialValue) => {
+    const [markdown, setMarkdown] = useMarkdown();
     const [state, _setState] = useState(initialValue);
     const [history, setHistory] = useState(initialValue !== undefined && initialValue !== null ? [initialValue] : []);
     const [pointer, setPointer] = useState(initialValue !== undefined && initialValue !== null ? 0 : -1);
   
     const setState = useCallback((value) => {
+        setMarkdown(value)
         let valueToAdd = value;
         if (typeof value === "function") {
             valueToAdd = value(state);
@@ -17,6 +20,8 @@ const useHistoryState = (initialValue) => {
     }, [setHistory, setPointer, _setState, state, pointer]);
   
     const undo = useCallback(() => {
+        console.log("entra en undo")
+        console.log(history)
         if (pointer <= 0)
             return;
         _setState(history[pointer - 1]);

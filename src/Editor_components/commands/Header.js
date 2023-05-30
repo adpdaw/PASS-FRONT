@@ -18,7 +18,7 @@ function Header() {
 
     return (
         <div className="titleBar" onClick={executeHeader}>
-            <button aria-label="Add Header Text">
+            <button aria-label="Add Header Text" className="btnTools">
                 <svg width="15" height="15" viewBox="0 0 384 512">
                     <path
                     fill="currentColor"

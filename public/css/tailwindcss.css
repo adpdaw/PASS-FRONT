@@ -1,6 +1,8 @@
+
+@import 'index/base';
+@import 'index/components';
+@import 'index/utilities';
 @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Open+Sans&display=swap');
-
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;900&display=swap'); 
 
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
@@ -59,6 +61,7 @@ Improve consistency of default fonts in all browsers. (https://github.com/sindre
 
 body {
   font-family:
+    Arimo,
 		system-ui,
 		-apple-system, /* Firefox supports this but not yet `system-ui` */
 		'Segoe UI',
@@ -1970,3 +1973,5 @@ a, button {
     padding-bottom: 120px;
   }
 }
+
+

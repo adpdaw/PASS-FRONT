@@ -17,7 +17,7 @@ import GoogleAuthCallback from './Login/GoogleAuthCallBack';
 import GithubAuthCallback from './Login/GithubAuthCallBack';
 import LinkedinAuthCallback from './Login/LinkedinAuthCallBack';
 
-/**Este es el componente principal que tiene las routas utilizadas. */
+/**Este es el componente principal que tiene las rutas utilizadas. */
 
 function App() {
   const navigate = useNavigate();
@@ -58,6 +58,7 @@ function App() {
           <Route path="/auth-github/call-back" element={<GithubAuthCallback/>} />
           <Route path="/auth-linkedin/call-back" element={<LinkedinAuthCallback/>} />
 
+          {/* <Route path='/files/:projectId' element={<FilesPage/>}/> */}
         </Routes>
       </Context>
    

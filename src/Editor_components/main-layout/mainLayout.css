@@ -3,13 +3,18 @@
     display: flex;
     height: 100vh;
     margin-left: 60px;
+   
 }
 .mainLayout__col{
     flex: 1;
-    padding: 1.875rem;
+    padding: 0 1.875rem 1.875rem 1.875rem; 
+    overflow-wrap: break-word;
+    overflow: hidden;
+      
 }
 
 .mainLayout__col:not(:last-child){
-    border-right: 3px solid var(--dark);
+    border-right: 1px solid var(--dark);
+  
 }
 

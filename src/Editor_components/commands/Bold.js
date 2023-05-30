@@ -1,16 +1,36 @@
 import "./toolbar.css";
 import { useMarkdown } from "../../provider/markdown-provider.js";
-import { useContext } from "react";
+import handleSelectedText from  "../../utils/SelectedText.js";
+import StartPosition from "../../utils/StarPosition";
+import React from "react";
+
 
 function Bold() {
-  const [markdown, setMarkdown] = useMarkdown();
+
+const [markdown, setMarkdown] = useMarkdown();
+
   const executeBold = () => {
-    return setMarkdown(markdown + "\n****");
+  const text = handleSelectedText();
+  const indexToReplace = StartPosition();
+  const previousMarkdown = markdown;
+  var firstCharacters =text.substring(0, 2);
+  var lastCharacters = text.substring(text.length - 2);
+ 
+  if (firstCharacters === "**" && lastCharacters === "**"){
+    var modifiedText = text.substring(2, text.length - 2);
+
+    return  text !== "" ? setMarkdown(previousMarkdown.substring(0 , indexToReplace) +  `${modifiedText}` +
+    markdown.substring(indexToReplace + text.length )): setMarkdown(markdown +`\n****`);
+  }
+  return  text !== "" ? setMarkdown(previousMarkdown.substring(0 , indexToReplace) +  `**${text}**` +
+    markdown.substring(indexToReplace + text.length )): setMarkdown(markdown +`\n****`);
+    
   };
 
   return (
+    <React.Fragment>
     <div className="titleBar" onClick={executeBold}>
-      <button aria-label="Add Bold Text">
+      <button aria-label="Add Bold Text" className="btnTools">
         <svg width="15" height="15" viewBox="0 0 384 512">
           <path
             fill="currentColor"
@@ -19,6 +39,7 @@ function Bold() {
         </svg>
       </button>
     </div>
+    </React.Fragment>
   );
 }
 export default Bold;

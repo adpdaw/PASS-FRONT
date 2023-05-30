@@ -2,11 +2,11 @@
     display: flex;
     height: 100%;
     width: auto;
-    flex-wrap: wrap;  
+    flex-wrap: wrap; 
 }
 
 .titleBar{
-    padding: 0.2rem;   
+    padding: 0.4rem; 
 }
 
 .titleBar:hover{
@@ -14,32 +14,34 @@
 }
 
 .all{
-    border:1px solid;
+    /* border:1px solid; */
     width: auto;
     height: auto;
+    /* border-radius: 5px; */ 
 }
 
-button {
+.btnTools {
     position: relative;
     color: var(--primary);
     background-color: transparent;
-    border: none;
+    border: none; 
 }
 
-button:hover{
-    color: var(--white);
+.btnTools:hover{
+    background-color: var(--secondary);
+    border-radius: 4px;
 }
 
-  button[aria-label]:focus:after,
-  button[aria-label]:hover:after {
+  button >.btnTools[aria-label]:focus:after,
+  button >.btnTools[aria-label]:hover:after {
     position: absolute;
-    z-index: 1;
-    top: -2em;
+    z-index: 100;
+    top: 2em;
     left: 0;
     display: block;
     overflow: hidden;
     width: 10em;
-    height: 2em;
+    height: 1.5em;
     border-radius: .2em;
     padding: 0 .7em;
     content: attr(aria-label);
@@ -49,3 +51,42 @@ button:hover{
     line-height: 2em;
     text-align: left;
   }
+
+  .dropdown-menu ul li {
+    list-style: none;
+    color: currentColor;
+
+   
+   
+  }
+
+  .dropdown-menu ul{
+    text-align: center;
+    background-color: var(--secondary);
+    padding-left: 20px;
+    border-radius: 10px;
+    
+  }
+
+  .dropdown-menu{
+    position: absolute;
+    z-index: 1;
+    box-shadow: var(--shadow3);
+    border-radius: 10px;
+    
+  }
+
+  .emojiPiker{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+  }
+
+  .emoji{
+    font-size: 16px;
+  }
+
+ 
+

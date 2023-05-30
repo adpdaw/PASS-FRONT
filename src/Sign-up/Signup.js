@@ -69,6 +69,7 @@ function Signup() {
                   className="my-8 text-sm"
                   onSubmit={handleSubmit(onSubmit)}
                 >
+                  {/* INPUT NAME *************************************************************/}
                   <div className="flex flex-col my-4">
                     <label htmlFor="name" className="text-gray-700">
                       Name
@@ -93,6 +94,7 @@ function Signup() {
                       )}
                     </div>
                   </div>
+                  {/* INPUT ADDRESS ***********************************************************/}
                   <div className="flex flex-col my-4">
                     <label htmlFor="email" className="text-gray-700">
                       Email Address
@@ -116,7 +118,7 @@ function Signup() {
                       )}
                     </div>
                   </div>
-                  {/* <div dangerouslySetInnerHTML={{ __html: passwdTemplate }}></div> */}
+                  {/* INPUT PASSWORD ***********************************************************/}
                   <div className="flex flex-col my-4">
                     <label htmlFor="passwordUp" className="text-gray-700">
                       Password
@@ -127,6 +129,7 @@ function Signup() {
                     </label>
                     <div className="relative flex items-center mt-2">
                       <input
+                      autoComplete="password"
                         id="password"
                         className="flex-1 p-2 pr-10 border border-gray-300 focus:outline-none focus:ring-0 focus:border-indigo-600 rounded text-sm text-gray-900"
                         placeholder="Enter your password"
@@ -153,7 +156,11 @@ function Signup() {
                             width={20}
                             color="red"
                           >
-                            <path d="M288 80c-65.2 0-118.8 29.6-159.9 67.7C89.6 183.5 63 226 49.4 256c13.6 30 40.2 72.5 78.6 108.3C169.2 402.4 222.8 432 288 432s118.8-29.6 159.9-67.7C486.4 328.5 513 286 526.6 256c-13.6-30-40.2-72.5-78.6-108.3C406.8 109.6 353.2 80 288 80zM95.4 112.6C142.5 68.8 207.2 32 288 32s145.5 36.8 192.6 80.6c46.8 43.5 78.1 95.4 93 131.1c3.3 7.9 3.3 16.7 0 24.6c-14.9 35.7-46.2 87.7-93 131.1C433.5 443.2 368.8 480 288 480s-145.5-36.8-192.6-80.6C48.6 356 17.3 304 2.5 268.3c-3.3-7.9-3.3-16.7 0-24.6C17.3 208 48.6 156 95.4 112.6zM288 336c44.2 0 80-35.8 80-80s-35.8-80-80-80c-.7 0-1.3 0-2 0c1.3 5.1 2 10.5 2 16c0 35.3-28.7 64-64 64c-5.5 0-10.9-.7-16-2c0 .7 0 1.3 0 2c0 44.2 35.8 80 80 80zm0-208a128 128 0 1 1 0 256 128 128 0 1 1 0-256z" />
+                            <path
+                              fill="currentColor"
+                              stroke="currentColor"
+                              d="M288 80c-65.2 0-118.8 29.6-159.9 67.7C89.6 183.5 63 226 49.4 256c13.6 30 40.2 72.5 78.6 108.3C169.2 402.4 222.8 432 288 432s118.8-29.6 159.9-67.7C486.4 328.5 513 286 526.6 256c-13.6-30-40.2-72.5-78.6-108.3C406.8 109.6 353.2 80 288 80zM95.4 112.6C142.5 68.8 207.2 32 288 32s145.5 36.8 192.6 80.6c46.8 43.5 78.1 95.4 93 131.1c3.3 7.9 3.3 16.7 0 24.6c-14.9 35.7-46.2 87.7-93 131.1C433.5 443.2 368.8 480 288 480s-145.5-36.8-192.6-80.6C48.6 356 17.3 304 2.5 268.3c-3.3-7.9-3.3-16.7 0-24.6C17.3 208 48.6 156 95.4 112.6zM288 336c44.2 0 80-35.8 80-80s-35.8-80-80-80c-.7 0-1.3 0-2 0c1.3 5.1 2 10.5 2 16c0 35.3-28.7 64-64 64c-5.5 0-10.9-.7-16-2c0 .7 0 1.3 0 2c0 44.2 35.8 80 80 80zm0-208a128 128 0 1 1 0 256 128 128 0 1 1 0-256z"
+                            />
                           </svg>
                         ) : (
                           <svg
@@ -177,7 +184,7 @@ function Signup() {
                         <p className="error relative flex-col"> {errors.password?.message} </p>
                       )} */}
                   </div>
-
+                  {/* INPUT CONFIRM PASSWORD ***************************************************/}
                   <div className="flex flex-col my-4">
                     <label
                       htmlFor="password_confirmation"
@@ -194,6 +201,7 @@ function Signup() {
                       className="relative flex items-center mt-2"
                     >
                       <input
+                         autoComplete="password"
                         id="password_confirmation"
                         name="password_confirmation"
                         className="flex-1 p-2 pr-10 border border-gray-300 focus:outline-none focus:ring-0 focus:border-indigo-600 rounded text-sm text-gray-900"
@@ -215,7 +223,11 @@ function Signup() {
                             width={20}
                             color="red"
                           >
-                            <path d="M288 80c-65.2 0-118.8 29.6-159.9 67.7C89.6 183.5 63 226 49.4 256c13.6 30 40.2 72.5 78.6 108.3C169.2 402.4 222.8 432 288 432s118.8-29.6 159.9-67.7C486.4 328.5 513 286 526.6 256c-13.6-30-40.2-72.5-78.6-108.3C406.8 109.6 353.2 80 288 80zM95.4 112.6C142.5 68.8 207.2 32 288 32s145.5 36.8 192.6 80.6c46.8 43.5 78.1 95.4 93 131.1c3.3 7.9 3.3 16.7 0 24.6c-14.9 35.7-46.2 87.7-93 131.1C433.5 443.2 368.8 480 288 480s-145.5-36.8-192.6-80.6C48.6 356 17.3 304 2.5 268.3c-3.3-7.9-3.3-16.7 0-24.6C17.3 208 48.6 156 95.4 112.6zM288 336c44.2 0 80-35.8 80-80s-35.8-80-80-80c-.7 0-1.3 0-2 0c1.3 5.1 2 10.5 2 16c0 35.3-28.7 64-64 64c-5.5 0-10.9-.7-16-2c0 .7 0 1.3 0 2c0 44.2 35.8 80 80 80zm0-208a128 128 0 1 1 0 256 128 128 0 1 1 0-256z" />
+                            <path
+                              fill="currentColor"
+                              stroke="currentColor"
+                              d="M288 80c-65.2 0-118.8 29.6-159.9 67.7C89.6 183.5 63 226 49.4 256c13.6 30 40.2 72.5 78.6 108.3C169.2 402.4 222.8 432 288 432s118.8-29.6 159.9-67.7C486.4 328.5 513 286 526.6 256c-13.6-30-40.2-72.5-78.6-108.3C406.8 109.6 353.2 80 288 80zM95.4 112.6C142.5 68.8 207.2 32 288 32s145.5 36.8 192.6 80.6c46.8 43.5 78.1 95.4 93 131.1c3.3 7.9 3.3 16.7 0 24.6c-14.9 35.7-46.2 87.7-93 131.1C433.5 443.2 368.8 480 288 480s-145.5-36.8-192.6-80.6C48.6 356 17.3 304 2.5 268.3c-3.3-7.9-3.3-16.7 0-24.6C17.3 208 48.6 156 95.4 112.6zM288 336c44.2 0 80-35.8 80-80s-35.8-80-80-80c-.7 0-1.3 0-2 0c1.3 5.1 2 10.5 2 16c0 35.3-28.7 64-64 64c-5.5 0-10.9-.7-16-2c0 .7 0 1.3 0 2c0 44.2 35.8 80 80 80zm0-208a128 128 0 1 1 0 256 128 128 0 1 1 0-256z"
+                            />
                           </svg>
                         ) : (
                           <svg
@@ -231,11 +243,11 @@ function Signup() {
                     <div className="error relative flex-col">
                       {watch("password_confirmation") !== watch("password") &&
                       getValues("password_confirmation") ? (
-                        <p>Password does not match</p>
+                        <p className="error">Password does not match</p>
                       ) : null}
                     </div>
                   </div>
-
+                  {/* CHECK BOX ACCEPT TERMS ****************************************************/}
                   <div className="flex items-center">
                     <input
                       type="checkbox"
@@ -282,7 +294,7 @@ function Signup() {
                       Sign Up
                     </button>
                     {error ? (
-                      <p className="text-red-700 p-5">
+                      <p className= "error">
                         One of your credentials is wrong, please try again!
                       </p>
                     ) : null}
@@ -296,8 +308,9 @@ function Signup() {
                   </span>
                   <div className="w-full h-[1px] bg-gray-500"></div>
                 </div>
-
+                {/* LOGIN SOCIAL BUTTONS **************************************************/}
                 <div className="text-sm">
+                   {/* GOOGLE **************************************************/}
                   <a
                     href="/"
                     className="flex items-center justify-center space-x-2 text-gray-600 my-2 py-2 bg-gray-100 hover:bg-gray-200 rounded"
@@ -329,8 +342,9 @@ function Signup() {
                         fill="#ea4335"
                       ></path>
                     </svg>
-                    <span>Sign up with Google</span>
+                    <span className="text-gray-800">Sign up with Google</span>
                   </a>
+                   {/* GITHUB **************************************************/}
                   <a
                     href="/"
                     className="flex items-center justify-center space-x-2 text-gray-600 my-2 py-2 bg-gray-100 hover:bg-gray-200 rounded"
@@ -343,8 +357,9 @@ function Signup() {
                     >
                       <path d="M32 1.7998C15 1.7998 1 15.5998 1 32.7998C1 46.3998 9.9 57.9998 22.3 62.1998C23.9 62.4998 24.4 61.4998 24.4 60.7998C24.4 60.0998 24.4 58.0998 24.3 55.3998C15.7 57.3998 13.9 51.1998 13.9 51.1998C12.5 47.6998 10.4 46.6998 10.4 46.6998C7.6 44.6998 10.5 44.6998 10.5 44.6998C13.6 44.7998 15.3 47.8998 15.3 47.8998C18 52.6998 22.6 51.2998 24.3 50.3998C24.6 48.3998 25.4 46.9998 26.3 46.1998C19.5 45.4998 12.2 42.7998 12.2 30.9998C12.2 27.5998 13.5 24.8998 15.4 22.7998C15.1 22.0998 14 18.8998 15.7 14.5998C15.7 14.5998 18.4 13.7998 24.3 17.7998C26.8 17.0998 29.4 16.6998 32.1 16.6998C34.8 16.6998 37.5 16.9998 39.9 17.7998C45.8 13.8998 48.4 14.5998 48.4 14.5998C50.1 18.7998 49.1 22.0998 48.7 22.7998C50.7 24.8998 51.9 27.6998 51.9 30.9998C51.9 42.7998 44.6 45.4998 37.8 46.1998C38.9 47.1998 39.9 49.1998 39.9 51.9998C39.9 56.1998 39.8 59.4998 39.8 60.4998C39.8 61.2998 40.4 62.1998 41.9 61.8998C54.1 57.7998 63 46.2998 63 32.5998C62.9 15.5998 49 1.7998 32 1.7998Z" />
                     </svg>
-                    <span>Sign up with GitHub</span>
+                    <span className="text-gray-800">Sign up with GitHub</span>
                   </a>
+                   {/* LINKEDIN **************************************************/}
                   <a
                     href="/"
                     className="flex items-center justify-center space-x-2 text-gray-600 my-2 py-2 bg-gray-100 hover:bg-gray-200 rounded"
@@ -366,7 +381,7 @@ function Signup() {
                         fill="#fff"
                       ></path>
                     </svg>
-                    <span>Sign up with LinkedIn</span>
+                    <span className="text-gray-800">Sign up with LinkedIn</span>
                   </a>
                 </div>
               </div>
@@ -397,7 +412,7 @@ function Signup() {
             </div>
           </div>
         </div>
-        <script type="module" src="./js/js-register/mainsignup.js"></script>
+        {/* <script type="module" src="./js/js-register/mainsignup.js"></script> */}
       </div>
     </React.Fragment>
   );

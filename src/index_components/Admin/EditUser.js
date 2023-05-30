@@ -54,7 +54,7 @@ export const EditUser = () => {
     <React.Fragment>
       <>
         <Header />
-        <div className="fixed top-0 left-0 right-0 bottom-0 bg-gray-900 z-30 overflow-x-hidden overflow-y-auto"></div>
+        <div className="fixed top-0 left-0 right-0 bottom-0 bg-indigo-300 z-30 overflow-x-hidden overflow-y-auto"></div>
         <div
           className="fixed top-0 right-0 z-50 
          items-center justify-center w-full p-4 
@@ -78,7 +78,7 @@ export const EditUser = () => {
                     Navigate("/IndexAdmin");
                   }}
                   className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                  data-modal-hide="editUserModal"
+                  // data-modal-hide="editUserModal"
                 >
                   <svg
                     aria-hidden="true"
@@ -207,7 +207,12 @@ export const EditUser = () => {
                       type="file"
                       id="photo"
                       name="photo"
-                      className="bg-indigo-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
+                      className="block w-full text-sm text-slate-500
+                                file:mr-4 file:py-2 file:px-4
+                                file:rounded-full file:border-0
+                                file:text-sm file:font-semibold
+                                file:bg-violet-50 file:text-violet-700
+                                hover:file:bg-violet-100 bg-gray-50"
                       {...register("photo", {
                         required: false,
                         pattern: {
@@ -321,7 +326,7 @@ export const EditUser = () => {
                 </Link>
               </div>
               {error ? (
-                <p className="text-red-700 p-5">
+                <p className="error p-5">
                   Some of your information is wrong, please try again!
                 </p>
               ) : (

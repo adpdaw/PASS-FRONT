@@ -68,3 +68,53 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+# Links utilizados
+***
+[Markdown sintaxis](https://tutorialmarkdown.com/sintaxis)
+
+[Markdown sintaxis II](https://www.markdownguide.org/basic-syntax/)
+
+[Markdown sintaxis III](https://blog.logrocket.com/how-to-safely-render-markdown-using-react-markdown/)
+
+[Emojis](https://www.npmjs.com/package/emoji-picker-react)
+
+[ReactMarkdown](https://github.com/remarkjs/react-markdown)
+***
+ ## Futuras implementaciones
+ [remark-gfm](https://github.com/remarkjs/remark-gfm)
+ # GFM
+
+## Autolink literals
+
+www.example.com, https://example.com, and contact@example.com.
+
+## Footnote
+
+A note[^1]
+
+[^1]: Big note.
+
+## Strikethrough
+
+~one~ or ~~two~~ tildes.
+
+## Table
+
+| a | b  |  c |  d  |
+| - | :- | -: | :-: |
+
+## Tasklist
+
+* [ ] to do
+* [x] done
+***
+# Imagenes para testear nuestro markdown
+***
+![To create](https://misimagenesde.com/wp-content/uploads/2017/06/fotos-chulas-3.jpg)
+***
+![Foto de un gato](https://cdn.pixabay.com/photo/2013/05/30/18/21/cat-114782_640.jpg)
+***
+![Iconos sideBar ](https://btsai.github.io/font_awesome4_cheatsheet/index.html)
