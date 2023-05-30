@@ -22,7 +22,7 @@
     color:inherit;
 }
 .preview__scroll ol li{
-  list-style: i !important;
+  list-style:decimal !important;
   color:inherit;
 }
 

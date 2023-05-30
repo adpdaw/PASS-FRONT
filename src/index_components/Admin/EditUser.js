@@ -52,15 +52,15 @@ export const EditUser = () => {
 
   return (
     <React.Fragment>
-      <>
-        <Header />
-        <div className="fixed top-0 left-0 right-0 bottom-0 bg-indigo-300 z-30 overflow-x-hidden overflow-y-auto"></div>
+     
+        <Header/>
+      
         <div
-          className="fixed top-0 right-0 z-50 
+          className=" right-0 
          items-center justify-center w-full p-4 
-         overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"
+           md:inset-0 h-auto md:h-full bg-violet-300 "
         >
-          <div className="absolute top-0 right-44 left-48 w-full h-full max-w-screen-md">
+          <div className=" right-44 left-48 w-full h-full max-w-screen-md">
             <form
               action="GET"
               onSubmit={handleSubmit(onSubmit)}
@@ -335,7 +335,8 @@ export const EditUser = () => {
             </form>
           </div>
         </div>
-      </>
+      
+ 
     </React.Fragment>
   );
 };

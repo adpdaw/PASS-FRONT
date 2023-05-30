@@ -212,3 +212,7 @@ input[type="file"]{
 .option-title{
   color: var(--indigo50);
 }
+
+li> ol{
+  padding-left: 20px;
+}

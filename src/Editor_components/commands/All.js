@@ -17,6 +17,7 @@ import HeaderDropdown from "./HeaderDropdown";
 import Refresh from "./Refresh";
 import AutoSave from "../autosave/AutoSave";
 import Emoticon from "./Emoticon.tsx";
+import Save from "./Save";
 
 const All = () => {
 
@@ -41,6 +42,7 @@ const All = () => {
         <FullScreen/>
         <Refresh/>
         <AutoSave/>
+        <Save/>
         <MarkDownManual/>
         
       </div>
