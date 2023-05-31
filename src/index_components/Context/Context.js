@@ -1,5 +1,6 @@
 import React, { createContext, useState } from "react";
 import { getData, postData, putData, deleteData, postDataHeaders, getDataHeaders,putDataHeaders,deleteDataHeaders } from "../../biblioteca";
+import { set } from "react-hook-form";
 /**Este componente es el contexto de toda la aplicación. */
 const datosContexto = createContext();
 
@@ -27,8 +28,11 @@ function Context(props) {
 const saveToken = (user,token)=>{
   sessionStorage.setItem('token',JSON.stringify(token));
   sessionStorage.setItem('user',JSON.stringify(user));
+  localStorage.setItem('token',token);
+  setLogin(true)
   setToken(token);
   setUserConnected(user);
+
 }
 
 const getToken = ()=>{
@@ -57,12 +61,24 @@ const getUser2 = ()=>{
       localStorage.setItem('token', response.data.token);
       setToken(response.data.token);
       setLogin(true);
+      const expirationTime = new Date().getTime() + (60 * 60 * 1000); // Set expiration time to 1 hour from now
+      localStorage.setItem('expirationTime', expirationTime);
       return response.data.path;
     } catch (error) {
       console.log(error)
       return error;
     }
   };
+
+  /*********Google Auth* */
+//   const googleAuth = async (url) => {
+//     try {
+//       const response = await postData(url);
+      
+//   }catch{
+//     return error;
+//   }
+// }
 
   /***Sign-up************ */
 
@@ -81,11 +97,9 @@ const getUser2 = ()=>{
   const logout = async (url) => {
     try {
       const response = await postDataHeaders(url,{},getToken());
-      console.log(response)
-      console.log(getToken())
       setUserConnected(objetoInicial);
       sessionStorage.clear();
-      localStorage.removeItem('token');
+      localStorage.clear();
       setLogin(false);
       return response;
     } catch (error) {
@@ -214,9 +228,9 @@ const deleteProject = async (url) => {
 //   setProject(project);
 // }
 /**Get one project */
-const getFiles = async (url,projectId) => {
+const getFiles = async (url) => {
   const FilesList = await getDataHeaders(url,getToken());
-  setFiles(FilesList.data.listProjects)
+  setFiles(FilesList.data)
   console.log(FilesList)
    return FilesList;
 };

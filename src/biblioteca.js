@@ -60,4 +60,38 @@ const deleteDataHeaders = async (url,token) => {
 };
 
 
-export { getData, postData, putData, deleteData, postDataHeaders,getDataHeaders,putDataHeaders,deleteDataHeaders };
+
+// Function to handle the token request
+const requestToken = async (code, redirectUri) => {
+  try {
+    const response = await axios.post('https://www.googleapis.com/oauth2/v4/token', {
+      code: code,
+      client_id: '910043443252-cm54om8q8rt4u32udfvvij2avq36653i.apps.googleusercontent.com',
+      client_secret: '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',
+      redirect_uri: redirectUri,
+      grant_type: 'authorization_code',
+    });
+
+    // Handle the token response
+    const { access_token, expires_in, refresh_token } = response.data;
+    // ...
+  } catch (error) {
+    // Handle the error
+    console.log('Token request error:', error);
+  }
+};
+export const refreshAccessToken = async (refreshToken) => {
+  try {
+    const response = await axios.post('/api/refresh-token', { refresh_token: refreshToken });
+    return response.data.access_token;
+  } catch (error) {
+    // Handle error
+    throw new Error('Token refresh failed');
+  }
+};
+
+
+
+
+
+export { getData, postData, putData, deleteData, postDataHeaders,getDataHeaders,putDataHeaders,deleteDataHeaders,requestToken };

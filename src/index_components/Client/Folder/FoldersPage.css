@@ -95,6 +95,7 @@ body{
 }
 .folder h2{
     padding: 2rem;
+    cursor: pointer;
 }
 .folder button:first-of-type{
     color: #d3d0ff;

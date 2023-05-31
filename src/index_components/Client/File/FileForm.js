@@ -1,23 +1,22 @@
 import React from 'react';
 import { useContext } from "react";
 import { datosContexto } from "../../Context/Context.js";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate,useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import IndexHeader from '../../Header/IndexHeader.js';
-import {} from "./FoldersPage.css";
 import {GiCancel} from 'react-icons/gi'
 
 
 
-function FolderForm(props) {
+function FileForm(props) {
 
     var context = useContext(datosContexto);
     const [error, setError] = useState(false);
     
-    
-    var url = `http://localhost/api/project`;
-    console.log(props.project)
+    const { projectId } = useParams();
+
+    var url = `http://localhost/api/file?project_id=${projectId}`;
 
     var Navigate = useNavigate();
     const {
@@ -35,14 +34,14 @@ function FolderForm(props) {
         var response = "";
         if(props.id === undefined){
            response = await context.createProject(url,datos);
+
         }else{
-          url = `http://localhost/api/project/${props.id}`
+          url = `http://localhost/api/file/${props.id}`
            response = await context.updateProject(url,datos);
         }
           if (response.status === 200) {
-            props.setShowModal(false)
             window.location.reload();
-              Navigate("/projects");
+              Navigate(`/files/${projectId}`);
 
           } else {
             setError(true);
@@ -73,7 +72,7 @@ function FolderForm(props) {
                   name="name"
                   className="bg-indigo-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
                   placeholder="Mi Project"
-                  defaultValue={props.id==undefined ? '': props.project['name']}
+                  defaultValue={props.id==undefined ? '': props.file['name']}
                   {...register("name", { required: true })}
                   aria-invalid={errors.name ? "true" : "false"}
                   />
@@ -83,7 +82,7 @@ function FolderForm(props) {
               </div>
               {error ? (
               <p className="text-red-700 p-5">
-                The name of the project should be unique
+                The name of the file should be unique
               </p>
               ) : null}
 
@@ -119,5 +118,5 @@ function FolderForm(props) {
   );
 }
 
-export default FolderForm;
+export default FileForm;
 

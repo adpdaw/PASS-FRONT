@@ -4,7 +4,7 @@ import {AiOutlineDelete,AiOutlineEdit} from 'react-icons/ai'
 import FolderForm from "./FolderForm";
 import { useState } from "react";
 import { useContext,useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import { datosContexto } from "../../Context/Context.js";
 
 function FolderCard (props){
@@ -21,6 +21,7 @@ function FolderCard (props){
       console.log(response)
       if (response.status === 200) {
         window.location.reload();
+        
       } else {
         setError(true);
       }
@@ -29,9 +30,12 @@ function FolderCard (props){
    }
     return (
         <React.Fragment>
-             <div className="folderCard" key={props.index} id={props.index}>
+            <div className="folderCard" key={props.index} id={props.index}>
             <div className="folder">
-              <h2>{props.project.name}</h2>
+            <Link to={`/files/${props.id}`}>
+               <h2>{props.project.name}</h2>
+            </Link>
+
               <button onClick={()=>{submitDelete(url)}}><AiOutlineDelete size={30}/></button>
               <button  onClick={()=>{setShowModal(!showModal)}}><AiOutlineEdit size={30}/></button>
               </div>
