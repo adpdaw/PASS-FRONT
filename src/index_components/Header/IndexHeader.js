@@ -6,15 +6,14 @@ import { useNavigate } from "react-router-dom";
 import logo from "../../img/faviconLogoround.png";
 import {} from '../Client/Folder/FoldersPage.css';
 import {AiOutlineUser} from 'react-icons/ai'
-import logoMd from "../../img/logo/logo-nav.svg";
 
 
 
 /**Este componente es la cabecera de la página de inicio y sus enlaces cambian según el tipo de usuario. */
 function IndexHeader() {
   var context = useContext(datosContexto);
-  const [show, setShow] = useState(false);
-  const [showBurger, setShowBurger] = useState(false);
+  const [show, setShow] = useState(false); 
+  //const [showBurger, setShowBurger] = useState(false);
   var user = JSON.parse(sessionStorage.getItem('user'));
 
   const Navigate = useNavigate();
@@ -52,7 +51,8 @@ function IndexHeader() {
                       </span>
                     </a>
                     <button className="block navbar-toggler focus:outline-none lg:hidden" type="button" data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne" aria-expanded="false" aria-label="Toggle navigation"
-                     onClick={() => setShowBurger(!showBurger)}>
+                    //  onClick={() => setShowBurger(!showBurger)}
+                    >
                   <span className="toggler-icon"></span>
                   <span className="toggler-icon"></span>
                   <span className="toggler-icon"></span>
@@ -81,12 +81,6 @@ function IndexHeader() {
                           data-dropdown-toggle="user-dropdown"
                           data-dropdown-placement="bottom"
                         >
-                          {/* <img
-                            id="userPhoto"
-                            className="w-8 h-8 rounded-full"
-                            src="./img/user.svg"
-                            alt=""
-                          /> */}
                           <AiOutlineUser size={30}/>
                         </button>
                         {/* <!-- Dropdown menu user --> */}

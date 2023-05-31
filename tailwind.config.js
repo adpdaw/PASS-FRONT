@@ -2,7 +2,8 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx,html}",
             "./src/index_components/Header/Header.js",
-            "./src/index_components/Header/IndexHeader.js",
+            // "./src/index_components/Header/IndexHeader.js",
+            "./src/index_components/Header/Nav.js",
             "./src/index_components/Footer/Footer.js",
             'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
             "./public/index.html",

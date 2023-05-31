@@ -1,4 +1,3 @@
-
 .fichero{
     width: 200px;
     height: 230px;
@@ -25,7 +24,7 @@
     border-bottom-color:#665add ;
     border-left-color:#665add ;
 }
-.ficherosList{
+.filesList{
     margin: 20px 4rem;
     min-height: 100vh;
     display: flex;

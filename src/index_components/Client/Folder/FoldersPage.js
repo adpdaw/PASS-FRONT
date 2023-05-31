@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useContext,useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import IndexHeader from "../../Header/IndexHeader";
 import Footer from "../../Footer/Footer";
 import { useForm } from "react-hook-form";
 import FolderCard from "./FolderCard";
@@ -9,6 +8,7 @@ import FolderCard from "./FolderCard";
 import { datosContexto } from "../../Context/Context.js";
 import {} from "./FoldersPage.css";
 import FolderForm from "./FolderForm";
+import Nav from "../../Header/Nav";
 
 function FoldersPage() {
   var context = useContext(datosContexto);
@@ -47,7 +47,7 @@ function FoldersPage() {
   
   return (
     <React.Fragment>
-      <IndexHeader className="header" />
+      <Nav className="header" />
 
       <div className="projectsContainer">
         <h1>Projects</h1>

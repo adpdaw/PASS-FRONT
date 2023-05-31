@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useContext,useEffect } from "react";
 import { useNavigate,useParams } from "react-router-dom";
-import IndexHeader from "../../Header/IndexHeader";
 import Footer from "../../Footer/Footer";
 import { useForm } from "react-hook-form";
 import { datosContexto } from "../../Context/Context.js";
 import FileForm from "./FileForm";
 import FileCard from "./FileCard";
+import Nav from "../../Header/Nav";
 
 
 function FilesPage() {
@@ -46,7 +46,7 @@ function FilesPage() {
   
   return (
     <React.Fragment>
-      <IndexHeader className="header" />
+      <Nav className="header" />
 
       <div className="projectsContainer">
         <h1>Files</h1>

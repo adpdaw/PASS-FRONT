@@ -1,10 +1,36 @@
-import React, { useState } from "react";
-import { Transition } from "@headlessui/react";
+import React from "react";
+import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { datosContexto } from "../Context/Context";
+import { useNavigate } from "react-router-dom";
 import logo from "../../img/faviconLogoround.png";
+import {} from '../Client/Folder/FoldersPage.css';
+import {AiOutlineUser} from 'react-icons/ai'
+import { Transition } from "@headlessui/react";
 import logoMd from "../../img/logo/logo-nav.svg";
 
 function Nav() {
+    var context = useContext(datosContexto);
+    const [show, setShow] = useState(false); 
     const [isOpen, setIsOpen] = useState(false);
+
+    //const [showBurger, setShowBurger] = useState(false);
+    var user = JSON.parse(sessionStorage.getItem('user'));
+
+    const Navigate = useNavigate();
+
+    const url = "http://localhost/api/logout";
+    /**Función que hace el logout. */
+    const submitLogout = async () => {
+      const response = await context.logout(url);
+    if (response.status === 200) {
+        Navigate("/login");
+      } else {
+        alert("Something is wrong,please try again!!");
+      }
+    };
+
+
     return (
       <div>
        <nav className="bg-gray-200">
@@ -25,30 +51,117 @@ function Nav() {
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
-                  <a
-                    href="#"
+                  <Link
+                    to="/"
                     className="hover:underline hover:text-gray-400 text-black  px-3 py-2 rounded-md text-xl font-medium"
                   >
-                    Dashboard
-                  </a>
+                    Home
+                  </Link>
 
-                  <a
-                    href="#"
+                  <Link
+                    to={context.loggedIn ? "/user" : "/login"}
                     className="hover:underline hover:text-gray-400 text-black  px-3 py-2 rounded-md text-xl font-medium"
                   >
-                    Team
-                  </a>
+                    Profile
+                  </Link>
 
-                  <a
-                    href="#"
+                  <Link
+                    to="/"
                     className="hover:underline hover:text-gray-400 text-black  px-3 py-2 rounded-md text-xl font-medium"
                   >
                     Projects
-                  </a>
-
+                  </Link>
                 </div>
               </div>
+             
             </div>
+            {context.loggedIn ? (
+                      <div className="center md:order-2">
+                        <button
+                          onClick={() => {
+                            setShow(!show);
+                          }}
+                          type="button"
+                          className="flex mr-3 text-sm bg-g 
+                            rounded-full md:mr-0 focus:ring-2 focus:ring-green-300 
+                            dark:focus:ring-zinc-600"
+                          id="user-menu-button"
+                          aria-expanded="false"
+                          data-dropdown-toggle="user-dropdown"
+                          data-dropdown-placement="bottom"
+                        >
+                          <AiOutlineUser size={30} color="black"/>
+                        </button>
+                        {/* <!-- Dropdown menu user --> */}
+                        {show ? (
+                          <div
+                            className="absolute top-12 right-0 z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+                            id="user-dropdown"
+                          >
+                            <div className="px-4 py-3">
+                              <span className="block text-sm text-gray-900 dark:text-white">
+                                {user.name}{" "}
+                              </span>
+                              <span className="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">
+                                {" "}
+                                {user.email}{" "}
+                              </span>
+                            </div>
+                            
+                            <ul
+                              className="py-2"
+                              aria-labelledby="user-menu-button"
+                            >
+                                 <li className="text-xl">
+                                <Link
+                                  to="/user"
+                                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                                >
+                                  Profile
+                                </Link>
+                              </li>
+                                 <li className="text-xl">
+                                <Link
+                                  onClick={() => {
+                                    submitLogout();
+                                  }}
+                                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                                >
+                                  Sign out
+                                </Link>
+                              </li>
+                            </ul>
+
+                            <button
+                              data-collapse-toggle="mobile-menu-2"
+                              type="button"
+                              className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                              aria-controls="mobile-menu-2"
+                              aria-expanded="false"
+                            >
+                              <span className="sr-only">Open main menu</span>
+                              <svg
+                                className="w-6 h-6"
+                                aria-hidden="true"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                  clipRule="evenodd"
+                                ></path>
+                              </svg>
+                            </button>
+                          </div>
+                        ) : (
+                          ""
+                        )}
+                      </div>
+                    ) : (
+                      ""
+                    )}
             <div className="-mr-2 flex md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -93,6 +206,7 @@ function Nav() {
                 )}
               </button>
             </div>
+
           </div>
         </div>
 

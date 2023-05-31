@@ -4,9 +4,8 @@ import { datosContexto } from "../../Context/Context.js";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import IndexHeader from '../../Header/IndexHeader.js';
 import {} from "./FoldersPage.css";
-import {GiCancel} from 'react-icons/gi'
+import Nav from '../../Header/Nav.js';
 
 
 
@@ -57,7 +56,7 @@ function FolderForm(props) {
     
   return (
     <React.Fragment>
-      <IndexHeader/>
+      <Nav/>
           <div  className="fixed align-top top-1/3 left-72 right-1/4 right-0 z-50  w-8/12 p-4  h-[calc(100%-1rem)]">
             <form id='folderForm' onSubmit={handleSubmit(onSubmit)} noValidate>
               <div className="mb-6">
