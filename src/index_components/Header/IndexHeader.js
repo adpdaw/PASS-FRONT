@@ -14,6 +14,7 @@ import logoMd from "../../img/logo/logo-nav.svg";
 function IndexHeader() {
   var context = useContext(datosContexto);
   const [show, setShow] = useState(false);
+  const [showBurger, setShowBurger] = useState(false);
   var user = JSON.parse(sessionStorage.getItem('user'));
 
   const Navigate = useNavigate();
@@ -50,11 +51,18 @@ function IndexHeader() {
                         MDcreations
                       </span>
                     </a>
-                    <button className="block navbar-toggler focus:outline-none lg:hidden" type="button" data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne" aria-expanded="false" aria-label="Toggle navigation">
+                    <button className="block navbar-toggler focus:outline-none lg:hidden" type="button" data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne" aria-expanded="false" aria-label="Toggle navigation"
+                     onClick={() => setShowBurger(!showBurger)}>
                   <span className="toggler-icon"></span>
                   <span className="toggler-icon"></span>
                   <span className="toggler-icon"></span>
                 </button>
+                    <div
+                    className={`items-center justify-between ${
+                      show ? 'flex' : 'hidden'
+                    } w-full md:flex md:w-auto md:order-1 bg-500`}
+                    id="mobile-menu-2"
+                  > 
                   
 
                     {/* <!--menu user --> */}
@@ -96,11 +104,12 @@ function IndexHeader() {
                                 {user.email}{" "}
                               </span>
                             </div>
+                            
                             <ul
                               className="py-2"
                               aria-labelledby="user-menu-button"
                             >
-                               <li className="text-xl">
+                                 <li className="text-xl">
                                 <Link
                                   to="/user"
                                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
@@ -108,7 +117,7 @@ function IndexHeader() {
                                   Profile
                                 </Link>
                               </li>
-                               <li className="text-xl">
+                                 <li className="text-xl">
                                 <Link
                                   onClick={() => {
                                     submitLogout();
@@ -156,7 +165,7 @@ function IndexHeader() {
                       id="mobile-menu-2"
                     >
                       <ul className="flex flex-col w-full p-4 mt-4 border border-gray-100 rounded-lg bg-300 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
-                        <li className="text-xl">
+                          <li className="text-xl">
                           <Link
                             to="/"
                             className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-indigo md:hover:text-indigo-700 md:p-0 dark:text-gray-400 md:dark:hover:text-indigo dark:hover:bg-transparent dark:hover:text-indigo dark:border-gray-700"
@@ -165,7 +174,7 @@ function IndexHeader() {
                             Home
                           </Link>
                         </li>
-                         <li className="text-xl">
+                           <li className="text-xl">
                           <Link
                             to={context.loggedIn ? "/user" : "/login"}
                             className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-indigo md:hover:text-indigo-700 md:p-0 dark:text-gray-400 md:dark:hover:text-indigo dark:hover:bg-transparent dark:hover:text-indigo dark:border-gray-700"
@@ -173,7 +182,7 @@ function IndexHeader() {
                             Profile
                           </Link>
                         </li>
-                         <li className="text-xl">
+                           <li className="text-xl">
                           <Link
                             to="/"
                             className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-indigo md:hover:text-indigo-700 md:p-0 dark:text-gray-400 md:dark:hover:text-indigo dark:hover:bg-transparent dark:hover:text-indigo dark:border-gray-700"
@@ -182,7 +191,7 @@ function IndexHeader() {
                           </Link>
                         </li>
                         {context.loggedIn ? null : (
-                           <li className="text-xl">
+                             <li className="text-xl">
                             <Link
                               to="/login"
                               className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-indigo md:hover:text-indigo-700 md:p-0 dark:text-gray-400 md:dark:hover:text-indigo dark:hover:bg-transparent dark:hover:text-indigo dark:border-gray-700"
@@ -193,7 +202,7 @@ function IndexHeader() {
                         )}
                       </ul>
                     </div>
-                  {/* </div> */}
+                  </div>
                 </nav>
               </div>
             </div>

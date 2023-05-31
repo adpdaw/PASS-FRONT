@@ -7,12 +7,14 @@ import AboutSection2 from "../Body/AboutSection2";
 import Pricing from "../Body/Pricing";
 import Footer from "../Footer/Footer";
 import ContactSection from "../Body/ContactSection";
+import Nav from "../Header/Nav";
 
 
 export const IndexClient = () => {
   return (
     <React.Fragment>
-      <IndexHeader />
+      <Nav/>
+      {/* <IndexHeader /> */}
       <HeroSection />
       <FeatureSection />
       <AboutSection />

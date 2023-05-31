@@ -24,9 +24,8 @@ function HeroSection() {
                   Enjoy and Create Amazing Documents with PassCode!
                 </h1>
                 <p className=" text-gray-800 text-lg mb-10 xl:pr-18 2xl:pr-120">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat, sed diam voluptua.
+                Elevate your document creation experience with PassCode, and unleash your creativity like never before. Experience the Power of PassCode for Exceptional Document Creation!
+                Unlock your potential with PassCode and discover a whole new level of document creation.
                 </p>
         
                 <Link  to={ context.loggedIn ? "/projects" : "/login" }

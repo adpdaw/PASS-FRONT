@@ -1,6 +1,6 @@
-import React, { } from "react";
+import React from "react";
 import { useState, useEffect } from "react";
-import aboutImg from "../../img/about/about-3.png"
+import aboutImg from "../../img/about/about-3.png";
 import aboutLeftImg from "../../img/about/about-left-shape.svg";
 import leftDotImg from "../../img/about/left-dots.svg";
 
@@ -34,21 +34,19 @@ function AboutSection() {
             <div className="w-full lg:w-1/2">
               <div className="about-content">
                 <div className="section-title mb-8">
-                  <h1 className="mb-6 text-3xl text-gray-800 font-bold">
+                  <h1 className="mb-6 text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl text-gray-800 font-bold">
                     Perfect Solution Thriving Online Business
                   </h1>
                   <p className=" text-gray-800">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                    dinonumy eirmod tempor invidunt ut labore et dolore magna
-                    aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                    justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-                    sea takimata sanctus est Lorem.Lorem ipsum dolor sit amet.
+                    Discover the Perfect Solution for a Thriving Online Business
+                    with PassCode! Achieve unparalleled success with PassCode as
+                    your trusted companion for online business endeavors. With
+                    its comprehensive features and seamless performance,
+                    PassCode empowers you to elevate your online presence and
+                    drive remarkable growth.
                   </p>
                 </div>
-                <a
-                  href="/"
-                  className="main-btn btn-hover border-btn "
-                >
+                <a href="/" className="main-btn btn-hover border-btn ">
                   Discover More
                 </a>
               </div>
