@@ -32,8 +32,8 @@
     border-radius: 4px;
 }
 
-  button >.btnTools[aria-label]:focus:after,
-  button >.btnTools[aria-label]:hover:after {
+  .btnTools[aria-label]:focus:after,
+  .btnTools[aria-label]:hover:after {
     position: absolute;
     z-index: 100;
     top: 2em;

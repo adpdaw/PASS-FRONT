@@ -55,12 +55,9 @@ export const EditUser = () => {
      
         <Header/>
       
-        <div
-          className=" right-0 
-         items-center justify-center w-full p-4 
-           md:inset-0 h-auto md:h-full bg-violet-300 "
-        >
-          <div className=" right-44 left-48 w-full h-full max-w-screen-md">
+         <div
+           className="flex items-center justify-center w-full h-screen bg-violet-300"> 
+          <div className=" right-44 left-48 w-full h-full max-w-screen-md ">
             <form
               action="GET"
               onSubmit={handleSubmit(onSubmit)}
@@ -334,7 +331,7 @@ export const EditUser = () => {
               )}
             </form>
           </div>
-        </div>
+         </div> 
       
  
     </React.Fragment>
