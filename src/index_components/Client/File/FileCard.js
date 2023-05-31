@@ -2,7 +2,7 @@ import React from "react";
 import {AiOutlineDelete,AiOutlineEdit} from 'react-icons/ai'
 import { useState } from "react";
 import { useContext,useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { datosContexto } from "../../Context/Context.js";
 import FileForm from "./FileForm.js";
 import {} from './FilesPage.css'
@@ -32,7 +32,9 @@ function FileCard (props){
         <React.Fragment>
             <div key={props.index} id={props.index}>
               <div className="fichero">
+                <Link to={'/editor'}>
                 <h2>.MD</h2>
+                </Link>
                  <button onClick={()=>{submitDelete(url)}}><AiOutlineDelete size={25}/></button> 
                 <button  onClick={()=>{setShowModal(!showModal)}}><AiOutlineEdit size={25}/></button>
               </div>
