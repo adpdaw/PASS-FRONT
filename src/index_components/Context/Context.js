@@ -20,6 +20,8 @@ function Context(props) {
   const [projects, setProjects] = useState(listaInicial);
 
   const [files, setFiles] = useState(listaInicial);
+  const [file, setFile] = useState(objetoInicial);
+
 
 
   const [token,setToken]=useState(objetoInicial);
@@ -231,9 +233,15 @@ const deleteProject = async (url) => {
 const getFiles = async (url) => {
   const FilesList = await getDataHeaders(url,getToken());
   setFiles(FilesList.data)
-  console.log(FilesList)
    return FilesList;
 };
+const updateFile=async(url,object)=>{
+  const response = await postDataHeaders(url,object,getToken());
+  if(response.status == 200){
+    setFile(object)
+  }
+  return response;
+}
 
 /**Update a project */
 

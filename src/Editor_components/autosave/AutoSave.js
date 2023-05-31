@@ -1,8 +1,9 @@
-import { React, useState, useEffect } from "react";
+import { React, useState,useContext, useEffect } from "react";
 import { useMarkdown } from "../../provider/markdown-provider.js";
-
+import { datosContexto } from "../../index_components/Context/Context.js";
 
 const AutoSave = () => {
+  const context = useContext(datosContexto);
     const [markdown, setMarkdown] = useMarkdown();
     const [autoSaveEnabled, setAutoSaveEnabled] = useState(false);
     const [button, setButton] = useState("AutoSave Off");
@@ -17,6 +18,7 @@ const AutoSave = () => {
             console.log("Guardando el markdown...");
             console.log(markdown);
             // Llamar a una función que guarde el markdown en una base de datos
+            
           }
         };
       

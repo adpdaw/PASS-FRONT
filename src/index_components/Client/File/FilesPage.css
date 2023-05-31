@@ -1,5 +1,5 @@
 
-.file{
+.fichero{
     width: 200px;
     height: 230px;
     position: relative;
@@ -9,11 +9,11 @@
     cursor: pointer;
 }
 
-.file~legend{
+.fichero~legend{
     cursor: pointer;
 }
 
-.file::before{
+.fichero::before{
     content: '';
     position: relative;
     top: -1;
@@ -32,26 +32,23 @@
     flex-wrap: wrap;
     gap: 2rem;
 }
-.file h2{
+.fichero h2{
     padding-top:4rem;
     padding-bottom: 2rem;
     font-size: 3.5rem;
 }
-.file button:first-of-type{
+.fichero button:first-of-type{
     color: #d3d0ff;
     position: absolute;
     right: 2px ;
     bottom: 0;
     margin-bottom:5px ;
 }
-.file button:last-of-type{
+.fichero button:last-of-type{
     color: #d3d0ff;
     position: absolute;
     right: 40px ;
     bottom: 0;
     margin-bottom:5px ;
 
-}
-.filesContainer{
-    
 }
