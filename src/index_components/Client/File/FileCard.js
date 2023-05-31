@@ -31,7 +31,7 @@ function FileCard (props){
     return (
         <React.Fragment>
             <div key={props.index} id={props.index}>
-              <div className="file">
+              <div className="fichero">
                 <h2>.MD</h2>
                  <button onClick={()=>{submitDelete(url)}}><AiOutlineDelete size={25}/></button> 
                 <button  onClick={()=>{setShowModal(!showModal)}}><AiOutlineEdit size={25}/></button>

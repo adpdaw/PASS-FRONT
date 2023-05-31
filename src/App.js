@@ -22,22 +22,22 @@ import LinkedinAuthCallback from './Login/LinkedinAuthCallBack';
 function App() {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    const expirationTime = localStorage.getItem('expirationTime');
+  // useEffect(() => {
+  //   const token = localStorage.getItem('token');
+  //   const expirationTime = localStorage.getItem('expirationTime');
 
-    if (token && expirationTime) {
-      const currentTime = new Date().getTime();
+  //   if (token && expirationTime) {
+  //     const currentTime = new Date().getTime();
 
-      if (currentTime > parseInt(expirationTime, 10)) {
-        // Token is expired, redirect to login page
-        navigate('/login');
-      }
-    } else {
-      // Token is not available, redirect to login page
-      navigate('/login');
-    }
-  }, [navigate]);
+  //     if (currentTime > parseInt(expirationTime, 10)) {
+  //       // Token is expired, redirect to login page
+  //       navigate('/login');
+  //     }
+  //   } else {
+  //     // Token is not available, redirect to login page
+  //     navigate('/login');
+  //   }
+  // }, [navigate]);
    
   
   return (
