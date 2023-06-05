@@ -1,11 +1,17 @@
 import React from "react";
-import { useState, useRef , useEffect} from "react";
+import { useState, useRef , useEffect,useContext} from "react";
+import { datosContexto } from "../../index_components/Context/Context.js";
 import TitleBar from "../title-bar/TitleBar.js";
 import { useMarkdown } from "../../provider/markdown-provider.js";
+import { useParams } from "react-router-dom";
 import './editor.css';
 import All from "../commands/All.js";
 
 const Editor = () =>{
+    var context = useContext(datosContexto);
+    const { fileId } = useParams();
+
+   const url = `http://localhost/api/file/${fileId}`;
 
     const [markdown, setMarkdown] = useMarkdown();
     const [words , setWords] = useState(0);
@@ -42,7 +48,18 @@ const Editor = () =>{
         }
     };
 
-
+    useEffect(() => {
+        async function fetchData() {
+          try {
+            const response = await context.getFile(url);
+            setMarkdown(response.data.file.content)
+            return response.data;
+          } catch (error) {
+            return error;
+          }
+        }
+        fetchData();
+      },[]);
     return(
         <React.Fragment>
         <div className="editor__wrap">

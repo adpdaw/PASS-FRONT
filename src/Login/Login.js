@@ -67,12 +67,12 @@ function Login() {
                 <p className="text-center text-sm text-gray-600 mt-2">
                   Don't have an account?
                   <a
-                    href="signup"
+                    href="/signup"
                     className="text-blue-600 hover:text-blue-700 hover:underline"
                     title="Sign In"
                   >
                     {" "}
-                    Sign in here
+                    Sign up here
                   </a>
                 </p>
                 <form className="my-8 text-sm" onSubmit={handleSubmit}>
@@ -224,7 +224,7 @@ function Login() {
                   </a>
                   <a
                     onClick={()=>{socialLogin('http://localhost/api/auth-linkedin')}}
-
+                      href="/"
                     className="flex items-center justify-center space-x-2 text-gray-600 my-2 py-2 bg-gray-100 hover:bg-gray-200 rounded cursor-pointer"
                   >
                     <svg

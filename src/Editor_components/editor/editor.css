@@ -16,7 +16,6 @@
     border: none;
     font-size: calc(1rem); 
 }
-
 /* .editor .light{
     width: 100%;
     flex-grow: 1;
@@ -29,3 +28,9 @@
     font-size: calc(1rem);  
 } */
 
+@media (max-width:430px) {
+
+    .editor {
+        font-size: 14px;
+    }
+}

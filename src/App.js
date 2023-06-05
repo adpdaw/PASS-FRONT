@@ -22,22 +22,22 @@ import LinkedinAuthCallback from './Login/LinkedinAuthCallBack';
 function App() {
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem('token');
-  //   const expirationTime = localStorage.getItem('expirationTime');
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    const expirationTime = localStorage.getItem('expirationTime');
 
-  //   if (token && expirationTime) {
-  //     const currentTime = new Date().getTime();
+    if (token && expirationTime) {
+      const currentTime = new Date().getTime();
 
-  //     if (currentTime > parseInt(expirationTime, 10)) {
-  //       // Token is expired, redirect to login page
-  //       navigate('/login');
-  //     }
-  //   } else {
-  //     // Token is not available, redirect to login page
-  //     navigate('/login');
-  //   }
-  // }, [navigate]);
+      if (currentTime > parseInt(expirationTime, 10)) {
+        // Token is expired, redirect to login page
+        navigate('/login');
+      }
+    } else {
+      // Token is not available, redirect to login page
+      navigate('/login');
+    }
+  }, [navigate]);
    
   
   return (
@@ -50,7 +50,7 @@ function App() {
           <Route path='/login' element={<Login/>}/>
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/editUser' element={<EditUser/>}/>
-          <Route path='/editor' element={<IndexEditor/>}/>
+          <Route path='/editor/:fileId' element={<IndexEditor/>}/>
           <Route path='/projects' element={<FoldersPage/>}/>
           <Route path='/projectForm' element={<FolderForm/>}/>
           <Route path='/files/:projectId' element={<FilesPage/>}/>

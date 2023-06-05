@@ -9,10 +9,12 @@ import { useNavigate } from "react-router-dom";
 /**Este componente es una cabecera, sus enlaces cambian depende del tipo de usuario. */
 function Header() {
   const url = "http://localhost/api/logout";
+  var userConnected = JSON.parse(sessionStorage.getItem('user'));
 
   var context = useContext(datosContexto);
   /**Crear un estado que muestre un menú desplegable. */
   const [show, setShow] = useState(false);
+
 
   const Navigate = useNavigate();
   /** Función que cierra sesión, si falla muestra una alerta.*/
@@ -69,10 +71,10 @@ function Header() {
               >
                 <div className="px-4 py-3">
                   <span className="block text-sm text-gray-900 dark:text-white">
-                    {context.userConnected.name}
+                    {userConnected.name}
                   </span>
                   <span className="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">
-                    {context.userConnected.email}
+                    {userConnected.email}
                   </span>
                 </div>
                 <ul className="py-2" aria-labelledby="user-menu-button">
@@ -130,16 +132,23 @@ function Header() {
               <li>
                 <Link
                   to={
-                    context.userConnected.user_type === "admin"
-                      ? "/IndexAdmin"
-                      : "/"
+                      "/IndexAdmin"
                   }
                   className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-indigo-100 md:bg-transparent md:text-indigo-700 md:p-0 dark:text-white"
                   aria-current="page"
                 >
-                  {context.userConnected.user_type === "admin"
-                    ? "Home client"
-                    : "Home"}{" "}
+                 Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={
+                   "/"
+                  }
+                  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-indigo-100 md:bg-transparent md:text-indigo-700 md:p-0 dark:text-white"
+                  aria-current="page"
+                >
+                  Home client
                 </Link>
               </li>
               <li>

@@ -107,3 +107,37 @@ blockquote {
   blockquote p {
     display: inline;
   }
+  @media (max-width:430px) {
+    .preview__scroll > p > img{
+      width: 100px;
+      
+    }
+    .preview__scroll h1 {
+      font-size: 24px;
+    }
+    
+    .preview__scroll h2 {
+      font-size: 20px;
+    }
+    
+    .preview__scroll h3 {
+      font-size: 18px;
+    }
+    
+    .preview__scroll h4 {
+      font-size: 16px;
+    }
+    
+    .preview__scroll h5 {
+      font-size: 14px;
+    }
+    
+    .preview__scroll h6 {
+      font-size: 12px;
+    }
+    
+    .preview__scroll p {
+      font-size: 14px;
+    }
+  
+  }

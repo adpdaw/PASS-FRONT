@@ -20,7 +20,7 @@ export const EditUser = () => {
   } = useForm({ mode: "all" });
 
   const url = `http://localhost/api/user/${context.user.id}`;
-
+  console.log(context.user)
   /**Función que modifica un usuario ,recoge los datos de formulario y lo manda.  */
   const onSubmit = async (data) => {
     let datos = {
@@ -53,16 +53,16 @@ export const EditUser = () => {
   return (
     <React.Fragment>
      
-        <Header/>
+        {/* <Header/> */}
       
          <div
-           className="flex items-center justify-center w-full h-screen bg-violet-300"> 
+           className="flex items-center justify-center w-full h-screen"> 
           <div className=" right-44 left-48 w-full h-full max-w-screen-md ">
             <form
               action="GET"
               onSubmit={handleSubmit(onSubmit)}
               noValidate
-              className="relative bg-white rounded-lg shadow dark:bg-gray-700 top-20"
+              className="relative bg-white rounded-lg shadow dark:bg-gray-700 top-10 "
             >
               {/* <!-- Modal header --> */}
               <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
@@ -75,7 +75,6 @@ export const EditUser = () => {
                     Navigate("/IndexAdmin");
                   }}
                   className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                  // data-modal-hide="editUserModal"
                 >
                   <svg
                     aria-hidden="true"

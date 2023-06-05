@@ -102,11 +102,11 @@ function Footer() {
                       </li>
                       <li>
                         {" "}
-                        <a href="/">Privacy policy</a>{" "}
+                        <a href="https://www.privacypolicygenerator.info/live.php?token=nzqFTnQaQvjbR9qfWrBD4rGcAOSCos18">Privacy policy</a>{" "}
                       </li>
                       <li>
                         {" "}
-                        <a href="/">Terms of service</a>{" "}
+                        <a href="https://www.termsandconditionsgenerator.com/live.php?token=BwKroY6vTrfDCNS8gdjhSa0qL8HggY3q">Terms of service</a>{" "}
                       </li>
                       <li>
                         {" "}

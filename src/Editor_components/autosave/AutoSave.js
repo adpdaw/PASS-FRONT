@@ -1,22 +1,31 @@
 import { React, useState,useContext, useEffect } from "react";
 import { useMarkdown } from "../../provider/markdown-provider.js";
 import { datosContexto } from "../../index_components/Context/Context.js";
+import { useParams } from "react-router-dom";
 
 const AutoSave = () => {
   const context = useContext(datosContexto);
+  const { fileId } = useParams();
     const [markdown, setMarkdown] = useMarkdown();
     const [autoSaveEnabled, setAutoSaveEnabled] = useState(false);
     const [button, setButton] = useState("AutoSave Off");
     const [color, setColor] = useState("currentColor");
-   
+
+    const url = `http://localhost/api/file/${fileId}`;
+
    
 
     useEffect(() => {
-        const handleKeyPress = (event) => {
+        const handleKeyPress = async (event) => {
           if (event.key === "Enter") {
         
             console.log("Guardando el markdown...");
-            console.log(markdown);
+            context.updateFileContent(markdown)
+            const response = await context.updateFile(url,context.file);
+
+            if(response.status !== 200){
+                window.alert("Something is wrong");
+            }
             // Llamar a una función que guarde el markdown en una base de datos
             
           }

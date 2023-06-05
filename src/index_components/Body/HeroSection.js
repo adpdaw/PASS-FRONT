@@ -31,7 +31,7 @@ function HeroSection() {
                 <Link  to={ context.loggedIn ? "/projects" : "/login" }
                   className="main-btn  btn-hover mb-2"
                 >
-                  Get Started
+                  Start Writting
                 </Link>
               </div>
             </div>

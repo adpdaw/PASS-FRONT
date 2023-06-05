@@ -230,17 +230,28 @@ const deleteProject = async (url) => {
 //   setProject(project);
 // }
 /**Get one project */
+const getFile =async (url)=>{
+  const file = await getDataHeaders(url,getToken());
+  setFile(file.data.file);
+  return file;
+}
 const getFiles = async (url) => {
   const FilesList = await getDataHeaders(url,getToken());
   setFiles(FilesList.data)
    return FilesList;
 };
 const updateFile=async(url,object)=>{
-  const response = await postDataHeaders(url,object,getToken());
+  const response = await putDataHeaders(url,object,getToken());
   if(response.status == 200){
     setFile(object)
   }
   return response;
+}
+
+const updateFileContent=(content)=>{
+  var newFile = file;
+  newFile['content'] = content
+  setFile(newFile)
 }
 
 /**Update a project */
@@ -305,7 +316,12 @@ const updateFile=async(url,object)=>{
     deleteProject,
     updateProjectList,
     files,
-    getFiles
+    file,
+    setFile,
+    getFiles,
+    getFile,
+    updateFileContent,
+    updateFile
   };
   return (
     <datosContexto.Provider value={data}>

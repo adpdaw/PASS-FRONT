@@ -50,8 +50,8 @@ export const RowUser = (props) => {
             className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
             type="button"
             onClick={() => {
-              context.setShowModal(true);
               context.updateUserState(props.data);
+              console.log(context.user)
             }}
           >
             EditUser

@@ -32,7 +32,7 @@ function FileCard (props){
         <React.Fragment>
             <div key={props.index} id={props.index}>
               <div className="fichero">
-                <Link to={'/editor'}>
+                <Link to={`/editor/${props.id}`}>
                 <h2>.MD</h2>
                 </Link>
                  <button onClick={()=>{submitDelete(url)}}><AiOutlineDelete size={25}/></button> 

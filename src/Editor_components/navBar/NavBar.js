@@ -1,6 +1,7 @@
 import { useMarkdown } from "../../provider/markdown-provider";
 import React, { useState, useRef, useEffect } from "react";
 import "./navBar.css";
+import { Link } from "react-router-dom";
 import logo from "../../img/favicon.png";
 
 const NavBar = () => {
@@ -101,11 +102,11 @@ const inputStyle = `
       <div className="nav">
         <input type="checkbox" id="nav-check" />
         <div className="nav-header">
-          <div className="nav-title">
+          <a href='/' className="nav-title">
             <img className="logo" src={logo} alt="logo" />
 
             <span className="logoName">PassCode ™</span>
-          </div>
+          </a>
         </div>
         <div className="nav-btn">
           <label htmlFor="nav-check">

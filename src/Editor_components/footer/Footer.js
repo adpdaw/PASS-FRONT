@@ -26,7 +26,7 @@ function Footer() {
         <p className="footerText">
           &copy; <span id="date">{year}</span>
           <span className="footer-logo">PassCode made by  </span>
-          <a href="https://guileless-scone-3def61.netlify.app" target="_blank">
+          <a href="/">
             MDcreations
           </a>
         </p>

@@ -37,18 +37,14 @@ function Nav() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 p-7">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
-              <div className="flex-shrink-0">
-              <a href="/" className="flex items-center shrink-1 w-8/12">
-                      <img
-                        src={logo}
-                        className="h6 mr-3 sm:h-9"
+            <div className="flex items-baseline space-x-4 flex-shrink-0 pt-10 cursor-pointer">
+               
+                       <img
+                        src={logoMd}
+                        className=" mr-3 "
                         alt="MDcreations Logo"
                       />
-                      <span className="self-center text-3xl font-semibold whitespace-nowrap rounded text-indigo-700  md:hover:text-gray-400 md:p-0 dark:border-gray-700">
-                        MDcreations
-                      </span>
-                    </a>
-              </div>
+            </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                   <Link

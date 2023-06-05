@@ -7,7 +7,9 @@ import Sidebar from '../../Editor_components/sidebar/SideBar.js';
 import NavBar from '../../Editor_components/navBar/NavBar.js'
 import Footer from '../../Editor_components/footer/Footer.js'
 
+
 function  IndexEditor  () {
+  
 
   return(  
     <MarkdownProvider>

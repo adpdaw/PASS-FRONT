@@ -3,6 +3,8 @@ import { useState, useContext } from "react";
 import { datosContexto } from "../index_components/Context/Context.js";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { getData } from "../biblioteca";
+
 /**Esta componente muestra un formulario para registrarse. */
 function Signup() {
   const [show, setShow] = useState(false);
@@ -42,6 +44,13 @@ function Signup() {
       setError(true);
     }
   };
+  const socialLogin =async(url)=>{
+    const response = await getData(url);
+    if(response.status == 200){
+    window.location.href =response.data.url;
+      return response.data.url
+    }
+  }
 
   return (
     <React.Fragment>
@@ -312,7 +321,7 @@ function Signup() {
                 <div className="text-sm">
                    {/* GOOGLE **************************************************/}
                   <a
-                    href="/"
+                   onClick={()=>{socialLogin('http://localhost/api/auth-google')}}
                     className="flex items-center justify-center space-x-2 text-gray-600 my-2 py-2 bg-gray-100 hover:bg-gray-200 rounded"
                   >
                     <svg
@@ -346,7 +355,7 @@ function Signup() {
                   </a>
                    {/* GITHUB **************************************************/}
                   <a
-                    href="/"
+                    onClick={()=>{socialLogin('http://localhost/api/auth-github')}}
                     className="flex items-center justify-center space-x-2 text-gray-600 my-2 py-2 bg-gray-100 hover:bg-gray-200 rounded"
                   >
                     <svg
@@ -361,7 +370,7 @@ function Signup() {
                   </a>
                    {/* LINKEDIN **************************************************/}
                   <a
-                    href="/"
+                    onClick={()=>{socialLogin('http://localhost/api/auth-linkedin')}}
                     className="flex items-center justify-center space-x-2 text-gray-600 my-2 py-2 bg-gray-100 hover:bg-gray-200 rounded"
                   >
                     <svg

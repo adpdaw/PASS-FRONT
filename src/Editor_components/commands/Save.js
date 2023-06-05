@@ -1,18 +1,42 @@
-import { React, useState, useEffect } from "react";
+import React from 'react';
+
+import { useState, useEffect,useContext } from "react";
 import { useMarkdown } from "../../provider/markdown-provider.js";
+import { datosContexto } from "../../index_components/Context/Context.js";
+import { useParams } from "react-router-dom";
 import "./toolbar.css";
 
 
 const Save = () => {
+  const context = useContext(datosContexto);
+  const { fileId } = useParams();
+    const [aviso, setAviso] = useState(false);
     const [markdown, setMarkdown] = useMarkdown();
-    
-    const handleSave = () => {
-        console.log('Guardar Markdown')
-        console.log(markdown)
+    const url = `http://localhost/api/file/${fileId}`;
+
+    const handleSave = async () => {
+        context.updateFileContent(markdown)
+        const response = await context.updateFile(url,context.file);
+        setAviso(true)
+        setTimeout(() => {
+            setAviso(false)
+          }, 2000);
+        if(response.status !== 200){
+            window.alert("Something is wrong");
+        }
     };
 
     return (
-        <div className="titleBar">
+       <React.Fragment>
+        
+        {aviso ?
+        <p className='aviso'
+        >Text well saved !!</p>
+        :
+        ""
+        }
+       
+         <div className="titleBar">
             <button aria-label="Save" onClick={handleSave} className="btnTools">
             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
 	 width="18px" height="18px" viewBox="0 0 612 612" fill="currentColor">
@@ -31,6 +55,9 @@ const Save = () => {
 </svg>
             </button>
         </div>
+       
+
+       </React.Fragment>
        
     );
 };

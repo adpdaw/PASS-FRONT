@@ -1,10 +1,9 @@
 import React from "react";
-import Header from "../Header/Header.js";
-import { useState } from "react";
-import { useContext } from "react";
+import { useContext,useState } from "react";
 import { datosContexto } from "../Context/Context.js";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import Nav from "../Header/Nav.js"
 /**Este componente es un formulario controlado que permite modificar o borra tu propia cuenta. */
 const UserForm = () => {
   const [show, setShow] = useState(false);
@@ -14,8 +13,9 @@ const UserForm = () => {
 
   var context = useContext(datosContexto);
   const Navigate = useNavigate();
+  var userConnected = JSON.parse(sessionStorage.getItem('user'));
 
-  const url = `http://localhost/api/user/${context.userConnected.id}`;
+  const url = `http://localhost/api/user/${userConnected.id}`;
 
   //Hook de la api react-hook-form
   //https://react-hook-form.com
@@ -62,12 +62,12 @@ const UserForm = () => {
   };
   return (
     <React.Fragment>
-      <Header />
+      <Nav />
       <div className="max-w-2xl mx-auto bg-indigo-300 m-5 border rounded-2xl shadow-2xl p-16">
         <h2 className="mb-5 font-medium text-heading-color text-gray-800">
           Welcome Back To Your Profile{" "}
           <span id="userOnForm" className="font-normal text-theme-color">
-            {context.userConnected.name}
+            {userConnected.name}
           </span>
         </h2>
         <p className="mb-5 text-gray-800" >
@@ -89,7 +89,7 @@ const UserForm = () => {
               name="name"
               className="bg-indigo-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
               placeholder="John"
-              defaultValue={context.userConnected.name}
+              defaultValue={userConnected.name}
               {...register("name", { required: true })}
               aria-invalid={errors.name ? "true" : "false"}
             />
@@ -111,7 +111,7 @@ const UserForm = () => {
               type="email"
               id="email"
               name="email"
-              defaultValue={context.userConnected.email}
+              defaultValue={userConnected.email}
               className="bg-indigo-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
               placeholder="john.doe@country.com"
               {...register("email", {
@@ -145,7 +145,7 @@ const UserForm = () => {
                 type="tel"
                 id="phoneNumber"
                 name="phoneNumber"
-                defaultValue={context.userConnected.phoneNumber}
+                defaultValue={userConnected.phoneNumber}
                 className="bg-indigo-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
                 placeholder="123 456 678"
                 pattern=""
@@ -217,7 +217,7 @@ const UserForm = () => {
               type="text"
               id="address"
               name="address"
-              defaultValue={context.userConnected.address}
+              defaultValue={userConnected.address}
               className="bg-indigo-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
               placeholder="Av HalfDome 27"
               {...register("address", { required: false })}
@@ -269,7 +269,7 @@ const UserForm = () => {
               <input
                 id="user_type"
                 name="user_type"
-                defaultValue={context.userConnected.user_type}
+                defaultValue={userConnected.user_type}
                 className="bg-indigo-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
                 {...register("user_type")}
               />
@@ -277,6 +277,7 @@ const UserForm = () => {
             </div>
           </div>
 
+ 
           {/* <!-- Input password --> */}
           <div className="mb-6 relative">
             <label
@@ -408,6 +409,9 @@ const UserForm = () => {
               ) : null}
             </div>
           </div>
+          :
+          ""
+
           <div className="flex items-start mb-6">
             <div className="flex items-center h-5">
               <input
